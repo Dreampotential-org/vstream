@@ -1,0 +1,12 @@
+img {
+    width: 50px;
+    /* height: 200px; */
+}
+
+.vehicle-content {
+    padding: 30px;
+}
+
+div#as-react-datatable-container {
+    width: 100%;
+}

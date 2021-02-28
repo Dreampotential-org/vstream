@@ -1,0 +1,47 @@
+.logo-big {
+    width: 80px !important;
+}
+
+nav.navbar {
+    background-color: black;
+    color: white;
+}
+
+.remove-caret {
+    cursor: pointer;
+}
+
+.user-size li:hover {
+    color: black;
+    font-weight: bolder;
+    /* background: black; */
+}
+
+.user-size li {
+    color: grey;
+    font-weight: normal;
+    border-bottom: 1px solid grey;
+    /* background: black; */
+}
+
+nav.navbar .dropdown-menu a {
+    color: grey;
+    font-weight: normal;
+    /* letter-spacing: 2px; */
+    /* background: black; */
+}
+
+nav.navbar .dropdown-menu a:hover {
+    color: black;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    /* background: black; */
+}
+
+nav.navbar .user-size {
+    min-width: 180px !important;
+}
+
+/* .remove-caret:after {
+    display: none;
+} */

@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './index.css';
+import './assets/bootstrap.min.css';
+import './assets/elisyam-1.5.min.css';
+import './assets/animate.min.css';
 
 ReactDOM.render(
   <React.StrictMode>

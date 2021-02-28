@@ -1,0 +1,20 @@
+.default-sidebar {
+    background-color: white;
+    color: black;
+}
+
+.default-sidebar>.side-navbar ul a {
+    color: black;
+}
+
+.default-sidebar>.side-navbar a i {
+    color: black;
+}
+
+.default-sidebar>.side-navbar.shrinked a span {
+    display: block !important;
+}
+
+/* .active {
+    color: #e76c90 !important;
+} */
