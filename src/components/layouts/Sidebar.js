@@ -18,14 +18,91 @@ function Sidebar({ toggle }) {
           >
             {/* <!-- Begin Main Navigation --> */}
             <ul className='list-unstyled'>
-              <li>
+            <li>
                 <NavLink
                   activeClassName='active'
-                  to='/dashboard/course-management'
+                  to='/dashboard/conversation'
                 >
                   <i className='la la-puzzle-piece'></i>
                   <span style={{ display: 'block !important' }}>
-                    Course Management
+                    Start Conversation
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  activeClassName='active'
+                  to='/dashboard/account'
+                >
+                  <i className='la la-puzzle-piece'></i>
+                  <span style={{ display: 'block !important' }}>
+                    Account
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  activeClassName='active'
+                  to='/dashboard/notifications'
+                >
+                  <i className='la la-puzzle-piece'></i>
+                  <span style={{ display: 'block !important' }}>
+                    Notifications
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  activeClassName='active'
+                  to='/dashboard/privacy'
+                >
+                  <i className='la la-puzzle-piece'></i>
+                  <span style={{ display: 'block !important' }}>
+                    Privacy & Security
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  activeClassName='active'
+                  to='/dashboard/invite-freinds'
+                >
+                  <i className='la la-puzzle-piece'></i>
+                  <span style={{ display: 'block !important' }}>
+                    Invite Freinds
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  activeClassName='active'
+                  to='/dashboard/community-guide'
+                >
+                  <i className='la la-puzzle-piece'></i>
+                  <span style={{ display: 'block !important' }}>
+                    Community Guidelines
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  activeClassName='active'
+                  to='/dashboard/contact-support'
+                >
+                  <i className='la la-puzzle-piece'></i>
+                  <span style={{ display: 'block !important' }}>
+                    Contact Support
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  activeClassName='active'
+                  to='/dashboard/about'
+                >
+                  <i className='la la-puzzle-piece'></i>
+                  <span style={{ display: 'block !important' }}>
+                    About
                   </span>
                 </NavLink>
               </li>

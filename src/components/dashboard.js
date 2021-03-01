@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Fragment,useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loadUser } from '../actions/auth';
@@ -11,6 +11,7 @@ function Dashboard({ toggling: { toggleNavbarBurger }, loadUser }) {
     <div
       className={toggleNavbarBurger ? 'content-inner' : 'content-inner active'}
     >
+      <Fragment>
       <div className='container-fluid'>
         {/* <!-- Begin Page Header--> */}
         <div className='row'>
@@ -45,6 +46,7 @@ function Dashboard({ toggling: { toggleNavbarBurger }, loadUser }) {
           </div>
         </div>
       </div>
+      </Fragment>
     </div>
   );
 }

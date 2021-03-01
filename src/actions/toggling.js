@@ -12,6 +12,6 @@ export const toggleNavbar = () => async dispatch => {
 
     } catch (error) {
 
-        console.log(error);
+        console.log("eror....."+error);
     }
 };

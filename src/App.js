@@ -3,6 +3,7 @@ import './App.css';
 import MainComponent from "./components/static/SplashScreen";
 import LoginRegister from './components/auth/login-register';
 import Dashboard from "./components/dashboard";
+import Conversation from "./components/conversation/conversation-main"
 import { Provider } from 'react-redux';
 import store from './store';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
@@ -29,12 +30,46 @@ function App() {
         path='/detailCourse/:id'
         component={DetailCourse}
       ></PrivateRoute> */}
-      {/* <PrivateRoute exact path='/detail/:id' component={DetailCourse} />
       <PrivateRoute
         exact
-        path='/dashboard/course-management'
-        component={AddCar}
-      ></PrivateRoute> */}
+        path='/dashboard/conversation'
+        component={Conversation}
+      ></PrivateRoute>
+      <PrivateRoute
+        exact
+        path='/dashboard/account'
+        component={Dashboard}
+      ></PrivateRoute>
+      <PrivateRoute
+        exact
+        path='/dashboard/notifications'
+        component={Dashboard}
+      ></PrivateRoute>
+      <PrivateRoute
+        exact
+        path='/dashboard/privacy'
+        component={Dashboard}
+      ></PrivateRoute>
+      <PrivateRoute
+        exact
+        path='/dashboard/invite-freinds'
+        component={Dashboard}
+      ></PrivateRoute>
+      <PrivateRoute
+        exact
+        path='/dashboard/community-guide'
+        component={Dashboard}
+      ></PrivateRoute>
+      <PrivateRoute
+        exact
+        path='/dashboard/contact-support'
+        component={Dashboard}
+      ></PrivateRoute>
+      <PrivateRoute
+        exact
+        path='/dashboard/about'
+        component={Dashboard}
+      ></PrivateRoute>
       {/* <PrivateRoute
         exact
         path='/dashboard/testing-reordering'
@@ -58,7 +93,22 @@ function App() {
               path='/(dashboard)'
               component={DefaultContainer}
             ></Route>
-            </Switch>
+            <Route
+              exact
+              path='/(dashboard)/(conversation)'
+              component={DefaultContainer}
+            ></Route>
+            <Route
+              exact
+              path='/(dashboard)'
+              component={DefaultContainer}
+            ></Route>
+            <Route
+              exact
+              path='/(dashboard)'
+              component={DefaultContainer}
+            ></Route>
+          </Switch>
         </div>
       </Router>
     </Provider>

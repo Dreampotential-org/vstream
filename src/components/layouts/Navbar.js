@@ -98,7 +98,8 @@ function Navbar({
                   /> */}
                   {userDetail !== null ? (
                     <span>
-                      {userDetail.first_name} {userDetail.last_name}
+                      {userDetail.name} 
+                      {/* {userDetail.last_name} */}
                     </span>
                   ) : (
                     <span>Username</span>
@@ -179,7 +180,7 @@ function Navbar({
 
 Navbar.propTypes = {
   toggling: PropTypes.object.isRequired,
-  // logout: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired,
   toggleNavbar: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
 };
