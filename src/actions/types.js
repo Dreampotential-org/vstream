@@ -12,3 +12,7 @@ export const GET_CATEGORIES = 'GET_CATEGORIES';
 export const SET_NAVBAR_TOGGLE = 'SET_NAVBAR_TOGGLE';
 
 
+export const GET_ALL_USERS = 'GET_ALL_USERS';
+export const CREATE_ROOM = 'CREATE_ROOM';
+
+

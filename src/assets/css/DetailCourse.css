@@ -1,0 +1,554 @@
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000;
+}
+
+.top-section {
+    background-color: #000;
+    padding: 10px;
+    /* position: fixed; */
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.course-title {
+    text-align: center;
+    color: #fff;
+}
+
+.modal-backdrop {
+    background: #0000008f;
+}
+
+.modal-body {
+    color: black;
+}
+
+.course-title .thumbnail-edit-file-input {
+    /* position: absolute;
+    width: 22px;
+    height: 22px;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    cursor: pointer;
+    opacity: 0; */
+    display: none;
+}
+
+.course-title h1 {
+    /* text-align: center; */
+    color: #fff;
+}
+
+.course-title:hover .edit-icon {
+    display: block;
+}
+
+/* .test:hover .delete-quiz {
+    display: block;
+}
+
+.test:hover .edit-quiz {
+    display: block;
+} */
+
+.test:hover .options {
+    display: block;
+}
+
+.testContent:hover .delete-content {
+    display: block;
+}
+
+/* .testAssignment:hover .delete-assignment {
+    display: block;
+} */
+
+.testAssignment:hover .options {
+    display: block;
+}
+
+.course-title img {
+    box-shadow: 0 0 6px 6px rgba(255, 255, 255, 1);
+    margin-right: 15px;
+}
+
+.lessons-sidebar {
+    background-color: #fff;
+    /* min-width: 300px; */
+    /* height: 100%; */
+    max-height: calc(100vh - 230px);
+    min-height: calc(100vh - 230px);
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.2);
+    /* position: absolute; */
+    overflow-y: auto;
+    /* top: 80px; */
+
+}
+
+.lessons-sidebar .list-group {
+    position: relative;
+}
+
+.lessons-sidebar .list-group .overlay {
+    position: absolute;
+    z-index: 99999;
+    background: #ffffff94;
+    width: 100%;
+    height: 100%;
+    /* top: 50%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    z-index: 99999;
+    background: #ffffff94;
+    width: 100%;
+    height: 100%;
+    /* top: 50%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow-x: auto; */
+}
+
+.list-group-item {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.list-group-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.list-group-item.active {
+    background-color: #000;
+    border-color: #000;
+}
+
+/* .videos-section,
+.quizzes-section,
+.assignments-section,
+.contents-section {
+    margin-left: 300px;
+}
+
+.videos-section {
+    margin-top: 100px;
+} */
+
+.quizzes-section,
+.assignments-section,
+.contents-section {
+    margin-top: 1rem;
+}
+
+.videos-title,
+.quizzes-title,
+.assignments-title,
+.contents-title {
+    font-size: 32px;
+    /* font-weight: bold; */
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.videos-title::after,
+.quizzes-title::after,
+.assignments-title::after,
+.contents-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 75px;
+    height: 3px;
+    background: #000;
+    bottom: 0;
+    left: 0;
+}
+
+.videos-swiper {
+    width: 100%;
+    height: 300px;
+}
+
+.lessons-video {
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 10px;
+    /* width: 100%; */
+    min-width: 300px;
+    max-width: 300px;
+    width: 300px;
+    margin-left: 20px;
+    height: 250px;
+}
+
+.lessons-video:hover .delete-video {
+    display: block;
+}
+
+.swiper-pagination {
+    text-align: left;
+}
+
+.swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #000;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    top: 43%;
+    color: #000;
+    background-color: #fff;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 35px;
+}
+
+.swiper-button-next {
+    right: 0;
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.lessons-video .add-video {
+    width: 100%;
+    height: 250px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    transition: 0.3s;
+}
+
+.video-file {
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.content-file {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.lessons-video .add-video:hover {
+    background-color: #000;
+    border-color: #000;
+}
+
+.video-title {
+    color: black;
+    text-align: center;
+}
+
+.lessons-video .add-video i,
+.lessons-video .add-video p {
+    color: gray;
+    position: absolute;
+    font-size: 50px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.lessons-video .add-video p {
+    font-size: 25px;
+    top: 60%;
+}
+
+.lessons-video .add-video:hover i,
+.lessons-video .add-video:hover p {
+    color: #fff;
+}
+
+.quizzes-list,
+.assignments-list,
+.contents-list {
+    padding: 0;
+    list-style: none;
+}
+
+.quizzes-list .quiz-list,
+.assignments-list .assignment-list,
+.contents-list .content-list {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+    /* margin-bottom: 20px; */
+    font-size: 13px;
+    display: inline-block;
+    color: black;
+    margin-right: 5px;
+}
+
+.quizzes-list .quiz-list:hover,
+.assignments-list .assignment-list:hover,
+.contents-list .content-list:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.quizzes-list .quiz-list.add-quiz,
+.assignments-list .assignment-list.add-assignment,
+.contents-list .content-list.add-content {
+    color: gray;
+    position: relative;
+}
+
+.quizzes-list .quiz-list.add-quiz:hover,
+.assignments-list .assignment-list.add-assignment:hover,
+.contents-list .content-list.add-content:hover {
+    color: #fff;
+}
+
+/* .contents-list a {
+    color: black;
+}
+
+.quizzes-list .quiz-list {
+    color: black;
+} */
+
+.quizzes-list a:focus,
+.assignments-list a:focus,
+.contents-list a:focus {
+    color: black;
+}
+
+.custom-height {
+    height: calc(100vh - 100px);
+    position: relative;
+}
+
+.custom-spin {
+    position: absolute;
+    /* width: 100%; */
+    /* height: 100%; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.disable-button {
+    pointer-events: none;
+    cursor: normal;
+}
+
+.edit-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: red;
+    /* margin: 5px; */
+    padding: 4px;
+    border-radius: 15px;
+    font-size: 1em !important;
+    /* z-index: 9999999; */
+    display: none;
+    cursor: pointer;
+}
+
+.delete-video {
+    position: absolute;
+    right: -15px;
+    top: 0px;
+    color: black;
+    background: red;
+    /* margin: 5px; */
+    padding: 4px;
+    border-radius: 15px;
+    font-size: 0.5em !important;
+    /* z-index: 9999999; */
+    display: none;
+    cursor: pointer;
+}
+
+.button {
+    text-align: right;
+}
+
+.delete-content {
+    position: absolute;
+    right: 0;
+    top: -16px;
+    color: black;
+    background: red;
+    /* margin: 5px; */
+    padding: 4px;
+    border-radius: 15px;
+    font-size: 0.5em !important;
+    /* z-index: 9999999; */
+    display: none;
+    cursor: pointer;
+}
+
+.delete-quiz, .edit-quiz, .delete-assignment, .edit-assignment {
+    /* position: absolute; */
+    /* right: 0; */
+    /* top: -16px; */
+    color: black;
+    margin: 0px 2px;
+    background: red;
+    /* margin: 5px; */
+    padding: 4px;
+    border-radius: 15px;
+    font-size: 0.5em !important;
+    /* z-index: 9999999; */
+    /* display: none; */
+    cursor: pointer;
+}
+
+.options {
+    position: absolute;
+    right: 0px;
+    top: -20px;
+    display: none;
+}
+
+#button-tooltip {
+    background-color: black;
+    border-radius: none;
+    color: white;
+}
+
+.tooltip-inner {
+    background-color: black ;
+    color: white;
+  }
+/* .tooltip-arrow {
+    background-color: black;
+} */
+/* 
+.tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -5px;
+ 
+    border-width: 0 5px 5px;
+  }
+
+.bs-tooltip-auto[x-placement^="bottom"] .arrow::before, .bs-tooltip-bottom .arrow::before{
+	border-bottom-color: #fcd308;
+}
+
+.bs-tooltip-auto[x-placement^="top"] .arrow::before, .bs-tooltip-top .arrow::before{
+    border-top-color: black ;
+    color: black;
+}
+
+.bs-tooltip-auto[x-placement^="left"] .arrow::before, .bs-tooltip-left .arrow::before{
+	border-left-color: #fcd308;
+}
+
+.bs-tooltip-auto[x-placement^="right"] .arrow::before, .bs-tooltip-right .arrow::before{
+	border-right-color: #fcd308;
+} */
+
+  /* .bs-tooltip-auto[x-placement^="top"] .arrow::before, .bs-tooltip-top .arrow::before{
+    border-color: black ;
+    background-color: black;
+    
+}
+   */
+
+/* .delete-content {
+    position: absolute;
+    right: 0;
+    top: -16px;
+    color: black;
+    background: red;
+    padding: 4px;
+    border-radius: 15px;
+    font-size: 0.5em !important;
+    display: none;
+    cursor: pointer;
+}
+
+.delete-assignment {
+    position: absolute;
+    right: 0;
+    top: -16px;
+    color: black;
+    background: red;
+    padding: 4px;
+    border-radius: 15px;
+    font-size: 0.5em !important;
+    display: none;
+    cursor: pointer;
+} */
+
+.position-relative {
+    position: relative;
+}
+
+.display-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.display-flex .input {
+    display: flex;
+    align-items: center;
+}
+
+.ql-editor{
+    min-height: 500px !important;
+    max-height: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
+    /* overflow-x: scroll; */
+  }
+
+  .row-dragging {
+    background: #fafafa;
+    border: 1px solid #ccc;
+  }
+  
+  .row-dragging td {
+    padding: 16px;
+    visibility: hidden;
+  }
+  
+  .row-dragging .drag-visible {
+    visibility: visible;
+  }
