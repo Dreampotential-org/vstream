@@ -15,4 +15,10 @@ export const SET_NAVBAR_TOGGLE = 'SET_NAVBAR_TOGGLE';
 export const GET_ALL_USERS = 'GET_ALL_USERS';
 export const CREATE_ROOM = 'CREATE_ROOM';
 
+// Show Conversation Components
+export const ADD_ROOM_COMPONENTS = "ADD_ROOM_COMPONENTS";
+export const SCHEDULE_COMPONENTS = "SCHEDULE_COMPONENTS";
+export const GO_LIVE_COMPONENTS = "GO_LIVE_COMPONENTS";
+
+
 

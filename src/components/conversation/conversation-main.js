@@ -7,16 +7,22 @@ import { Link } from 'react-router-dom';
 import Icofont from 'react-icofont';
 import '../../assets/css/DetailCourse.css';
 import AddRoom from "./new-room";
+import { changeComponents } from "../../actions/conversation";
 
 function Conversation({
+    changeComponents,
+    conversation: { roomComponent, scheduleComponent, liveComponent },
+    // scheduleComponent: { scheduleComponent },
+    // liveComponent: { liveComponent },
     toggling: { toggleNavbarBurger },
-    toggleNavbar,
-    logout,
-    auth: { userDetail },
+
+    // toggleNavbar,
+    // logout,
+    // auth: { userDetail },
 }) {
-    const [showAddRoom, setShowAddRoom] = useState(false);
-    const [showSchedule, setShowSchedule] = useState(false);
-    const [showGoLive, setShowGoLive] = useState(false);
+    // const [showAddRoom, setShowAddRoom] = useState(false);
+    // const [showSchedule, setShowSchedule] = useState(false);
+    // const [showGoLive, setShowGoLive] = useState(false);
     // const addToggleLesson = (e) => {
     //     e.preventDefault();
 
@@ -24,19 +30,20 @@ function Conversation({
     // };
 
     const showComponents = (e) => {
-        if (e.target.id == "addRoom") {
-            setShowAddRoom(true);
-            setShowSchedule(false);
-            setShowGoLive(false);
-        } else if (e.target.id == "schedule") {
-            setShowSchedule(true);
-            setShowGoLive(false);
-            setShowAddRoom(false);
-        } else if (e.target.id == "live") {
-            setShowGoLive(true);
-            setShowAddRoom(false);
-            setShowSchedule(false);
-        }
+        changeComponents(e.target.id);
+        // if (e.target.id == "addRoom") {
+        //     setShowAddRoom(true);
+        //     setShowSchedule(false);
+        //     setShowGoLive(false);
+        // } else if (e.target.id == "schedule") {
+        //     setShowSchedule(true);
+        //     setShowGoLive(false);
+        //     setShowAddRoom(false);
+        // } else if (e.target.id == "live") {
+        //     setShowGoLive(true);
+        //     setShowAddRoom(false);
+        //     setShowSchedule(false);
+        // }
     }
 
     return (
@@ -54,36 +61,36 @@ function Conversation({
                         <div className='lessons-sidebar'>
                             <ul className='list-group rounded-0'>
                                 <li
-                                    className={showAddRoom ? 'list-group-item active'
+                                    className={roomComponent ? 'list-group-item active'
                                         : 'list-group-item'}
                                     id="addRoom"
                                     onClick={(e) => showComponents(e)}
                                     style={
-                                        showAddRoom ? { pointerEvents: 'none', cursor: 'normal' }
+                                        roomComponent ? { pointerEvents: 'none', cursor: 'normal' }
                                             : null
                                     }
                                 >
                                     <i className='icofont-plus'></i> Create Room
                                 </li>
                                 <li
-                                    className={showSchedule ? 'list-group-item active'
+                                    className={scheduleComponent ? 'list-group-item active'
                                         : 'list-group-item'}
                                     onClick={(e) => showComponents(e)}
                                     id="schedule"
                                     style={
-                                        showSchedule ? { pointerEvents: 'none', cursor: 'normal' }
+                                        scheduleComponent ? { pointerEvents: 'none', cursor: 'normal' }
                                             : null
                                     }
                                 >
                                     <i className='icofont-plus'></i> Schedule Events
                                 </li>
                                 <li
-                                    className={showGoLive ? 'list-group-item active'
+                                    className={liveComponent ? 'list-group-item active'
                                         : 'list-group-item'}
                                     id="live"
                                     onClick={(e) => showComponents(e)}
                                     style={
-                                        showGoLive ? { pointerEvents: 'none', cursor: 'normal' }
+                                        liveComponent ? { pointerEvents: 'none', cursor: 'normal' }
                                             : null
                                     }
                                 >
@@ -105,13 +112,13 @@ function Conversation({
                             overflowY: 'auto',
                         }}
                     >
-                        {showAddRoom ?
+                        {roomComponent ?
                             <div>New Room</div> : null
                         }
-                        {showSchedule ?
+                        {scheduleComponent ?
                             <div>Schedule Events</div> : null
                         }
-                        {showGoLive ?
+                        {liveComponent ?
                             <div>Go Live</div> : null
                         }
 
@@ -124,14 +131,19 @@ function Conversation({
 }
 Conversation.propTypes = {
     toggling: PropTypes.object.isRequired,
-    logout: PropTypes.func.isRequired,
-    toggleNavbar: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired,
+    // logout: PropTypes.func.isRequired,
+    // toggleNavbar: PropTypes.func.isRequired,
+    conversation: PropTypes.object.isRequired,
+    changeComponents: PropTypes.func.isRequired,
+    // auth: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
     toggling: state.toggling,
-    auth: state.auth,
+    // auth: state.auth,
+    conversation: state.conversation,
 });
 
-export default connect(mapStateToProps, { toggleNavbar, logout })(Conversation);
+export default connect(mapStateToProps,
+    { changeComponents }
+)(Conversation);

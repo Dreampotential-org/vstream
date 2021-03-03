@@ -5,7 +5,10 @@ import {
     AUTH_ERROR,
     LOG_OUT,
     LOGIN_FAIL,
-    CREATE_ROOM
+    CREATE_ROOM,
+    ADD_ROOM_COMPONENTS,
+    SCHEDULE_COMPONENTS,
+    GO_LIVE_COMPONENTS,
 } from './types';
 import axios from 'axios';
 import setAuthToken from '../utils/SetAuthToken';
@@ -106,3 +109,21 @@ export const getAllUsers = (roomData) => async (dispatch) => {
         return true;
     }
 };
+
+
+export const changeComponents = (componentId) => async (dispatch) => {
+    if (componentId == "addRoom") {
+        dispatch({
+            type: ADD_ROOM_COMPONENTS,
+        });
+    } else if (componentId == "schedule") {
+        dispatch({
+            type: SCHEDULE_COMPONENTS,
+        });
+
+    } else if (componentId == "live") {
+        dispatch({
+            type: GO_LIVE_COMPONENTS,
+        });
+    }
+}
