@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCategories } from '../actions/feeds-categories';
+import { getCategories } from '../../actions/feeds-categories';
 // import Loader from 'react-loader-spinner';
 import Icofont from 'react-icofont';
 

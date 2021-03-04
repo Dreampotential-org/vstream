@@ -113,7 +113,7 @@ function Conversation({
                         }}
                     >
                         {roomComponent ?
-                            <div>New Room</div> : null
+                            <AddRoom></AddRoom> : null
                         }
                         {scheduleComponent ?
                             <div>Schedule Events</div> : null
