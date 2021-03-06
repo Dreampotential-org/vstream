@@ -70,16 +70,6 @@ function App() {
         path='/dashboard/about'
         component={Dashboard}
       ></PrivateRoute>
-      {/* <PrivateRoute
-        exact
-        path='/dashboard/testing-reordering'
-        component={TestingReordering}
-      ></PrivateRoute> */}
-      {/* <PrivateRoute
-        exact
-        path='/dashboard/create-booking'
-        component={CreateBooking}
-      ></PrivateRoute> */}
     </div>
   );
   return (
@@ -112,23 +102,6 @@ function App() {
         </div>
       </Router>
     </Provider>
-    // <div className="App">
-    //   < MainComponent />
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 

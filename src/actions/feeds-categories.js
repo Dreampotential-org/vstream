@@ -5,6 +5,9 @@ import {
     AUTH_ERROR,
     LOG_OUT,
     LOGIN_FAIL,
+    SET_CATEGORIES,
+    SET_WEBSOCKET_OBJECT,
+    GET_CONFERENCE_URL,
 } from './types';
 import axios from 'axios';
 import setAuthToken from '../utils/SetAuthToken';
@@ -12,14 +15,26 @@ import Noty from 'noty';
 
 export const getCategories = () => async (dispatch) => {
     try {
-        const res = await axios.get(`${API_ENDPOINT}/category/`);
+        var socket = new WebSocket('wss://sfapp-api.dreamstate-4-all.org/vstream/');
+        socket.onopen = function open() {
+            dispatch({
+                type: SET_WEBSOCKET_OBJECT,
+                payload: socket,
+            })
+            console.error("=====", 'WebSockets connection created.');
+        };
 
-        console.log('Get Categories Data: ', res.data);
+        socket.onerror = function open(err) {
+            console.error('=======', err);
+        };
 
-        dispatch({
-            type: GET_CATEGORIES,
-            payload: res.data,
-        });
+        socket.onmessage = (event) => {
+            var response_data = JSON.parse(event.data);
+            dispatch({
+                type: SET_CATEGORIES,
+                payload: response_data.categories,
+            })            
+        }
     } catch (error) {
         console.log('Get Categories Data error: ', error);
         if (error.message !== 'Network Error') {
@@ -62,3 +77,23 @@ export const getCategories = () => async (dispatch) => {
 
     }
 };
+
+export const joinConference = (socket, category) => async (dispatch) => {
+    try {
+        socket.onmessage = (event) => {
+            var response_data = JSON.parse(event.data);
+            dispatch({
+                type: SET_CATEGORIES,
+                payload: response_data.categories,
+            })          
+            return true;  
+        }
+    } catch (error) {
+        new Noty({
+            type: 'error',
+            layout: 'bottomCenter',
+            text: error.message,
+            timeout: 300000,
+        }).show();
+    }
+}

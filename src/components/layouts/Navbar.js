@@ -62,7 +62,7 @@ function Navbar({
           <div className='navbar-holder d-flex align-items-center align-middle justify-content-between'>
             {/* <!-- Begin Logo --> */}
             <div className='navbar-header'>
-              <Link to='/' className='navbar-brand'>
+              <Link to='/dashboard' className='navbar-brand'>
                 <div className='brand-image brand-big'>
                   <img src={Logo} alt='logo' className='logo-big' />
                 </div>

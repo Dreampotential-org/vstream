@@ -20,5 +20,12 @@ export const ADD_ROOM_COMPONENTS = "ADD_ROOM_COMPONENTS";
 export const SCHEDULE_COMPONENTS = "SCHEDULE_COMPONENTS";
 export const GO_LIVE_COMPONENTS = "GO_LIVE_COMPONENTS";
 
+// Categories
+export const SET_CATEGORIES = "SET_CATEGORIES";
 
+// Websocket object
+export const SET_WEBSOCKET_OBJECT = "SET_WEBSOCKET_OBJECT";
+
+// Conference Url
+export const GET_CONFERENCE_URL = "GET_CONFERENCE_URL";
 

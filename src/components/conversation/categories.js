@@ -1,45 +1,91 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getCategories } from '../../actions/feeds-categories';
+import { getCategories, joinConference } from '../../actions/feeds-categories';
 // import Loader from 'react-loader-spinner';
 import Icofont from 'react-icofont';
 
 function FeedsCategories({
-    categories: { categories },
+    conversation,
     getCategories,
+    joinConference,
     changeView,
 }) {
+    const [toggleLoader, setToggleLoader] = useState(true);
+    const [categories, setCategories] = useState(null);
 
     useEffect(() => {
         getCategories();
     }, [getCategories]);
 
-    const [toggleLoader, setToggleLoader] = useState(true);
-
+    const joinRoom = (evt) => {
+        evt.preventDefault();
+        console.log(evt.target.id);
+        console.log(conversation.categories[evt.target.id]);
+        var joinRoom = joinConference(conversation.websocket,
+            conversation.categories[evt.target.id].category)
+        if (joinRoom) {
+            console.log(joinRoom)
+        }
+    }
 
     return (
         <div>
-            {toggleLoader ? (
+            {conversation.categoriesLoader ? (
                 <Icofont icon='spinner' size='3' spin='true' />
-            ) : <p>{categories}</p>}
+            ) : conversation.categories !== null ?
+                    <div className='table-responsive'>
+                        <table className='table mb-0'>
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>People Count</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody style={{ height: '60vh' }}>
+                                {conversation.categories.map((cat, i) => (
+                                    <tr key={i}>
+                                        <td>
+                                            {cat.category}
+                                        </td>
+                                        <td>{cat.count}</td>
+                                        <td className='td-actions'>
+                                            <button
+                                                id={i}
+                                                onClick={(e) => joinRoom(e)}
+                                                className='btn btn-gradient-01'
+                                            >
+                                                Join Room
+                                                </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    : <h1>hammad</h1>}
         </div>
     )
 
 }
 
-AddCourse.propTypes = {
+
+
+FeedsCategories.propTypes = {
     // toggling: PropTypes.object.isRequired,
-    categories: PropTypes.object.isRequired,
+    conversation: PropTypes.object.isRequired,
     // changeView: PropTypes.func.isRequired,
     // createCourse: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
     // toggling: state.toggling,
-    categories: state.categories,
+    conversation: state.conversation,
 });
 
-export default connect(mapStateToProps, { getCategories })(
+export default connect(mapStateToProps, { getCategories, joinConference })(
     FeedsCategories
 );
