@@ -80,13 +80,18 @@ export const getCategories = () => async (dispatch) => {
 
 export const joinConference = (socket, category) => async (dispatch) => {
     try {
+        var dict = {
+            'action': 'join_category',
+            'category': category,
+        }
+        socket.send(JSON.stringify(dict));
         socket.onmessage = (event) => {
             var response_data = JSON.parse(event.data);
             dispatch({
                 type: SET_CATEGORIES,
                 payload: response_data.categories,
             })          
-            return true;  
+            return true;
         }
     } catch (error) {
         new Noty({

@@ -26,6 +26,7 @@ function FeedsCategories({
             conversation.categories[evt.target.id].category)
         if (joinRoom) {
             console.log(joinRoom)
+            window.open(conversation.categories[evt.target.id].conference_url, '_blank');
         }
     }
 
