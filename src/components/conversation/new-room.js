@@ -61,24 +61,34 @@ function AddRoom() {
                                     />
                                 </div>
                             </div>
+                            <div className='form-group row d-flex align-items-center mb-5'>
+                                <label className='col-lg-4 form-control-label d-flex justify-content-lg-end'>
+                                    Room Link
+                                </label>
+                                <div className='col-lg-5'>
+                                    <label className='form-control-label d-flex'>
+                                        This is room
+                                    </label>
+                                </div>
+                            </div>
                             <div className='text-right'>
                                 <button
-                                className='btn btn-gradient-01'
-                                type='submit'
+                                    className='btn btn-gradient-01'
+                                    type='submit'
                                 //   style={toggleLoader ? { pointerEvents: 'none' } : null}
                                 >
-                                <span 
-                                // style={toggleLoader ? { marginRight: '10px' } : null}
-                                >
-                                    Create Room
+                                    <span
+                                    // style={toggleLoader ? { marginRight: '10px' } : null}
+                                    >
+                                        Create Room
                                 </span>
-                                {/* <Icofont icon='spinner' size='3' spin='true' /> */}
-                                {/* {toggleLoader ? (
+                                    {/* <Icofont icon='spinner' size='3' spin='true' /> */}
+                                    {/* {toggleLoader ? (
                                     <Icofont icon='spinner' size='3' spin='true' />
                                 ) : null} */}
                                 </button>
                                 <button className='btn btn-shadow' type='reset'>
-                                Reset
+                                    Reset
                                 </button>
                             </div>
                         </form>

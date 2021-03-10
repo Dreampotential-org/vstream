@@ -1,6 +1,7 @@
 import {
     LOGIN_SUCCESS,
     API_ENDPOINT,
+    WEBSOCKET_ENDPOINT,
     USER_LOADED,
     AUTH_ERROR,
     LOG_OUT,
@@ -15,7 +16,7 @@ import Noty from 'noty';
 
 export const getCategories = () => async (dispatch) => {
     try {
-        var socket = new WebSocket('wss://sfapp-api.dreamstate-4-all.org/vstream/');
+        var socket = new WebSocket(WEBSOCKET_ENDPOINT+'/vstream/');
         socket.onopen = function open() {
             dispatch({
                 type: SET_WEBSOCKET_OBJECT,
@@ -85,14 +86,15 @@ export const joinConference = (socket, category) => async (dispatch) => {
             'category': category,
         }
         socket.send(JSON.stringify(dict));
-        socket.onmessage = (event) => {
-            var response_data = JSON.parse(event.data);
-            dispatch({
-                type: SET_CATEGORIES,
-                payload: response_data.categories,
-            })          
-            return true;
-        }
+        return true;
+        // socket.onmessage = (event) => {
+        //     var response_data = JSON.parse(event.data);
+        //     dispatch({
+        //         type: SET_CATEGORIES,
+        //         payload: response_data.categories,
+        //     })          
+        //     return true;
+        // }
     } catch (error) {
         new Noty({
             type: 'error',
