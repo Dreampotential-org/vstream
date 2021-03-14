@@ -27,6 +27,12 @@ export const getCategories = () => async (dispatch) => {
 
         socket.onerror = function open(err) {
             console.error('=======', err);
+            new Noty({
+                type: 'error',
+                layout: 'bottomCenter',
+                text: "Connection Error..",
+                timeout: 300000,
+            }).show();
         };
 
         socket.onmessage = (event) => {
