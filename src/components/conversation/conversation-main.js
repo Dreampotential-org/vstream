@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 import Icofont from 'react-icofont';
 import '../../assets/css/DetailCourse.css';
 import AddRoom from "./new-room";
+import ScheduleEvents from "./schedule-events";
+import Golive from "./go-live";
 import { changeComponents } from "../../actions/conversation";
 
 function Conversation({
@@ -116,10 +118,10 @@ function Conversation({
                             <AddRoom></AddRoom> : null
                         }
                         {scheduleComponent ?
-                            <div>Schedule Events</div> : null
+                            <ScheduleEvents></ScheduleEvents> : null
                         }
                         {liveComponent ?
-                            <div>Go Live</div> : null
+                            <Golive></Golive> : null
                         }
 
 

@@ -10,6 +10,7 @@ import { logout } from '../../actions/auth';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
+import Notification from '../../assets/icons/notification.png'
 
 function Navbar({
   toggling: { toggleNavbarBurger },
@@ -90,6 +91,30 @@ function Navbar({
               className='nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right'
             >
               <li>
+
+                <Dropdown.Toggle as='b' className='remove-caret'>
+                  <img src={Notification} height="30px"></img>
+                </Dropdown.Toggle>
+                <Dropdown.Menu as='bul' className='user-size dropdown-menu'>
+                  <li>
+                    <Dropdown.Item className='text-center' href='!#'>
+                      Notification 1
+                    </Dropdown.Item>
+                  </li>
+                  <li>
+                    <Dropdown.Item className='text-center' href='!#'>
+                      Notification 2
+                    </Dropdown.Item>
+                  </li>
+                  <li>
+                    <Dropdown.Item className='text-center' href='!#'>
+                      Notification 3
+                    </Dropdown.Item>
+                  </li>
+                </Dropdown.Menu>
+                {/* <span>Hammad</span> */}
+              </li>
+              <li>
                 <Dropdown.Toggle as='a' className='nav-link remove-caret'>
                   {/* <img
                     src={Avatar01}
@@ -98,7 +123,7 @@ function Navbar({
                   /> */}
                   {userDetail !== null ? (
                     <span>
-                      {userDetail.name} 
+                      {userDetail.name}
                       {/* {userDetail.last_name} */}
                     </span>
                   ) : (
@@ -123,6 +148,7 @@ function Navbar({
                   </li> */}
                 </Dropdown.Menu>
               </li>
+
             </Dropdown>
             {/* <ul className='nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right'>
               

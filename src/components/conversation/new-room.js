@@ -12,15 +12,6 @@ function AddRoom() {
                 <div className='widget has-shadow'>
                     <div className='widget-header bordered no-actions d-flex align-items-center'>
                         <h4 style={{ width: '50%' }}>Add Room</h4>
-                        <div className='text-right' style={{ width: '50%' }}>
-                            <button
-                                // onClick={(e) => toggleAddVehicleForm(e)}
-                                className='btn btn-gradient-01'
-                            >
-                                {/* {toggleForm ? 'Back To Courses' : 'Add Course'} */}
-                                {/* Add Vehicle */}
-                            </button>
-                        </div>
                     </div>
 
                     <div className='widget-body'>
@@ -103,6 +94,7 @@ function AddRoom() {
                 {/* <!-- End Form --> */}
             </div>
         </div>
+        
         // <div>
         //     {/* <!-- Begin Sign In --> */}
         //     < div role='tabpanel'
