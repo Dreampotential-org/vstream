@@ -16,7 +16,7 @@ class SplashScreen extends React.Component {
 
     return (
       <div >
-        <img className='splash-screen-container' src={Logo} />
+        <img height="100ox" className='splash-screen-container' src={Logo} />
       </div>
     );
   }
@@ -37,6 +37,7 @@ class MainComponent extends React.Component {
     } catch (error) {
       console.log(error);
     }
+    // console.log("")
   }
 
   // apiCallback(data) {

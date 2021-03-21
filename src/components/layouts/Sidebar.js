@@ -32,15 +32,15 @@ function Sidebar({ toggle }) {
               <li>
                 <NavLink
                   activeClassName='active'
-                  to='/dashboard/account'
+                  to='/dashboard/follow'
                 >
                   <i className='la la-puzzle-piece'></i>
                   <span style={{ display: 'block !important' }}>
-                    Account
+                    Follow Peoples
                   </span>
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   activeClassName='active'
                   to='/dashboard/notifications'
@@ -50,7 +50,7 @@ function Sidebar({ toggle }) {
                     Notifications
                   </span>
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   activeClassName='active'

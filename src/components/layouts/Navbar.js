@@ -1,4 +1,4 @@
-import React from 'react'; // useState
+import React, { useState, useEffect, Fragment } from 'react'; // useState
 import Logo from '../../assets/img/vstream-logo.png';
 // import Notification01 from '../../assets/img/notifications/01.jpg';
 // import Avatar01 from '../../assets/img/avatar/avatar-01.jpg';
@@ -18,7 +18,8 @@ function Navbar({
   logout,
   auth: { userDetail },
 }) {
-  //   const [toggleState, setToggleState] = useState(false);
+  const [toggleState, setToggleState] = useState(false);
+  const [toggleStateNoti, setToggleStateNoti] = useState(false);
 
   // console.log(toggleState);
 
@@ -35,11 +36,17 @@ function Navbar({
     console.log('Logout Button Clicked');
   };
 
-  //   const toggleDropDown = (e) => {
-  //     e.preventDefault();
-
-  //     setToggleState(!toggleState);
-  //   };
+  const toggleDropDown = (e) => {
+    e.preventDefault();
+    console.log("this is toggle..")
+    if (e.target.id == "notifications") {
+      setToggleStateNoti(!toggleStateNoti)
+      setToggleState(false);
+    } else {
+      setToggleState(!toggleState);
+      setToggleStateNoti(false);
+    }
+  };
 
   return (
     <div>
@@ -86,72 +93,109 @@ function Navbar({
             </div>
             {/* <!-- End Logo --> */}
             {/* <!-- Begin Navbar Menu --> */}
-            <Dropdown
+            <div
+              className='nav-menu list-unstyled d-flex flex-md-row 
+              align-items-md-center pull-right'>
+              <li>
+                <Dropdown as='ul'>
+                  <Dropdown.Toggle id="notification-dropdown" as='b' className='nav-link remove-caret'>
+                    <img src={Notification} height="30px"></img>
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item className='text-center' href='!#not'>
+                      Notification 1
+                    </Dropdown.Item>
+                    <Dropdown.Item className='text-center' href='!#123'>
+                      Notification 2
+                    </Dropdown.Item>
+                    <Dropdown.Item className='text-center' href='!#456'>
+                      Notification 3
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </li>
+              <li>
+                <Dropdown as='ul'>
+                  <Dropdown.Toggle as='b' id="username-dropdown" className='nav-link remove-caret'>
+                    {userDetail !== null ? (
+                      <span>
+                        {userDetail.name}
+                      </span>
+                    ) : (
+                      <span>Username</span>
+                    )}
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              </li>
+            </div>
+            {/* <Dropdown
               as='ul'
               className='nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right'
             >
-              <li>
 
-                <Dropdown.Toggle as='b' className='remove-caret'>
+              <li>
+                <Dropdown.Toggle as='b' id='notifications'
+                  className='nav-link remove-caret'
+                  onClick={(e) => toggleDropDown(e)}>
                   <img src={Notification} height="30px"></img>
                 </Dropdown.Toggle>
-                <Dropdown.Menu as='bul' className='user-size dropdown-menu'>
+
+                <Dropdown.Menu as='ul'
+                  className='user-size'
+                >
                   <li>
-                    <Dropdown.Item className='text-center' href='!#'>
+                    <Dropdown.Item className='text-center' href='!#not'>
                       Notification 1
                     </Dropdown.Item>
                   </li>
                   <li>
-                    <Dropdown.Item className='text-center' href='!#'>
+                    <Dropdown.Item className='text-center' href='!#123'>
                       Notification 2
                     </Dropdown.Item>
                   </li>
                   <li>
-                    <Dropdown.Item className='text-center' href='!#'>
+                    <Dropdown.Item className='text-center' href='!#456'>
                       Notification 3
                     </Dropdown.Item>
                   </li>
                 </Dropdown.Menu>
-                {/* <span>Hammad</span> */}
+
               </li>
               <li>
                 <Dropdown.Toggle as='a' className='nav-link remove-caret'>
-                  {/* <img
-                    src={Avatar01}
+                  <img
+                    src={Notification}
                     alt='...'
                     className='avatar rounded-circle'
-                  /> */}
+                  />
                   {userDetail !== null ? (
                     <span>
                       {userDetail.name}
-                      {/* {userDetail.last_name} */}
                     </span>
                   ) : (
                     <span>Username</span>
                   )}
                 </Dropdown.Toggle>
                 <Dropdown.Menu as='ul' className='user-size dropdown-menu'>
-                  {/* <li>
-                    <Dropdown.Item className='text-center' href='#/action-1'>
-                      Profile
-                    </Dropdown.Item>
-                  </li> */}
                   <li onClick={(e) => logOut(e)}>
                     <Dropdown.Item className='text-center' href='!#'>
                       Logout
                     </Dropdown.Item>
                   </li>
-                  {/* <li>
-                    <Dropdown.Item className='text-center' href='#/action-3'>
-                      Something else
-                    </Dropdown.Item>
-                  </li> */}
                 </Dropdown.Menu>
               </li>
 
-            </Dropdown>
+            </Dropdown> */}
+
             {/* <ul className='nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right'>
-              
+
               <li className='nav-item dropdown'>
                 <a
                   id='user'
@@ -162,10 +206,10 @@ function Navbar({
                   data-toggle='dropdown'
                   aria-haspopup='true'
                   aria-expanded='true'
-                  className='nav-link'
+                  className='nav-link remove-caret'
                 >
                   <img
-                    src={Avatar01}
+                    src={Notification}
                     alt='...'
                     className='avatar rounded-circle'
                   />
@@ -179,7 +223,55 @@ function Navbar({
                   }
                 >
                   <li className='welcome'>
-                    <img src={Avatar01} alt='...' className='rounded-circle' />
+                    <img src={Notification} width="20px" alt='...' className='rounded-circle' />
+                    
+                  </li>
+                  <li>
+                    <a
+                      rel='nofollow'
+                      onClick={(e) => logOut(e)}
+                      className='dropdown-item logout text-center'
+                    >
+                      <i className='ti-power-off'></i>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li className='nav-item dropdown'>
+                <a
+                  id='notifications'
+                  rel='nofollow'
+                  data-target='#'
+                  href='!#'
+                  onClick={(e) => toggleDropDown(e)}
+                  data-toggle='dropdown'
+                  aria-haspopup='true'
+                  aria-expanded='true'
+                  className='nav-link remove-caret'
+                >
+                  {userDetail !== null ? (
+                      <span>
+                        {userDetail.name}
+                      </span>
+                    ) : (
+                      <span>Username</span>
+                    )}
+                  <img
+                    src={Notification}
+                    alt='...'
+                    className='avatar rounded-circle'
+                  />
+                </a>
+                <ul
+                  aria-labelledby='user'
+                  className={
+                    toggleStateNoti
+                      ? 'user-size dropdown-menu show'
+                      : 'user-size dropdown-menu'
+                  }
+                >
+                  <li className='welcome'>
+                    <img src={Notification} alt='...' className='rounded-circle' />
                   </li>
                   <li>
                     <a

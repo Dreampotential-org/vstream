@@ -4,6 +4,7 @@ import MainComponent from "./components/static/SplashScreen";
 import LoginRegister from './components/auth/login-register';
 import Dashboard from "./components/dashboard";
 import Conversation from "./components/conversation/conversation-main"
+import FollowPeoples from "./components/following/follow-card";
 import { Provider } from 'react-redux';
 import store from './store';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
@@ -37,8 +38,8 @@ function App() {
       ></PrivateRoute>
       <PrivateRoute
         exact
-        path='/dashboard/account'
-        component={Dashboard}
+        path='/dashboard/follow'
+        component={ FollowPeoples }
       ></PrivateRoute>
       <PrivateRoute
         exact
@@ -90,7 +91,7 @@ function App() {
             ></Route>
             <Route
               exact
-              path='/(dashboard)'
+              path='/(dashboard)/(follow)'
               component={DefaultContainer}
             ></Route>
             <Route
