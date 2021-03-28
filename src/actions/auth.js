@@ -93,7 +93,7 @@ export const userAuthentication = (authData, history) => async (dispatch) => {
     new Noty({
       type: 'error',
       layout: 'bottomCenter',
-      text: err.response.data,
+      text: "Network Error!",
       timeout: 300000,
     }).show();
 
