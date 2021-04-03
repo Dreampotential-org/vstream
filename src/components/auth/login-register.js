@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
-import Logo from '../../assets/img/vstream-logo.png';
-import GoogleLogo from '../../assets/img/google.jpg';
+import VstreamLogo from '../../assets/img/auth/vStream_logo_white.png';
+import GoogleLogo from '../../assets/img/auth/Google.png';
+import FacebookLogo from '../../assets/img/auth/Facebook.png';
 import { Link, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userAuthentication, userRegistration } from '../../actions/auth';
@@ -153,7 +154,7 @@ function LoginRegister({
   // Redirect If Looged in
 
   if (localStorage.token) {
-    return <Redirect to='/dashboard' />;
+    return <Redirect to='/home' />;
   }
 
   return (
@@ -173,13 +174,13 @@ function LoginRegister({
           <div className='col-xl-3 col-lg-5 col-md-5 col-sm-12 col-12 no-padding'>
             <div className='elisyam-bg'>
               <div
-                className='elisyam-overlay overlay-08'
-                style={{ background: 'black' }}
+                className='elisyam-overlay overlay-08 App-background'
+                // style={{ background: 'linear-gradient(100deg,#7E47AF 19%,#1A1F63 100%)' }}
               ></div>
               <div className='authentication-col-content-2 mx-auto text-center'>
                 <div className='logo-centered'>
                   <Link to='/'>
-                    <img src={Logo} alt='logo' />
+                    <img src={VstreamLogo} alt='logo' />
                   </Link>
                 </div>
                 {/* <h1>Welcome To Rent A Car Online Portal!</h1> */}
@@ -255,7 +256,7 @@ function LoginRegister({
                         data-easein='zoomInRight'
                       >
                         Login With Facebook
-                      <img src={GoogleLogo} style={{ width: "20px", height: "20px", marginLeft: "10px" }}></img>
+                      <img src={FacebookLogo} style={{ width: "20px", height: "20px", marginLeft: "10px" }}></img>
                       </a>
                     </li>
                   </ul>
@@ -293,7 +294,7 @@ function LoginRegister({
                         data-easein='zoomInRight'
                       >
                         Sign Up Via Facebook
-                      <img src={GoogleLogo} style={{ width: "20px", height: "20px", marginLeft: "10px" }}></img>
+                      <img src={FacebookLogo} style={{ width: "20px", height: "20px", marginLeft: "10px" }}></img>
                       </a>
                     </li>
                   </ul>
@@ -360,7 +361,6 @@ function LoginRegister({
                     </div>
                     <div className='sign-btn text-center'>
                       <button
-                        // href='!#'
                         onClick={(e) => login(e)}
                         className='btn btn-lg btn-gradient-01'
                         style={toggleLoader ? { pointerEvents: 'none' } : null}

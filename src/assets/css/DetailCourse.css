@@ -182,58 +182,10 @@
     left: 0;
 }
 
-.videos-swiper {
-    width: 100%;
-    height: 300px;
-}
 
-.lessons-video {
-    position: relative;
-    cursor: pointer;
-    margin-bottom: 10px;
-    /* width: 100%; */
-    min-width: 300px;
-    max-width: 300px;
-    width: 300px;
-    margin-left: 20px;
-    height: 250px;
-}
 
 .lessons-video:hover .delete-video {
     display: block;
-}
-
-.swiper-pagination {
-    text-align: left;
-}
-
-.swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-}
-
-.swiper-pagination-bullet-active {
-    background-color: #000;
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-    top: 43%;
-    color: #000;
-    background-color: #fff;
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-    font-size: 35px;
-}
-
-.swiper-button-next {
-    right: 0;
-}
-
-.swiper-button-prev {
-    left: 0;
 }
 
 .lessons-video .add-video {

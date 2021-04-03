@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import MainComponent from "./components/static/SplashScreen";
 import LoginRegister from './components/auth/login-register';
+import Home from './components/home/home-main'
 import Dashboard from "./components/dashboard";
 import Conversation from "./components/conversation/conversation-main"
 import FollowPeoples from "./components/following/follow-card";
@@ -23,7 +24,12 @@ function App() {
       <Navbar />
       <PrivateRoute
         exact
-        path='/dashboard'
+        path='/home'
+        component={Home}
+      ></PrivateRoute>
+      <PrivateRoute
+        exact
+        path='/feed/categories'
         component={Dashboard}
       ></PrivateRoute>
       {/* <PrivateRoute
@@ -81,7 +87,12 @@ function App() {
             <Route exact path='/' component={LoginContainer}></Route>
             <Route
               exact
-              path='/(dashboard)'
+              path='/(home)'
+              component={DefaultContainer}
+            ></Route>
+            <Route
+              exact
+              path='/(feed)/(categories)'
               component={DefaultContainer}
             ></Route>
             <Route

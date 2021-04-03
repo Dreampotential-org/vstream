@@ -10,7 +10,10 @@ import { logout } from '../../actions/auth';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
-import Notification from '../../assets/icons/notification.png'
+import Notification from '../../assets/icons/navbar/notification.png'
+import  vStream from '../../assets/icons/navbar/vstream_logo.png'
+import Search from '../../assets/icons/navbar/nav_search.png'
+import Icofont from 'react-icofont';
 
 function Navbar({
   toggling: { toggleNavbarBurger },
@@ -20,6 +23,8 @@ function Navbar({
 }) {
   const [toggleState, setToggleState] = useState(false);
   const [toggleStateNoti, setToggleStateNoti] = useState(false);
+  const [toggleLoader, setToggleLoader] = useState(true);
+  const [toggleSearch, setToggleSearch] = useState(false);
 
   // console.log(toggleState);
 
@@ -27,6 +32,11 @@ function Navbar({
     e.preventDefault();
     toggleNavbar();
   };
+
+  const openSearchBar = (e) => {
+    e.preventDefault();
+    setToggleSearch(!toggleSearch);
+  }
 
   const logOut = (e) => {
     e.preventDefault();
@@ -52,30 +62,48 @@ function Navbar({
     <div>
       <header className='header'>
         <nav className='navbar fixed-top'>
+
           {/* <!-- Begin Search Box--> */}
-          {/* <div className='search-box'>
-            <button className='dismiss'>
+          {/* {
+            toggleSearch ?
+              <div className='search-box'>
+                <button className='dismiss'>
+                  <i className='ion-close-round'></i>
+                </button>
+                <form id='searchForm' action='!#' role='search'>
+                  <input
+                    type='search'
+                    placeholder='Search something ...'
+                    className='form-control'
+                  />
+                </form>
+              </div> : null
+          } */}
+          <div className='search-box' style={{ display: toggleSearch ? "block" : 'none' }}>
+            <button className='dismiss' onClick={(e) => openSearchBar(e)}>
               <i className='ion-close-round'></i>
             </button>
-            <form id='searchForm' action='#' role='search'>
+            <form id='searchForm' role='search'>
               <input
+                style={{borderRadius:"49px", border:'3px solid #1A1F63'}}
                 type='search'
-                placeholder='Search something ...'
+                placeholder='Search topic, event, channels, etc.'
                 className='form-control'
               />
             </form>
-          </div> */}
+          </div>
+
           {/* <!-- End Search Box--> */}
           {/* <!-- Begin Topbar --> */}
           <div className='navbar-holder d-flex align-items-center align-middle justify-content-between'>
             {/* <!-- Begin Logo --> */}
             <div className='navbar-header'>
-              <Link to='/dashboard' className='navbar-brand'>
+              <Link to='/home' className='navbar-brand'>
                 <div className='brand-image brand-big'>
-                  <img src={Logo} alt='logo' className='logo-big' />
+                  <img src={vStream} alt='logo' className='logo-big' />
                 </div>
                 <div className='brand-image brand-small'>
-                  <img src={Logo} alt='logo' className='logo-small' />
+                  <img src={vStream} alt='logo' className='logo-small' />
                 </div>
               </Link>
               {/* <!-- Toggle Button --> */}
@@ -96,6 +124,29 @@ function Navbar({
             <div
               className='nav-menu list-unstyled d-flex flex-md-row 
               align-items-md-center pull-right'>
+              <li className="nav-item d-flex align-items-center"
+                onClick={(e) => openSearchBar(e)}>
+                <a id="search" style={{ cursor:"pointer" }}>
+                  {/* <i className="la la-search"></i> */}
+                  <img src={Search}></img>
+                </a>
+              </li>
+              <li>
+                <button
+                  onClick={(e) => console.log("click!")}
+                  className='btn btn-lg btn-gradient-01'
+                // style={toggleLoader ? { pointerEvents: 'none' } : null}
+                >
+                  {toggleLoader ? (
+                    <Icofont icon='play' size='3' color='#e8e9ea' />
+                  ) : null}
+                  <span
+                    style={toggleLoader ? { marginLeft: '10px' } : null}>
+                    Show Time
+                        </span>
+
+                </button>
+              </li>
               <li>
                 <Dropdown as='ul'>
                   <Dropdown.Toggle id="notification-dropdown" as='b' className='nav-link remove-caret'>

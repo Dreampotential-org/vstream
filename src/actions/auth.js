@@ -69,7 +69,7 @@ export const userAuthentication = (authData, history) => async (dispatch) => {
     });
     dispatch(loadUser());
 
-    history.push('/dashboard');
+    history.push('/home');
     //}
 
     return true;

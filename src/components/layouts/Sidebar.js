@@ -1,9 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../assets/css/sidebar.css';
+import About from "../../assets/icons/sidebar/sidebar_about.png";
+import Categories from "../../assets/icons/sidebar/sidebar_categories.png";
+import Community from "../../assets/icons/sidebar/sidebar_community.png";
+import Guidelines from "../../assets/icons/sidebar/sidebar_guidelines.png";
+import Hide from "../../assets/icons/sidebar/sidebar_hide.png";
+import Home from "../../assets/icons/sidebar/sidebar_home.png";
+import InviteFreinds from "../../assets/icons/sidebar/sidebar_invite_friends.png";
+import PrivacySecurity from "../../assets/icons/sidebar/sidebar_privacy&security.png";
+import ShowTime from "../../assets/icons/sidebar/sidebar_showtime.png";
 // import PropTypes from 'prop-types'
 
 function Sidebar({ toggle }) {
+
   return (
     <div>
       <div className='page-content d-flex align-items-stretch'>
@@ -21,15 +31,52 @@ function Sidebar({ toggle }) {
             <li>
                 <NavLink
                   activeClassName='active'
-                  to='/dashboard/conversation'
+                  to='/home'
                 >
-                  <i className='la la-puzzle-piece'></i>
+                  <i className='la la-home'>
+                  </i>
                   <span style={{ display: 'block !important' }}>
-                    Start Conversation
+                    Home
                   </span>
                 </NavLink>
               </li>
               <li>
+                <NavLink
+                  activeClassName='active'
+                  to='/feed/categories'
+                >
+                  <i className='la la-star'>
+                  </i>
+                  <span style={{ display: 'block !important' }}>
+                    Categories
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  activeClassName='active'
+                  to='/dashboard/conversation'
+                >
+                  <i className='la la-play-circle'>
+                  </i>
+                  <span style={{ display: 'block !important' }}>
+                    Show Time
+                  </span>
+                </NavLink>
+              </li>
+              {/* <li>
+                <NavLink
+                  activeClassName='active'
+                  to='/dashboard/conversation'
+                >
+                  <i className='la la-home'>
+                  </i>
+                  <span style={{ display: 'block !important' }}>
+                    Start Conversation
+                  </span>
+                </NavLink>
+              </li> */}
+              {/* <li>
                 <NavLink
                   activeClassName='active'
                   to='/dashboard/follow'
@@ -39,7 +86,7 @@ function Sidebar({ toggle }) {
                     Follow Peoples
                   </span>
                 </NavLink>
-              </li>
+              </li> */}
               {/* <li>
                 <NavLink
                   activeClassName='active'
@@ -54,15 +101,26 @@ function Sidebar({ toggle }) {
               <li>
                 <NavLink
                   activeClassName='active'
+                  to='/dashboard/community'
+                >
+                  <i className='la la-comment'></i>
+                  <span style={{ display: 'block !important' }}>
+                    Community
+                  </span>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  activeClassName='active'
                   to='/dashboard/privacy'
                 >
-                  <i className='la la-puzzle-piece'></i>
+                  <i className='la la-lock'></i>
                   <span style={{ display: 'block !important' }}>
                     Privacy & Security
                   </span>
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   activeClassName='active'
                   to='/dashboard/invite-freinds'
@@ -72,15 +130,15 @@ function Sidebar({ toggle }) {
                     Invite Freinds
                   </span>
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink
                   activeClassName='active'
-                  to='/dashboard/community-guide'
+                  to='/dashboard/guidelines'
                 >
-                  <i className='la la-puzzle-piece'></i>
+                  <i className='la la-list-ul'></i>
                   <span style={{ display: 'block !important' }}>
-                    Community Guidelines
+                    Guidelines
                   </span>
                 </NavLink>
               </li>
@@ -89,7 +147,7 @@ function Sidebar({ toggle }) {
                   activeClassName='active'
                   to='/dashboard/contact-support'
                 >
-                  <i className='la la-puzzle-piece'></i>
+                  <i className='la la-envelope'></i>
                   <span style={{ display: 'block !important' }}>
                     Contact Support
                   </span>
@@ -100,7 +158,7 @@ function Sidebar({ toggle }) {
                   activeClassName='active'
                   to='/dashboard/about'
                 >
-                  <i className='la la-puzzle-piece'></i>
+                  <i className='la la-info'></i>
                   <span style={{ display: 'block !important' }}>
                     About
                   </span>
