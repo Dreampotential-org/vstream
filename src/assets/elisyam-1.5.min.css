@@ -256,6 +256,7 @@ table {
   width: calc(100% - 240px);
   margin-left: 240px;
   transition: all 0.3s ease;
+  background-color: white;
 }
 .content-inner.active {
   width: calc(100% - 90px);
@@ -3793,7 +3794,7 @@ section.forms form small {
   }
 }
 .nav-tabs {
-  border-bottom: 2px solid #eee;
+  border-top: 2px solid #eee;
 }
 .nav-tabs .nav-item {
   position: relative;
@@ -3804,13 +3805,16 @@ section.forms form small {
 }
 .nav-tabs .nav-link {
   border: 0 none;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #e76c90;
-  background-color: #fff;
+  color: black;
+  background-color: transparent !important;
   border-bottom: 2px solid #5d5386 !important;
   margin-bottom: -1px;
+  
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:focus,
@@ -5155,6 +5159,7 @@ section.forms form small {
 .db-social .users-like a {
   margin: 0 -1.6rem 0 0;
   transition: all 0.4s ease;
+  margin-left: auto !important;
 }
 .db-social .users-like a:hover {
   margin-right: -0.3rem;

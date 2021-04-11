@@ -28,7 +28,7 @@ function Sidebar({ toggle }) {
           >
             {/* <!-- Begin Main Navigation --> */}
             <ul className='list-unstyled'>
-            <li>
+              <li>
                 <NavLink
                   activeClassName='active'
                   to='/home'
@@ -52,6 +52,15 @@ function Sidebar({ toggle }) {
                   </span>
                 </NavLink>
               </li>
+              {/* <li><a href="#dropdown-app" aria-expanded="false" data-toggle="collapse">
+                <i class="la la-puzzle-piece"></i><span>Applications</span></a>
+                <ul id="dropdown-app" class="collapse list-unstyled pt-0">
+                  <li><a href="app-calendar.html">Calendar</a></li>
+                  <li><a href="app-chat.html">Chat</a></li>
+                  <li><a href="app-mail.html">Mail</a></li>
+                  <li><a href="app-contact.html">Contact</a></li>
+                </ul>
+              </li> */}
               <li>
                 <NavLink
                   activeClassName='active'

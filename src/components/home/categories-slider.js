@@ -30,24 +30,23 @@ function CategoriesSlider({
                 conversation.categories !== null ?
                     <Swiper navigation speed={500} slidesPerView={1}
                         spaceBetween={10}
-                        navigation
                         breakpoints={{
                             // when window width is >= 640px
                             640: {
-                                slidesPerView: 1,
-                                spaceBetween: 20,
+                                slidesPerView: 2,
+                                spaceBetween: 10,
                             },
                             768: {
-                                slidesPerView: 2,
-                                spaceBetween: 20,
+                                slidesPerView: 5,
+                                spaceBetween: 10,
                             },
                             1024: {
-                                slidesPerView: 3,
-                                spaceBetween: 20,
+                                slidesPerView: 7,
+                                spaceBetween: 10,
                             },
                             1300: {
-                                slidesPerView: 4,
-                                spaceBetween: 20,
+                                slidesPerView: 9,
+                                spaceBetween: 10,
                             },
                         }}>
                         {conversation.categories.map((cat, i) => (

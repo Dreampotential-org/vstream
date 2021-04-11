@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getCategories, joinConference } from '../../actions/feeds-categories';
 // import Loader from 'react-loader-spinner';
 import Icofont from 'react-icofont';
+import RoomMain from '../room/room-main'
 
 function FeedsCategories({
     conversation,
@@ -32,7 +33,8 @@ function FeedsCategories({
 
     return (
         <div>
-            {conversation.categoriesLoader ? (
+            <RoomMain></RoomMain>
+            {/* {conversation.categoriesLoader ? (
                 <Icofont icon='spinner' size='3' spin='true' />
             ) : conversation.categories !== null ?
                     <div className='table-responsive'>
@@ -67,7 +69,7 @@ function FeedsCategories({
                     </div>
 
 
-                    : <h1>hammad</h1>}
+                    : <h1>hammad</h1>} */}
         </div>
     )
 

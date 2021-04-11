@@ -48,8 +48,8 @@ h2, h3, h4, h5 {
 }
 
 .UserCard {
-  width: 200px;
-  height: 250px;
+  width: 270px;
+  /* height: 250px; */
   border-radius: 10px;
   box-shadow: 5px 5px 30px black;
   margin: 10px;
@@ -58,17 +58,21 @@ h2, h3, h4, h5 {
   /* background: linear-gradient(to left, #0c2b5e, #173c77); */
 }
 
-.UserCard img {
+/* .UserCard img {
   width: 120px;
   height: 120px;
   margin: 8px 0 0 0;
   border-radius: 50%;
   border: 4px solid white;
   object-fit: cover;
+} */
+.card-header--title{
+  text-align: right;
+  z-index: 999;
+  position: relative;
 }
-
 .UserCardTop {
-  height: 52%;
+  /* height: 52%; */
   width: 100%;
   overflow: hidden;
   text-align: center;

@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { loadUser } from '../../actions/auth';
 import AdsCarousel from "./ads-slider";
 import CategoriesSlider from "./categories-slider"
+import TabsCategory from "./tabs-category"
+import RoomMain from '../room/room-main'
 
 function Home({ toggling: { toggleNavbarBurger }, loadUser }) {
     useEffect(() => {
@@ -33,9 +35,16 @@ function Home({ toggling: { toggleNavbarBurger }, loadUser }) {
                     <div className='row' style={{ display: 'block' }}>
                         <AdsCarousel></AdsCarousel>
                     </div>
-                    <div className="row">
+                    <div className="row" style={{ marginTop: '10px' }}>
                         <CategoriesSlider></CategoriesSlider>
                     </div>
+                    <div className="row">
+                        <TabsCategory></TabsCategory>
+                    </div>
+                    <div className="row">
+                        <RoomMain></RoomMain>
+                    </div>
+
 
                     {/* <div className='row flex-row' style={{ height: "250px" }}>
                         <div className='col-xl-12' style={{ height: "100%" }}>

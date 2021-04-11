@@ -1,10 +1,10 @@
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { loadUser } from '../actions/auth';
-import FeedsCategories from "../components/conversation/categories";
+import { loadUser } from '../../actions/auth';
+import FeedsCategories from "./categories";
 
-function Dashboard({ toggling: { toggleNavbarBurger }, loadUser }) {
+function CategoryMain({ toggling: { toggleNavbarBurger }, loadUser }) {
   useEffect(() => {
     loadUser();
   }, [loadUser]);
@@ -15,29 +15,29 @@ function Dashboard({ toggling: { toggleNavbarBurger }, loadUser }) {
       <Fragment>
         <div className='container-fluid'>
           {/* <!-- Begin Page Header--> */}
-          <div className='row'>
+          {/* <div className='row'>
             <div className='page-header'>
               <div className='d-flex align-items-center'>
                 <h2 className='page-header-title'>Categories</h2>
 
               </div>
             </div>
-          </div>
+          </div> */}
           {/* <!-- End Page Header --> */}
           {/* <!-- Begin Row --> */}
 
           <div className='row flex-row'>
-            <div className='col-xl-12'>
+            {/* <div className='col-xl-12'> */}
               {/* <!-- Form --> */}
-              <div className='widget has-shadow'>
+              {/* <div className='widget has-shadow'> */}
 
 
-                <div className='widget-body'>
+                {/* <div className='widget-body'> */}
                   <FeedsCategories></FeedsCategories>
-                </div>
-              </div>
+                {/* </div> */}
+              {/* </div> */}
               {/* <!-- End Form --> */}
-            </div>
+            {/* </div> */}
           </div>
         </div>
       </Fragment>
@@ -45,7 +45,7 @@ function Dashboard({ toggling: { toggleNavbarBurger }, loadUser }) {
   );
 }
 
-Dashboard.propTypes = {
+CategoryMain.propTypes = {
   toggling: PropTypes.object.isRequired,
   loadUser: PropTypes.func.isRequired,
 };
@@ -54,4 +54,4 @@ const mapStateToProps = (state) => ({
   toggling: state.toggling,
 });
 
-export default connect(mapStateToProps, { loadUser })(Dashboard);
+export default connect(mapStateToProps, { loadUser })(CategoryMain);

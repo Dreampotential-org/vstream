@@ -1,6 +1,6 @@
 .swiper-slide {
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
     background: #fff;
     /* Center slide text vertically */
     display: -webkit-box;
@@ -15,8 +15,11 @@
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
-    flex-shrink: 3;
-    line-height: 50px;
+    line-height: 40px;
+    width: 130px;
+    margin-right: 20px;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4.2rem;
 }
 
 .swiper-container {
@@ -71,3 +74,150 @@
     margin-left: 20px;
     /* height: 250px; */
 }
+
+.nav-tabs .nav-item {
+    width: 25%;
+}
+
+/* .nav-tabs .nav-item:hover {
+    border-bottom: None;
+    border-top: 2px solid #5d5386 !important;
+} */
+
+/* .app-card-list {
+    display: block;
+    width: 100%;
+    float: right;
+    margin: 0;
+    min-height: 75vh;
+    white-space: normal;
+    overflow-x: scroll;
+    margin-top: -70px;
+}
+.app-card-list::-webkit-scrollbar {
+    display: none;
+}
+@media(min-width:768px) {
+    .app-card-list {
+        white-space: nowrap;
+        margin-top: 0;
+    }
+    
+}
+.app-card-list .card {
+    margin: 13px 19px;
+    display: block;
+    width: 25%;
+    
+}
+.card .card-body {
+    white-space: normal;
+}
+
+.designer-link {
+    display: block;
+    padding-top: 40px;
+}
+.card-header--title{
+    text-align: right;
+}
+
+.card-header {
+    min-height: 175px;
+    max-height: 200px;
+} */
+
+.listOfCards {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-right: auto !important;
+}
+
+.card-header--title {
+    text-align: right;
+}
+
+/* .listOfCards .card{
+    margin: 10px;
+    width: 26%;
+} */
+
+.listOfCards .card {
+    margin: 13px 18px;
+    display: block;
+    min-width: 28%;
+    max-width: 28%;
+    /* min-height: max-content; */
+}
+
+.listOfCards .card .card-body {
+    white-space: normal;
+}
+
+.listOfCards .card-header {
+    min-height: 175px;
+    max-height: 200px;
+}
+
+.widget-header .user-image {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1.07rem;
+}
+
+.widget-header .title {
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.widget-header .time {
+    color: black;
+    font-size: .85rem;
+}
+.widget-footer .meta li {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.widget-footer .meta li:last-child {
+    margin-right: 0;
+}
+
+.widget-footer .meta li a {
+    color: #aea9c3;
+}
+
+.widget-footer .meta li a:hover {
+    color: #5d5386;
+}
+
+.widget-footer .meta li i {
+    font-size: 1.8rem;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+}
+
+.widget-footer .meta li .numb {
+    vertical-align: middle;
+}
+
+/* .users-like a {
+    margin: 0 -1.6rem 0 0;
+    transition: all 0.4s ease;
+    margin-left: auto !important;
+}
+
+.users-like a.view-more {
+    background: #5d5386;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border: 0.25rem solid #fff;
+    border-radius: 50%;
+    vertical-align: middle;
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 30px;
+    margin-right: 0;
+} */

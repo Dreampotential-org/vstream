@@ -3,7 +3,7 @@ import './App.css';
 import MainComponent from "./components/static/SplashScreen";
 import LoginRegister from './components/auth/login-register';
 import Home from './components/home/home-main'
-import Dashboard from "./components/dashboard";
+import CategoryMain from "./components/category/category-main";
 import Conversation from "./components/conversation/conversation-main"
 import FollowPeoples from "./components/following/follow-card";
 import { Provider } from 'react-redux';
@@ -30,7 +30,7 @@ function App() {
       <PrivateRoute
         exact
         path='/feed/categories'
-        component={Dashboard}
+        component={CategoryMain}
       ></PrivateRoute>
       {/* <PrivateRoute
         // exact
@@ -50,32 +50,32 @@ function App() {
       <PrivateRoute
         exact
         path='/dashboard/notifications'
-        component={Dashboard}
+        component={CategoryMain}
       ></PrivateRoute>
       <PrivateRoute
         exact
         path='/dashboard/privacy'
-        component={Dashboard}
+        component={CategoryMain}
       ></PrivateRoute>
       <PrivateRoute
         exact
         path='/dashboard/invite-freinds'
-        component={Dashboard}
+        component={CategoryMain}
       ></PrivateRoute>
       <PrivateRoute
         exact
         path='/dashboard/community-guide'
-        component={Dashboard}
+        component={CategoryMain}
       ></PrivateRoute>
       <PrivateRoute
         exact
         path='/dashboard/contact-support'
-        component={Dashboard}
+        component={CategoryMain}
       ></PrivateRoute>
       <PrivateRoute
         exact
         path='/dashboard/about'
-        component={Dashboard}
+        component={CategoryMain}
       ></PrivateRoute>
     </div>
   );
