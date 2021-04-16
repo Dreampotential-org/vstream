@@ -15,9 +15,16 @@ class SplashScreen extends React.Component {
     };
 
     return (
-      <div >
-        <img height="100ox" className='splash-screen-container' src={Logo} />
+      // <div >
+      //   <img height="100ox" className='splash-screen-container' src={Logo} />
+      // </div>
+      <div id="preloader" style={{ display: "block" }}>
+        <div class="canvas">
+          <img src={Logo} alt="logo" class="loader-logo" />
+          <div class="spinner"></div>
+        </div>
       </div>
+
     );
   }
 }

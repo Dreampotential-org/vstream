@@ -41,9 +41,9 @@ function Home({ toggling: { toggleNavbarBurger }, loadUser }) {
                     <div className="row">
                         <TabsCategory></TabsCategory>
                     </div>
-                    <div className="row">
+                    {/* <div className="row"> */}
                         <RoomMain></RoomMain>
-                    </div>
+                    {/* </div> */}
 
 
                     {/* <div className='row flex-row' style={{ height: "250px" }}>

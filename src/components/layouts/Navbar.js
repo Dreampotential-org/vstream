@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
 import Notification from '../../assets/icons/navbar/notification.png'
-import  vStream from '../../assets/icons/navbar/vstream_logo.png'
+import vStream from '../../assets/icons/navbar/vstream_logo.png'
 import Search from '../../assets/icons/navbar/nav_search.png'
 import Icofont from 'react-icofont';
 
@@ -24,7 +24,7 @@ function Navbar({
   const [toggleState, setToggleState] = useState(false);
   const [toggleStateNoti, setToggleStateNoti] = useState(false);
   const [toggleLoader, setToggleLoader] = useState(true);
-  const [toggleSearch, setToggleSearch] = useState(false);
+  const [toggleSearch, setToggleSearch] = useState(true);
 
   // console.log(toggleState);
 
@@ -58,6 +58,10 @@ function Navbar({
     }
   };
 
+  const search = (e) => {
+    e.preventDefault();
+  }
+
   return (
     <div>
       <header className='header'>
@@ -80,12 +84,12 @@ function Navbar({
               </div> : null
           } */}
           <div className='search-box' style={{ display: toggleSearch ? "block" : 'none' }}>
-            <button className='dismiss' onClick={(e) => openSearchBar(e)}>
+            {/* <button className='dismiss' onClick={(e) => openSearchBar(e)}>
               <i className='ion-close-round'></i>
-            </button>
-            <form id='searchForm' role='search'>
+            </button> */}
+            <form id='searchForm' role='search' onSubmit={search}>
               <input
-                style={{borderRadius:"49px", border:'3px solid #1A1F63'}}
+                style={{ borderRadius: "49px", border: '3px solid #1A1F63' }}
                 type='search'
                 placeholder='Search topic, event, channels, etc.'
                 className='form-control'
@@ -125,12 +129,27 @@ function Navbar({
               className='nav-menu list-unstyled d-flex flex-md-row 
               align-items-md-center pull-right'>
               <li className="nav-item d-flex align-items-center"
-                onClick={(e) => openSearchBar(e)}>
-                <a id="search" style={{ cursor:"pointer" }}>
-                  {/* <i className="la la-search"></i> */}
-                  <img src={Search}></img>
-                </a>
+                onClick={(e) => openSearchBar(e)} >
+                {/* <a id="search" style={{ cursor:"pointer" }}> */}
+                {/* <i className="la la-search"></i> */}
+                {/* <img src={Search}></img>
+                </a> */}
+                {/* <div className='search-box' style={{ display: toggleSearch ? "block" : 'none' }}>
+
+                  <form id='searchForm' role='search'>
+                    <input
+                      style={{ borderRadius: "49px", border: '3px solid #1A1F63' }}
+                      type='search'
+                      placeholder='Search topic, event, channels, etc.'
+                      className='form-control'
+                    /> */}
+                    {/* <button className='dismiss' onClick={(e) => openSearchBar(e)}>
+                      <i className='ion-close-round'></i>
+                    </button> */}
+                  {/* </form>
+                </div> */}
               </li>
+
               <li>
                 <button
                   onClick={(e) => console.log("click!")}

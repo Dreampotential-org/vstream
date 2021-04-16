@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../assets/css/sidebar.css';
 import About from "../../assets/icons/sidebar/sidebar_about.png";
@@ -13,6 +13,11 @@ import ShowTime from "../../assets/icons/sidebar/sidebar_showtime.png";
 // import PropTypes from 'prop-types'
 
 function Sidebar({ toggle }) {
+  const [toggleStateDropdown, setToggleStateDropdown] = useState(false);
+  const showCategories = (e) => {
+    e.preventDefault();
+    setToggleStateDropdown(!toggleStateDropdown);
+  }
 
   return (
     <div>
@@ -51,6 +56,19 @@ function Sidebar({ toggle }) {
                     Categories
                   </span>
                 </NavLink>
+              </li>
+              <li><a aria-expanded={toggleStateDropdown ? "true" : "false"}
+                data-toggle="collapse" onClick={showCategories}>
+                <i class="la la-puzzle-piece"></i><span>Applications</span></a>
+
+                <ul id="dropdown-app" class="collapse list-unstyled pt-0"
+                  style={{ display: toggleStateDropdown ? "block" : 'none' }}>
+                  <li><a href="app-calendar.html">Calendar</a></li>
+                  <li><a href="app-chat.html">Chat</a></li>
+                  <li><a href="app-mail.html">Mail</a></li>
+                  <li><a href="app-contact.html">Contact</a></li>
+                </ul>
+
               </li>
               {/* <li><a href="#dropdown-app" aria-expanded="false" data-toggle="collapse">
                 <i class="la la-puzzle-piece"></i><span>Applications</span></a>

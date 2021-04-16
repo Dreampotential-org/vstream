@@ -144,10 +144,10 @@
 } */
 
 .listOfCards .card {
-    margin: 13px 18px;
+    margin: 7px 10px;
     display: block;
-    min-width: 28%;
-    max-width: 28%;
+    min-width: 31%;
+    max-width: 31%;
     /* min-height: max-content; */
 }
 
@@ -159,7 +159,25 @@
     min-height: 175px;
     max-height: 200px;
 }
-
+.categoryCard {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin-right: auto !important;
+}
+.categoryCard .card {
+    margin: 4px 7px;
+    display: block;
+    border-radius: 2.25rem;
+    /* min-width: max-content;
+    max-width: max-content; */
+    /* min-height: max-content; */
+}
+.categoryCard .card-header {
+    /* min-height: 80px; */
+    /* max-height: 80px; */
+    border-bottom: none;
+}
 .widget-header .user-image {
     display: inline-block;
     vertical-align: middle;

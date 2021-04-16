@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loadUser } from '../../actions/auth';
 import FeedsCategories from "./categories";
+import CategoryCards from "./category-card";
 
 function CategoryMain({ toggling: { toggleNavbarBurger }, loadUser }) {
   useEffect(() => {
@@ -15,18 +16,18 @@ function CategoryMain({ toggling: { toggleNavbarBurger }, loadUser }) {
       <Fragment>
         <div className='container-fluid'>
           {/* <!-- Begin Page Header--> */}
-          {/* <div className='row'>
+          <div className='row'>
             <div className='page-header'>
               <div className='d-flex align-items-center'>
-                <h2 className='page-header-title'>Categories</h2>
+                <CategoryCards></CategoryCards>
 
               </div>
             </div>
-          </div> */}
+          </div>
           {/* <!-- End Page Header --> */}
           {/* <!-- Begin Row --> */}
 
-          <div className='row flex-row'>
+          {/* <div className='row flex-row'> */}
             {/* <div className='col-xl-12'> */}
               {/* <!-- Form --> */}
               {/* <div className='widget has-shadow'> */}
@@ -38,7 +39,7 @@ function CategoryMain({ toggling: { toggleNavbarBurger }, loadUser }) {
               {/* </div> */}
               {/* <!-- End Form --> */}
             {/* </div> */}
-          </div>
+          {/* </div> */}
         </div>
       </Fragment>
     </div>

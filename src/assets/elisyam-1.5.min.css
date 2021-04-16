@@ -5702,16 +5702,16 @@ nav.navbar .nav-item > a.logout i {
   margin-left: 10px;
 }
 nav.navbar .search-box {
-  width: 70%;
-  height: 100%;
+  width: 30%;
+  /* height: 100%; */
   position: absolute;
   top: 0;
-  right: 0;
+  right: 35%;
   padding: 0;
   background: #fff;
-  z-index: 9999;
+  /* z-index: 9999; */
   border-radius: 0;
-  display: none;
+  display: block;
 }
 nav.navbar .search-box .dismiss {
   position: absolute;
@@ -5728,7 +5728,7 @@ nav.navbar .search-box form {
   height: 100%;
 }
 nav.navbar .search-box form input {
-  height: 100%;
+  /* height: 100%; */
   border: none;
   padding: 20px;
   color: #5d5386;
