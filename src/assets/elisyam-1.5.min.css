@@ -5702,11 +5702,11 @@ nav.navbar .nav-item > a.logout i {
   margin-left: 10px;
 }
 nav.navbar .search-box {
-  width: 30%;
+  width: 100%;
   /* height: 100%; */
-  position: absolute;
+  position: relative;
   top: 0;
-  right: 35%;
+  right: 5%;
   padding: 0;
   background: #fff;
   /* z-index: 9999; */
@@ -6171,7 +6171,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
 }
 .default-sidebar > .side-navbar a[aria-expanded="true"] {
   background: #252946;
-  margin: 0 10px 0 10px;
+  margin: 0 0px 0 0px;
   border-radius: 4px 4px 0 0;
 }
 .default-sidebar > .side-navbar a[aria-expanded="true"] i {
@@ -6215,7 +6215,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
   color: #e76c90;
 }
 .default-sidebar > .side-navbar ul ul {
-  margin: 0 10px 0 10px;
+  margin: 0 0px 0 0px;
 }
 .default-sidebar > .side-navbar ul ul {
   background: #252946;
@@ -6223,7 +6223,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
 }
 .default-sidebar > .side-navbar ul ul a {
   font-size: 0.85rem;
-  padding-left: 40px;
+  padding-left: 18px;
   color: #aea9c3;
 }
 .default-sidebar > .side-navbar ul ul a:hover {
@@ -8821,6 +8821,8 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  height: 54px;
+  width: 95%;
 }
 .widget-29 .devices-item {
   background: linear-gradient(

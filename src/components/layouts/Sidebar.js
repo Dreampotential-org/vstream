@@ -11,8 +11,10 @@ import InviteFreinds from "../../assets/icons/sidebar/sidebar_invite_friends.png
 import PrivacySecurity from "../../assets/icons/sidebar/sidebar_privacy&security.png";
 import ShowTime from "../../assets/icons/sidebar/sidebar_showtime.png";
 // import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-function Sidebar({ toggle }) {
+function Sidebar({ toggle, conversation }) {
   const [toggleStateDropdown, setToggleStateDropdown] = useState(false);
   const showCategories = (e) => {
     e.preventDefault();
@@ -35,7 +37,7 @@ function Sidebar({ toggle }) {
             <ul className='list-unstyled'>
               <li>
                 <NavLink
-                  activeClassName='active'
+                  className='active'
                   to='/home'
                 >
                   <i className='la la-home'>
@@ -45,7 +47,7 @@ function Sidebar({ toggle }) {
                   </span>
                 </NavLink>
               </li>
-              <li>
+              {/* <li>
                 <NavLink
                   activeClassName='active'
                   to='/feed/categories'
@@ -56,18 +58,38 @@ function Sidebar({ toggle }) {
                     Categories
                   </span>
                 </NavLink>
-              </li>
-              <li><a aria-expanded={toggleStateDropdown ? "true" : "false"}
-                data-toggle="collapse" onClick={showCategories}>
-                <i class="la la-puzzle-piece"></i><span>Applications</span></a>
+              </li> */}
+              <li>
 
-                <ul id="dropdown-app" class="collapse list-unstyled pt-0"
-                  style={{ display: toggleStateDropdown ? "block" : 'none' }}>
-                  <li><a href="app-calendar.html">Calendar</a></li>
+                <a aria-expanded={toggleStateDropdown ? "true" : "false"}
+                  data-toggle="collapse" onClick={showCategories}>
+
+                  <i class="la la-star"></i><span>Categories</span></a>
+
+
+                {
+                  conversation.categories !== null ?
+                    <ul id="dropdown-app" class="collapse list-unstyled pt-0"
+                      style={{ display: toggleStateDropdown ? "block" : 'none' }}>
+                      {conversation.categories.map((cat, i) => (
+                        // <SwiperSlide key={i}>{cat.category}</SwiperSlide>
+                        <li>
+                          <NavLink
+                            activeClassName='active'
+                            to={'/feed/categories?' + cat.category}
+                          >
+                            <a id={cat.category}>{cat.category}</a>
+                          </NavLink>
+                        </li>
+                      ))}
+                    </ul> : null
+                }
+
+                {/* <li><a href="app-calendar.html">Calendar</a></li>
                   <li><a href="app-chat.html">Chat</a></li>
                   <li><a href="app-mail.html">Mail</a></li>
-                  <li><a href="app-contact.html">Contact</a></li>
-                </ul>
+                  <li><a href="app-contact.html">Contact</a></li> */}
+
 
               </li>
               {/* <li><a href="#dropdown-app" aria-expanded="false" data-toggle="collapse">
@@ -266,5 +288,18 @@ function Sidebar({ toggle }) {
 // Sidebar.propTypes = {
 
 // }
+Sidebar.propTypes = {
+  // toggling: PropTypes.object.isRequired,
+  conversation: PropTypes.object.isRequired,
+  // changeView: PropTypes.func.isRequired,
+  // createCourse: PropTypes.func.isRequired,
+};
 
-export default Sidebar;
+const mapStateToProps = (state) => ({
+  // toggling: state.toggling,
+  conversation: state.conversation,
+});
+export default connect(mapStateToProps, {})(
+  Sidebar
+);
+// export default Sidebar;

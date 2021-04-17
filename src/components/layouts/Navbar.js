@@ -83,11 +83,11 @@ function Navbar({
                 </form>
               </div> : null
           } */}
-          <div className='search-box' style={{ display: toggleSearch ? "block" : 'none' }}>
+          {/* <div className='search-box' style={{ display: toggleSearch ? "block" : 'none' }}> */}
             {/* <button className='dismiss' onClick={(e) => openSearchBar(e)}>
               <i className='ion-close-round'></i>
             </button> */}
-            <form id='searchForm' role='search' onSubmit={search}>
+            {/* <form id='searchForm' role='search' onSubmit={search}>
               <input
                 style={{ borderRadius: "49px", border: '3px solid #1A1F63' }}
                 type='search'
@@ -95,7 +95,7 @@ function Navbar({
                 className='form-control'
               />
             </form>
-          </div>
+          </div> */}
 
           {/* <!-- End Search Box--> */}
           {/* <!-- Begin Topbar --> */}
@@ -128,8 +128,8 @@ function Navbar({
             <div
               className='nav-menu list-unstyled d-flex flex-md-row 
               align-items-md-center pull-right'>
-              <li className="nav-item d-flex align-items-center"
-                onClick={(e) => openSearchBar(e)} >
+              {/* <li className="nav-item d-flex align-items-center"
+                onClick={(e) => openSearchBar(e)} > */}
                 {/* <a id="search" style={{ cursor:"pointer" }}> */}
                 {/* <i className="la la-search"></i> */}
                 {/* <img src={Search}></img>
@@ -143,13 +143,27 @@ function Navbar({
                       placeholder='Search topic, event, channels, etc.'
                       className='form-control'
                     /> */}
-                    {/* <button className='dismiss' onClick={(e) => openSearchBar(e)}>
+                {/* <button className='dismiss' onClick={(e) => openSearchBar(e)}>
                       <i className='ion-close-round'></i>
                     </button> */}
-                  {/* </form>
+                {/* </form>
                 </div> */}
+              {/* </li> */}
+              <li>
+                <div className='search-box'>
+                  {/* <button className='dismiss' onClick={(e) => openSearchBar(e)}>
+              <i className='ion-close-round'></i>
+            </button> */}
+                  <form id='searchForm' role='search' onSubmit={search}>
+                    <input
+                      style={{ borderRadius: "49px", border: '3px solid #1A1F63' }}
+                      type='search'
+                      placeholder='Search topic, event, channels, etc.'
+                      className='form-control'
+                    />
+                  </form>
+                </div>
               </li>
-
               <li>
                 <button
                   onClick={(e) => console.log("click!")}
