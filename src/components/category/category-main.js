@@ -5,9 +5,10 @@ import { loadUser } from '../../actions/auth';
 import FeedsCategories from "./categories";
 import CategoryCards from "./category-card";
 
-function CategoryMain({ toggling: { toggleNavbarBurger }, loadUser }) {
+function CategoryMain({ toggling: { toggleNavbarBurger },match, loadUser }) {
   useEffect(() => {
     loadUser();
+    // console.log(match.params.id);
   }, [loadUser]);
   return (
     <div
@@ -19,7 +20,7 @@ function CategoryMain({ toggling: { toggleNavbarBurger }, loadUser }) {
           <div className='row'>
             <div className='page-header'>
               <div className='d-flex align-items-center'>
-                <CategoryCards></CategoryCards>
+                <CategoryCards id={match.params.id}></CategoryCards>
 
               </div>
             </div>

@@ -6135,6 +6135,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
   top: 0;
   z-index: 999;
   transition: all 0.2s ease;
+  overflow-y: auto;
 }
 .default-sidebar .sidebar-separator {
   background: rgba(255, 255, 255, 0.05);

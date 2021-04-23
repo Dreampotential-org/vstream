@@ -168,7 +168,7 @@
 .categoryCard .card {
     margin: 4px 7px;
     display: block;
-    border-radius: 2.25rem;
+    /* border-radius: 2.25rem; */
     /* min-width: max-content;
     max-width: max-content; */
     /* min-height: max-content; */
@@ -177,6 +177,7 @@
     /* min-height: 80px; */
     /* max-height: 80px; */
     border-bottom: none;
+    background-color: unset;
 }
 .widget-header .user-image {
     display: inline-block;
@@ -256,4 +257,12 @@
   
   .owl-nav .owl-next {
     right: -30px;
+  }
+
+  .backgroud-active-category {
+      background: linear-gradient(to right, #7E47AF 10%, #1A1F63 100%) !important;
+      
+  }
+  .categoryCard .backgroud-active-category .category {
+    color: white !important;
   }

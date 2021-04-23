@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import '../../assets/css/sidebar.css';
 import About from "../../assets/icons/sidebar/sidebar_about.png";
 import Categories from "../../assets/icons/sidebar/sidebar_categories.png";
@@ -11,14 +11,23 @@ import InviteFreinds from "../../assets/icons/sidebar/sidebar_invite_friends.png
 import PrivacySecurity from "../../assets/icons/sidebar/sidebar_privacy&security.png";
 import ShowTime from "../../assets/icons/sidebar/sidebar_showtime.png";
 // import PropTypes from 'prop-types'
+import { clickSidebarItems } from '../../actions/toggling';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-function Sidebar({ toggle, conversation }) {
-  const [toggleStateDropdown, setToggleStateDropdown] = useState(false);
-  const showCategories = (e) => {
-    e.preventDefault();
-    setToggleStateDropdown(!toggleStateDropdown);
+function Sidebar(
+  { toggling: { sidebarStates }, toggle,
+    conversation, clickSidebarItems }
+) {
+  // const [toggleStateDropdown, setToggleStateDropdown] = useState(false);
+  // const [clickSideBar, setClickSidebar] = useState(false);
+  // const showCategories = (e) => {
+  //   e.preventDefault();
+  //   setToggleStateDropdown(!toggleStateDropdown);
+  // }
+  const onActiveItems = (e) => {
+    // console.log(e.target.id);
+    clickSidebarItems(e.target.id)
   }
 
   return (
@@ -35,14 +44,20 @@ function Sidebar({ toggle, conversation }) {
           >
             {/* <!-- Begin Main Navigation --> */}
             <ul className='list-unstyled'>
-              <li>
+              <li 
+                className={sidebarStates.activeHome ? 'active' : "none"}
+              >
                 <NavLink
-                  className='active'
+                  // className='active'
+                  // onClick={clickSidebarItems("ACTIVE_HOME")}
+                  id="activeHome"
+                  onClick={onActiveItems}
+                  // onClick = { clickSidebarItems("ACTIVE_HOME") }
                   to='/home'
                 >
-                  <i className='la la-home'>
+                  <i className='la la-home' id="activeHome">
                   </i>
-                  <span style={{ display: 'block !important' }}>
+                  <span id="activeHome" style={{ display: 'block !important' }}>
                     Home
                   </span>
                 </NavLink>
@@ -59,27 +74,27 @@ function Sidebar({ toggle, conversation }) {
                   </span>
                 </NavLink>
               </li> */}
-              <li>
+              <li id="activeCategory">
 
-                <a aria-expanded={toggleStateDropdown ? "true" : "false"}
-                  data-toggle="collapse" onClick={showCategories}>
+                <a aria-expanded={sidebarStates.activeCategory ? "true" : "false"}
+                  data-toggle="collapse" onClick={onActiveItems} id="activeCategory">
 
-                  <i class="la la-star"></i><span>Categories</span></a>
+                  <i className="la la-star"></i>
+                  <span id="activeCategory">Categories</span></a>
 
 
                 {
                   conversation.categories !== null ?
-                    <ul id="dropdown-app" class="collapse list-unstyled pt-0"
-                      style={{ display: toggleStateDropdown ? "block" : 'none' }}>
+                    <ul id="dropdown-app" className="collapse list-unstyled pt-0"
+                      style={{ display: sidebarStates.activeCategory ? "block" : 'none' }}>
                       {conversation.categories.map((cat, i) => (
                         // <SwiperSlide key={i}>{cat.category}</SwiperSlide>
                         <li>
-                          <NavLink
-                            activeClassName='active'
-                            to={'/feed/categories?' + cat.category}
+                          <Link
+                            to={'/feed/categories/' + cat.category}
                           >
                             <a id={cat.category}>{cat.category}</a>
-                          </NavLink>
+                          </Link>
                         </li>
                       ))}
                     </ul> : null
@@ -101,14 +116,17 @@ function Sidebar({ toggle, conversation }) {
                   <li><a href="app-contact.html">Contact</a></li>
                 </ul>
               </li> */}
-              <li>
+              <li 
+                className={sidebarStates.activeShowTime ? 'active' : "none"}>
                 <NavLink
-                  activeClassName='active'
+                  // activeClassName='active'
+                  id="activeShowTime"
+                  onClick={onActiveItems}
                   to='/dashboard/conversation'
                 >
-                  <i className='la la-play-circle'>
+                  <i className='la la-play-circle' id="activeShowTime">
                   </i>
-                  <span style={{ display: 'block !important' }}>
+                  <span id="activeShowTime" style={{ display: 'block !important' }}>
                     Show Time
                   </span>
                 </NavLink>
@@ -147,9 +165,10 @@ function Sidebar({ toggle, conversation }) {
                   </span>
                 </NavLink>
               </li> */}
-              <li>
+              <li id="activeCommunity">
                 <NavLink
-                  activeClassName='active'
+                  onClick={onActiveItems}
+                  // activeClassName='active'
                   to='/dashboard/community'
                 >
                   <i className='la la-comment'></i>
@@ -158,7 +177,7 @@ function Sidebar({ toggle, conversation }) {
                   </span>
                 </NavLink>
               </li>
-              <li>
+              <li id="activePrivacy">
                 <NavLink
                   activeClassName='active'
                   to='/dashboard/privacy'
@@ -180,7 +199,7 @@ function Sidebar({ toggle, conversation }) {
                   </span>
                 </NavLink>
               </li> */}
-              <li>
+              <li id="activeGuidelines">
                 <NavLink
                   activeClassName='active'
                   to='/dashboard/guidelines'
@@ -191,7 +210,7 @@ function Sidebar({ toggle, conversation }) {
                   </span>
                 </NavLink>
               </li>
-              <li>
+              <li id="activeSupport">
                 <NavLink
                   activeClassName='active'
                   to='/dashboard/contact-support'
@@ -202,7 +221,7 @@ function Sidebar({ toggle, conversation }) {
                   </span>
                 </NavLink>
               </li>
-              <li>
+              <li id="activeAbout">
                 <NavLink
                   activeClassName='active'
                   to='/dashboard/about'
@@ -289,17 +308,18 @@ function Sidebar({ toggle, conversation }) {
 
 // }
 Sidebar.propTypes = {
-  // toggling: PropTypes.object.isRequired,
+  toggling: PropTypes.object.isRequired,
   conversation: PropTypes.object.isRequired,
+  clickSidebarItems: PropTypes.func.isRequired,
   // changeView: PropTypes.func.isRequired,
   // createCourse: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  // toggling: state.toggling,
+  toggling: state.toggling,
   conversation: state.conversation,
 });
-export default connect(mapStateToProps, {})(
+export default connect(mapStateToProps, { clickSidebarItems })(
   Sidebar
 );
 // export default Sidebar;

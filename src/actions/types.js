@@ -33,3 +33,14 @@ export const SET_WEBSOCKET_OBJECT = "SET_WEBSOCKET_OBJECT";
 // Conference Url
 export const GET_CONFERENCE_URL = "GET_CONFERENCE_URL";
 
+// Sidebar Constants
+export const ACTIVE_KEY = "ACTIVE_KEY";
+export const ACTIVE_HOME = "ACTIVE_HOME";
+export const ACTIVE_CATEGORY = "ACTIVE_CATEGORY";
+export const ACTIVE_SHOW_TIME = "ACTIVE_SHOW_TIME";
+export const ACTIVE_COMMUNITY = "ACTIVE_COMMUNITY";
+export const ACTIVE_PRIVACY = "ACTIVE_PRIVACY";
+export const ACTIVE_GUIDELINES = "ACTIVE_GUIDELINES";
+export const ACTIVE_SUPPORT = "ACTIVE_SUPPORT";
+export const ACTIVE_ABOUT = "ACTIVE_ABOUT";
+

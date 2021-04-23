@@ -4,12 +4,15 @@ import { connect } from 'react-redux';
 import { getCategories, joinConference } from '../../actions/feeds-categories';
 
 function CategoryCards({
+    id,
     conversation,
     getCategories,
     joinConference,
     changeView,
+
 }) {
     useEffect(() => {
+        console.log("id...", id)
         getCategories();
     }, [getCategories]);
     return (
@@ -17,7 +20,7 @@ function CategoryCards({
             {   conversation.categories !== null ?
                 Object
                     .keys(conversation.categories)
-                    .map(key => <CategoryCard key={key} index={key} details={conversation.categories[key]} />): null
+                    .map(key => <CategoryCard id={id} key={key} index={key} details={conversation.categories[key]} />) : null
             }
         </div>
     )
@@ -27,10 +30,18 @@ class CardHeader extends React.Component {
         const { image, category } = this.props;
         var style = {
             backgroundImage: 'url(' + image + ')',
+
         };
         return (
-            <header style={style} className="card-header">
-                <h4 className="card-header--title">{category}</h4>
+            <header style={style}
+                // className="card-header"
+                className={this.props.id === category ?
+                    "card-header backgroud-active-category" : "card-header"}
+            >
+
+                {/* <div className="category"> */}
+                <h4 className="category">{category}</h4>
+                {/* </div> */}
                 {/* <div className="card-header--title" >
                     <img src={Live}></img>
                 </div> */}
@@ -41,9 +52,13 @@ class CardHeader extends React.Component {
 }
 class CategoryCard extends React.Component {
     render() {
+        console.log(this.props.id)
         return (
-            <article className="card">
-                <CardHeader category={this.props.details.category} image={this.props.details.image} />
+            <article
+                className="card"
+            // className={this.props.id === this.props.details.category ? "card backgroud-active-category" : "card"}
+            >
+                <CardHeader id={this.props.id} category={this.props.details.category} image={this.props.details.image} />
                 {/* <CardBody title={this.props.details.title} text={this.props.details.text} /> */}
             </article>
         )

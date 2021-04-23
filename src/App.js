@@ -29,7 +29,7 @@ function App() {
       ></PrivateRoute>
       <PrivateRoute
         exact
-        path='/feed/categories'
+        path='/feed/categories/:id'
         component={CategoryMain}
       ></PrivateRoute>
       {/* <PrivateRoute
@@ -92,7 +92,7 @@ function App() {
             ></Route>
             <Route
               exact
-              path='/(feed)/(categories)'
+              path='/(feed)/(categories)/:id'
               component={DefaultContainer}
             ></Route>
             <Route
