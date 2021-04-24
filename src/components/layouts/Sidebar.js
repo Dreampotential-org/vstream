@@ -14,6 +14,22 @@ import ShowTime from "../../assets/icons/sidebar/sidebar_showtime.png";
 import { clickSidebarItems } from '../../actions/toggling';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { ICON_DICT_OF_CATEGORY } from '../../actions/types'
+
+var iconDictOfCategory = {
+  "Art & Design": "la la-pencil-ruler",
+  "Business": "la la-briefcase",
+  "Entertainment": "la la-film",
+  "Fashion": "la la-tshirt",
+  "Food": "la la-hamburger",
+  "Games": "la la-gamepad",
+  "Life": "la la-hand-holding-heart",
+  "Music": "la la-music",
+  "News": "la la-readme",
+  "Social": "la la-users",
+  "Travel": "la la-plane-departure",
+  "All": "la la-check-circle"
+}
 
 function Sidebar(
   { toggling: { sidebarStates }, toggle,
@@ -44,7 +60,7 @@ function Sidebar(
           >
             {/* <!-- Begin Main Navigation --> */}
             <ul className='list-unstyled'>
-              <li 
+              <li
                 className={sidebarStates.activeHome ? 'active' : "none"}
               >
                 <NavLink
@@ -93,7 +109,11 @@ function Sidebar(
                           <Link
                             to={'/feed/categories/' + cat.category}
                           >
-                            <a id={cat.category}>{cat.category}</a>
+                            {/* {console.log(iconDictOfCategory[cat.category])} */}
+                            <i className={ICON_DICT_OF_CATEGORY[cat.category]}>
+                            </i>
+                            <span id={cat.category}
+                              style={{ display: 'block !important' }}>{cat.category}</span>
                           </Link>
                         </li>
                       ))}
@@ -116,7 +136,7 @@ function Sidebar(
                   <li><a href="app-contact.html">Contact</a></li>
                 </ul>
               </li> */}
-              <li 
+              <li
                 className={sidebarStates.activeShowTime ? 'active' : "none"}>
                 <NavLink
                   // activeClassName='active'

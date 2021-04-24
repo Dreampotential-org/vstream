@@ -19,6 +19,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import { ICON_DICT_OF_CATEGORY } from "../../actions/types";
 // import '../../assets/css/categories.css';
 // import '../../assets/js/owl.carousel.min.js';
 
@@ -43,17 +44,17 @@ function CategoriesSlider({
                             <div className="widget-body pt-0">
                                 {/* <div className="widget29"> */}
                                 <OwlCarousel dots={false} autoPlay={true} className='widget29 owl-theme'
-                                    items={conversation.categories.length/2} loop margin={5} nav
+                                    items={5} margin={5} nav
                                     navText={[
                                         "<i class='fa fa-caret-left'></i>",
                                         "<i class='fa fa-caret-right'></i>"
                                       ]}>
                                     {conversation.categories.map((cat, i) => (
                                         // <SwiperSlide key={i}>{cat.category}</SwiperSlide>
-                                        <div class='item'>
-                                            <div class="devices-item d-flex justify-content-center align-items-center">
-                                                <i class="la la-tv"></i>
-                                                <div class="room">{cat.category}</div>
+                                        <div className='item'>
+                                            <div className="devices-item d-flex justify-content-center align-items-center">
+                                                <i className={ICON_DICT_OF_CATEGORY[cat.category]}></i>
+                                                <div className="room">{cat.category}</div>
                                             </div>
                                         </div>
                                     ))}

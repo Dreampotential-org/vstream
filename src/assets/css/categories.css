@@ -265,4 +265,15 @@
   }
   .categoryCard .backgroud-active-category .category {
     color: white !important;
+    /* font-size: 0.85rem;
+    padding-left: 18px; */
+    /* color: #aea9c3; */
+  }
+
+  .icons-of-category-card {
+    font-size: 1.6rem !important;
+    margin-right: 10px;
+    transition: none;
+    vertical-align: -4px;
+    /* color: #e8e9ea; */
   }

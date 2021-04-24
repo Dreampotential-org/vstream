@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCategories, joinConference } from '../../actions/feeds-categories';
+import { ICON_DICT_OF_CATEGORY } from "../../actions/types";
 
 function CategoryCards({
     id,
@@ -40,7 +41,14 @@ class CardHeader extends React.Component {
             >
 
                 {/* <div className="category"> */}
-                <h4 className="category">{category}</h4>
+                <a className="category">
+                    <i className={"icons-of-category-card " + ICON_DICT_OF_CATEGORY[category]}>
+                    </i>
+                    <span id={category}
+                        style={{ display: 'block !important' }}>{category}</span>
+                </a>
+
+                {/* <h4 className="category">{category}</h4> */}
                 {/* </div> */}
                 {/* <div className="card-header--title" >
                     <img src={Live}></img>

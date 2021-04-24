@@ -44,3 +44,17 @@ export const ACTIVE_GUIDELINES = "ACTIVE_GUIDELINES";
 export const ACTIVE_SUPPORT = "ACTIVE_SUPPORT";
 export const ACTIVE_ABOUT = "ACTIVE_ABOUT";
 
+export const ICON_DICT_OF_CATEGORY = {
+  "Art & Design": "la la-pencil-ruler",
+  "Business": "la la-briefcase",
+  "Entertainment": "la la-film",
+  "Fashion": "la la-tshirt",
+  "Food": "la la-hamburger",
+  "Games": "la la-gamepad",
+  "Life": "la la-hand-holding-heart",
+  "Music": "la la-music",
+  "News": "la la-readme",
+  "Social": "la la-users",
+  "Travel": "la la-plane-departure",
+  "All": "la la-check-circle"
+}
