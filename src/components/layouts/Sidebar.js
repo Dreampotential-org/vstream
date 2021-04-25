@@ -105,7 +105,7 @@ function Sidebar(
                       style={{ display: sidebarStates.activeCategory ? "block" : 'none' }}>
                       {conversation.categories.map((cat, i) => (
                         // <SwiperSlide key={i}>{cat.category}</SwiperSlide>
-                        <li>
+                        <li key={i}>
                           <Link
                             to={'/feed/categories/' + cat.category}
                           >

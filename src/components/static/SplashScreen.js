@@ -19,9 +19,9 @@ class SplashScreen extends React.Component {
       //   <img height="100ox" className='splash-screen-container' src={Logo} />
       // </div>
       <div id="preloader" style={{ display: "block" }}>
-        <div class="canvas">
-          <img src={Logo} alt="logo" class="loader-logo" />
-          <div class="spinner"></div>
+        <div className="canvas">
+          <img src={Logo} alt="logo" className="loader-logo" />
+          <div className="spinner"></div>
         </div>
       </div>
 

@@ -21,7 +21,7 @@ function CategoryMain({ toggling: { toggleNavbarBurger },match, loadUser }) {
             <div className='page-header'>
               <div className='d-flex align-items-center'>
                 <CategoryCards id={match.params.id}></CategoryCards>
-
+                
               </div>
             </div>
           </div>

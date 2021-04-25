@@ -191,7 +191,9 @@ class RoomMain extends React.Component {
                 {
                     Object
                         .keys(this.state.posts)
-                        .map(key => <VideosCard key={key} index={key} details={this.state.posts[key]} />)
+                        .map(key =>
+                            <VideosCard key={key} index={key} details={this.state.posts[key]} />
+                        )
                 }
             </div>
         )
@@ -267,7 +269,7 @@ class CardBody extends React.Component {
                 </div> */}
                 </div>
                 <div className="widget-footer d-flex align-items-center">
-                    <div className="col-xl-5 col-md-8 col-5 no-padding d-flex justify-content-start align-items-center">
+                    <div className="col-xl-5 col-md-5 col-7 no-padding d-flex justify-content-start align-items-center">
                         <div className="users-like">
                             <a href="javascript:void(0);">
                                 <img src={Views} className="img-fluid rounded-circle" alt="..." />
@@ -286,7 +288,7 @@ class CardBody extends React.Component {
                     </a> */}
                         </div>
                     </div>
-                    <div className="col-xl-7 col-md-4 col-7 no-padding d-flex justify-content-end">
+                    <div className="col-xl-7 col-md-7 col-5 no-padding d-flex justify-content-end align-items-center">
                         <div className="meta">
                             <ul>
                                 <li>

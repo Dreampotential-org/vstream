@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCategories, joinConference } from '../../actions/feeds-categories';
@@ -30,8 +30,13 @@ function CategoriesSlider({
     getCategories,
     conversation,
 }) {
+    // const myRef = useRef();
     useEffect(() => {
         getCategories();
+        // refs.categorySlider.goTo(1);
+
+        // myRef.to(1);
+        // myRef.addEvent
         console.log(conversation.categories)
     }, [getCategories]);
 
@@ -43,22 +48,24 @@ function CategoriesSlider({
                         <div className="widget no-bg">
                             <div className="widget-body pt-0">
                                 {/* <div className="widget29"> */}
-                                <OwlCarousel dots={false} autoPlay={true} className='widget29 owl-theme'
-                                    items={5} margin={5} nav
-                                    navText={[
-                                        "<i class='fa fa-caret-left'></i>",
-                                        "<i class='fa fa-caret-right'></i>"
-                                      ]}>
+                                <OwlCarousel dots={false} autoPlay={true}
+                                    className='widget29 owl-theme'
+                                    items={5} margin={5} nav={true}
+                                    // navText={[
+                                    //     "<i class='fa fa-caret-left'></i>",
+                                    //     "<i class='fa fa-caret-right'></i>"
+                                    // ]}
+                                >
                                     {conversation.categories.map((cat, i) => (
                                         // <SwiperSlide key={i}>{cat.category}</SwiperSlide>
-                                        <div className='item'>
+                                        <div className='item' key={i}>
                                             <div className="devices-item d-flex justify-content-center align-items-center">
                                                 <i className={ICON_DICT_OF_CATEGORY[cat.category]}></i>
                                                 <div className="room">{cat.category}</div>
                                             </div>
                                         </div>
                                     ))}
-                                
+
                                 </OwlCarousel>
                             </div>
                         </div>
