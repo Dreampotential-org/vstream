@@ -177,7 +177,8 @@
     /* min-height: 80px; */
     /* max-height: 80px; */
     border-bottom: none;
-    background-color: unset;
+    /* background-color: unset; */
+    background-color: #191A1F;
 }
 .widget-header .user-image {
     display: inline-block;
@@ -263,12 +264,16 @@
       background: linear-gradient(to right, #7E47AF 10%, #1A1F63 100%) !important;
       
   }
-  .categoryCard .backgroud-active-category .category {
+  .categoryCard .category {
     color: white !important;
     /* font-size: 0.85rem;
     padding-left: 18px; */
     /* color: #aea9c3; */
   }
+
+  /* .categoryCard .category {
+      color: white !important;
+  } */
 
   .icons-of-category-card {
     font-size: 1.6rem !important;

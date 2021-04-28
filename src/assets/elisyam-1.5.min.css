@@ -8826,7 +8826,8 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
   width: 95%;
 }
 .widget-29 .devices-item {
-  background: linear-gradient(to right, #7E47AF 10%, #1A1F63 100%);
+  /* background: linear-gradient(to right, #7E47AF 10%, #1A1F63 100%); */
+  background: #191A1F;
   position: absolute;
   bottom: 0;
   width: 100%;
