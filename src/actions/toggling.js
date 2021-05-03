@@ -1,5 +1,5 @@
 import {
-    SET_NAVBAR_TOGGLE, ACTIVE_KEY
+    SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY
 } from './types';
 
 export const toggleNavbar = () => async dispatch => {
@@ -20,6 +20,13 @@ export const clickSidebarItems = (key) => async dispatch => {
     console.log("key..", key);
     dispatch({
         type: ACTIVE_KEY,
+        payload: key,
+    });
+}
+
+export const clickCategory = (key) => async (dispatch) => {
+    dispatch({
+        type: ACTIVE_SUB_CATEGORY,
         payload: key,
     });
 }

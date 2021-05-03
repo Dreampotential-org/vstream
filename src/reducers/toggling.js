@@ -1,7 +1,5 @@
 import {
-  SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_HOME, ACTIVE_CATEGORY,
-  ACTIVE_COMMUNITY, ACTIVE_SHOW_TIME, ACTIVE_PRIVACY,
-  ACTIVE_GUIDELINES, ACTIVE_ABOUT, ACTIVE_SUPPORT
+  SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY
 } from '../actions/types';
 
 const initialState = {
@@ -15,7 +13,8 @@ const initialState = {
     activeGuidelines: false,
     activeSupport: false,
     activeAbout: false,
-  }
+  },
+  subCategoryStates: {},
 
 };
 
@@ -37,14 +36,15 @@ export default function (state = initialState, action) {
         ...state,
         ...state.sidebarStates[payload] = true
       }
-    // case ACTIVE_HOME:
-    //   for (var key in state.sidebarStates) {
-    //     state.sidebarStates[key] = false
-    //   }
-    //   return {
-    //     ...state,
-    //     ...state.sidebarStates[payload] = true
-    //   }
+    case ACTIVE_SUB_CATEGORY:
+      for (var key in state.subCategoryStates) {
+        state.subCategoryStates[key] = false
+      }
+      // state.subCategoryStates[payload] = true
+      return {
+        ...state,
+        ...state.subCategoryStates[payload] = true
+      }
     default:
       return state;
   }

@@ -6,11 +6,13 @@ import AdsCarousel from "./ads-slider";
 import CategoriesSlider from "./categories-slider"
 import TabsCategory from "./tabs-category"
 import RoomMain from '../room/room-main'
+import { getCategories, joinConference } from '../../actions/feeds-categories';
 
-function Home({ toggling: { toggleNavbarBurger }, loadUser }) {
+function Home({ toggling: { toggleNavbarBurger }, loadUser, getCategories, }) {
     useEffect(() => {
         loadUser();
-    }, [loadUser]);
+        getCategories();
+    }, [loadUser, getCategories]);
     return (
         <div
             className={toggleNavbarBurger ? 'content-inner' : 'content-inner active'}
@@ -79,4 +81,4 @@ const mapStateToProps = (state) => ({
     toggling: state.toggling,
 });
 
-export default connect(mapStateToProps, { loadUser })(Home);
+export default connect(mapStateToProps, { loadUser, getCategories })(Home);

@@ -58,3 +58,4 @@ export const ICON_DICT_OF_CATEGORY = {
   "Travel": "la la-plane-departure",
   "All": "la la-check-circle"
 }
+export const ACTIVE_SUB_CATEGORY = "ACTIVE_SUB_CATEGORY";
