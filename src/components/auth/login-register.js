@@ -8,6 +8,7 @@ import { userAuthentication, userRegistration } from '../../actions/auth';
 import PropTypes from 'prop-types';
 import Icofont from 'react-icofont';
 import Noty from 'noty';
+import { SOCIAL_ICONS } from "../../actions/types";
 
 function LoginRegister({
   auth: { isAuthenticated },
@@ -175,7 +176,7 @@ function LoginRegister({
             <div className='elisyam-bg'>
               <div
                 className='elisyam-overlay overlay-08 App-background'
-                // style={{ background: 'linear-gradient(100deg,#7E47AF 19%,#1A1F63 100%)' }}
+              // style={{ background: 'linear-gradient(100deg,#7E47AF 19%,#1A1F63 100%)' }}
               ></div>
               <div className='authentication-col-content-2 mx-auto text-center'>
                 <div className='logo-centered'>
@@ -193,8 +194,27 @@ function LoginRegister({
                   role='tablist'
                   id='animate-tab'
                 >
-                  <li>
-                    <a
+                  <li name='signin'>
+                    <button
+                      className={toggleSignIn ? 'btn btn-outline-primary mr-1 mb-2 active' : 'btn btn-outline-primary mr-1 mb-2'}
+                      onClick={(e) => changeSignIn(e)}
+                      // data-toggle='tab'
+                      name='signin'
+                      // role='tab'
+                      id='singin-tab'
+                    // data-easein='zoomInUp'
+                    // style={{color:"white"}}
+                    // style={toggleLoader ? { pointerEvents: 'none' } : null}
+                    >
+
+                      <span name='signin'>
+                        Login
+                        </span>
+                      {/* <i className={SOCIAL_ICONS["Google"]}></i> */}
+
+
+                    </button>
+                    {/* <a
                       className={toggleSignIn ? 'active' : ''}
                       onClick={(e) => changeSignIn(e)}
                       data-toggle='tab'
@@ -205,10 +225,28 @@ function LoginRegister({
                       data-easein='zoomInUp'
                     >
                       Login
-                    </a>
+                    </a> */}
                   </li>
-                  <li>
-                    <a
+                  <li name='signup'>
+                    <button
+                      className={toggleSignIn ? 'btn btn-outline-primary mr-1 mb-2' :
+                        'btn btn-outline-primary mr-1 mb-2 active'}
+                      onClick={(e) => changeSignIn(e)}
+                      name='signup'
+                      // role='tab'
+                      id='signup-tab'
+                    // data-easein='zoomInRight'
+                    // style={{color:"white"}}
+                    // style={toggleLoader ? { pointerEvents: 'none' } : null}
+                    >
+                      <span name='signup'>
+                        Create Account
+                        </span>
+                      {/* <i className={SOCIAL_ICONS["Google"]}></i> */}
+
+
+                    </button>
+                    {/* <a
                       className={toggleSignIn ? '' : 'active'}
                       onClick={(e) => changeSignIn(e)}
                       data-toggle='tab'
@@ -219,7 +257,7 @@ function LoginRegister({
                       data-easein='zoomInRight'
                     >
                       Create Account
-                    </a>
+                    </a> */}
                   </li>
                 </ul>
                 {toggleSignIn ?
@@ -229,7 +267,26 @@ function LoginRegister({
                     id='animate-tab'
                   >
                     <li>
-                      <a
+                      <button
+                        onClick={(e) => changeLoginSocial(e)}
+                        className={toggleLoginGoogle ? 'btn btn-outline-primary mr-1 mb-2 active' :
+                          'btn btn-outline-primary mr-1 mb-2'}
+                        data-toggle='tab'
+                        name='login-google'
+                        role='tab'
+                        id='login-google'
+                        data-easein='zoomInUp'
+                      // style={{color:"white"}}
+                      // style={toggleLoader ? { pointerEvents: 'none' } : null}
+                      >
+                        <span>
+                          Login With Google
+                        </span>
+                        <i className={SOCIAL_ICONS["Google"]}></i>
+
+
+                      </button>
+                      {/* <a
                         className={toggleLoginGoogle ? 'active' : ''}
                         onClick={(e) => changeLoginSocial(e)}
                         data-toggle='tab'
@@ -241,11 +298,30 @@ function LoginRegister({
                       >
                         Login With Google
                       <img src={GoogleLogo} style={{ width: "20px", height: "20px", marginLeft: "10px" }}></img>
-                      </a>
+                      </a> */}
 
                     </li>
                     <li>
-                      <a
+                      <button
+                        onClick={(e) => changeLoginSocial(e)}
+                        className={toggleLoginFb ? 'btn btn-outline-primary mr-1 mb-2 active' :
+                          'btn btn-outline-primary mr-1 mb-2'}
+                        data-toggle='tab'
+                        name='login-facebook'
+                        role='tab'
+                        id='login-facebook'
+                        data-easein='zoomInRight'
+                      // style={{color:"white"}}
+                      // style={toggleLoader ? { pointerEvents: 'none' } : null}
+                      >
+                        <span>
+                          Login With Facebook
+                        </span>
+                        <i className={SOCIAL_ICONS["Facebook"]}></i>
+
+
+                      </button>
+                      {/* <a
                         className={toggleLoginFb ? 'active' : ''}
                         onClick={(e) => changeLoginSocial(e)}
                         data-toggle='tab'
@@ -257,7 +333,7 @@ function LoginRegister({
                       >
                         Login With Facebook
                       <img src={FacebookLogo} style={{ width: "20px", height: "20px", marginLeft: "10px" }}></img>
-                      </a>
+                      </a> */}
                     </li>
                   </ul>
                   :
@@ -267,7 +343,24 @@ function LoginRegister({
                     id='animate-tab'
                   >
                     <li>
-                      <a
+                      <button
+                        onClick={(e) => changeSignupSocial(e)}
+                        className={toggleSignUpGoogle ? 'btn btn-outline-primary mr-1 mb-2 active' : 'btn btn-outline-primary mr-1 mb-2'}
+                        data-toggle='tab'
+                        name='signup-google'
+                        // role='tab'
+                        id='singup-google'
+                      // data-easein='zoomInUp'
+                      // style={toggleLoader ? { pointerEvents: 'none' } : null}
+                      >
+                        <span>
+                          Sign Up Via Google
+                        </span>
+                        <i className={SOCIAL_ICONS["Google"]}></i>
+
+
+                      </button>
+                      {/* <a
                         className={toggleSignUpGoogle ? 'active' : ''}
                         onClick={(e) => changeSignupSocial(e)}
                         data-toggle='tab'
@@ -279,11 +372,29 @@ function LoginRegister({
                       >
                         Sign Up Via Google
                       <img src={GoogleLogo} style={{ width: "20px", height: "20px", marginLeft: "10px" }}></img>
-                      </a>
+                      </a> */}
 
                     </li>
                     <li>
-                      <a
+                      <button
+                        onClick={(e) => changeSignupSocial(e)}
+                        className={toggleSignUpFb ? 'btn btn-outline-primary mr-1 mb-2 active' :
+                          'btn btn-outline-primary mr-1 mb-2'}
+                        data-toggle='tab'
+                        name='signup-facebook'
+                        role='tab'
+                        id='signup-facebook'
+                        data-easein='zoomInRight'
+                      // style={toggleLoader ? { pointerEvents: 'none' } : null}
+                      >
+                        <span>
+                          Sign Up Via Facebook
+                        </span>
+                        <i className={SOCIAL_ICONS["Facebook"]}></i>
+
+
+                      </button>
+                      {/* <a
                         className={toggleSignUpFb ? 'active' : ''}
                         onClick={(e) => changeSignupSocial(e)}
                         data-toggle='tab'
@@ -293,9 +404,11 @@ function LoginRegister({
                         id='signup-facebook'
                         data-easein='zoomInRight'
                       >
+
                         Sign Up Via Facebook
-                      <img src={FacebookLogo} style={{ width: "20px", height: "20px", marginLeft: "10px" }}></img>
-                      </a>
+                        <i className={SOCIAL_ICONS["Facebook"]}></i>
+                        <img src={FacebookLogo} style={{ width: "20px", height: "20px", marginLeft: "10px" }}></img>
+                      </a> */}
                     </li>
                   </ul>
                 }
@@ -426,18 +539,6 @@ function LoginRegister({
                     </div> */}
                     <div className='group material-input'>
                       <input
-                        type='email'
-                        name='email'
-                        value={registerData.email}
-                        onChange={(e) => saveRegisterData(e)}
-                        required
-                      />
-                      <span className='highlight'></span>
-                      <span className='bar'></span>
-                      <label>Email</label>
-                    </div>
-                    <div className='group material-input'>
-                      <input
                         type='text'
                         name='last_name'
                         value={registerData.last_name}
@@ -450,6 +551,19 @@ function LoginRegister({
                     </div>
                     <div className='group material-input'>
                       <input
+                        type='email'
+                        name='email'
+                        value={registerData.email}
+                        onChange={(e) => saveRegisterData(e)}
+                        required
+                      />
+                      <span className='highlight'></span>
+                      <span className='bar'></span>
+                      <label>Email</label>
+                    </div>
+                    
+                    {/* <div className='group material-input'>
+                      <input
                         type='text'
                         name='last_name'
                         value={registerData.last_name}
@@ -459,8 +573,8 @@ function LoginRegister({
                       <span className='highlight'></span>
                       <span className='bar'></span>
                       <label>Date OF Birth</label>
-                    </div>
-                    <div className='group material-input'>
+                    </div> */}
+                    {/* <div className='group material-input'>
                       <input
                         type='text'
                         name='last_name'
@@ -471,8 +585,8 @@ function LoginRegister({
                       <span className='highlight'></span>
                       <span className='bar'></span>
                       <label>Display Name</label>
-                    </div>
-                    <div className='group material-input'>
+                    </div> */}
+                    {/* <div className='group material-input'>
                       <input
                         type='text'
                         name='last_name'
@@ -483,7 +597,7 @@ function LoginRegister({
                       <span className='highlight'></span>
                       <span className='bar'></span>
                       <label>Short Bio</label>
-                    </div>
+                    </div> */}
                     <div className='group material-input'>
                       <input
                         type='password'

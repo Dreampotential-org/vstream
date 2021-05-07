@@ -58,4 +58,10 @@ export const ICON_DICT_OF_CATEGORY = {
   "Travel": "la la-plane-departure",
   "All": "la la-check-circle"
 }
+
+export const SOCIAL_ICONS = {
+  "Facebook": "la la-facebook-square",
+  "Google": "la la-google-plus-square"
+}
+
 export const ACTIVE_SUB_CATEGORY = "ACTIVE_SUB_CATEGORY";

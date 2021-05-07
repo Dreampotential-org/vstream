@@ -8,9 +8,9 @@ import './assets/elisyam-1.5.min.css';
 import './assets/animate.min.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  // <React.StrictMode>
+    <App />,
+  // </React.StrictMode>,
   document.getElementById('root')
 );
 
