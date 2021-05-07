@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { loadUser } from '../../actions/auth';
 import AdsCarousel from "./ads-slider";
-import CategoriesSlider from "./categories-slider"
+// import CategoriesSlider from "./categories-slider"
 import TabsCategory from "./tabs-category"
+import CategoriesSlider from "./category-slider";
 import RoomMain from '../room/room-main'
 import { getCategories, joinConference } from '../../actions/feeds-categories';
 
@@ -43,6 +44,9 @@ function Home({ toggling: { toggleNavbarBurger }, loadUser, getCategories, }) {
                     <div className="row">
                         <TabsCategory></TabsCategory>
                     </div>
+                    {/* <div className="row">
+                        <MultipleItems></MultipleItems>
+                    </div> */}
                     {/* <div className="row"> */}
                         <RoomMain></RoomMain>
                     {/* </div> */}

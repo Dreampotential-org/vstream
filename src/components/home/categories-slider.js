@@ -20,6 +20,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import { ICON_DICT_OF_CATEGORY } from "../../actions/types";
+
 // import '../../assets/css/categories.css';
 // import '../../assets/js/owl.carousel.min.js';
 
@@ -53,19 +54,26 @@ function CategoriesSlider({
         e.stopPropagation();
         console.log(e.target.id);
         clickCategory(e.target.id);
-        
+
     }
     return (
         <>
-            {/* {console.log(test)} */}
+            {/* {
+                conversation.categories !== null ?
+                <div className="col-xl-12 widget-29">
+                        <div className="widget no-bg">
+                            <div className="widget-body pt-0">
+                                
+                                </div></div></div> 
+                : null
+            } */}
             {
                 conversation.categories !== null ?
                     <div className="col-xl-12 widget-29">
                         <div className="widget no-bg">
                             <div className="widget-body pt-0">
-                                {/* <div className="widget29"> */}
                                 <OwlCarousel dots={false} autoPlay={false}
-                                    // className='widget29 owl-theme'
+                                    className='widget29 owl-theme'
                                     items={5} margin={5} nav={false}
                                     mouseDrag={false}
                                 // navText={[
@@ -74,17 +82,19 @@ function CategoriesSlider({
                                 // ]}
                                 >
                                     {conversation.categories.map((cat, i) => (
-                                        // <SwiperSlide key={i}>{cat.category}</SwiperSlide>
                                         <div id={cat.category} onClick={(e) => onActiveItems(e)} key={i} >
                                             {console.log(toggling.subCategoryStates[cat.category])}
                                             <div id={cat.category} onClick={(e) => onActiveItems(e)} key={i}
                                                 className="item">
                                                 <div id={cat.category}
                                                     className="devices-item d-flex justify-content-center align-items-center"
-                                                        style={ toggling.subCategoryStates[cat.category] ? { background: "linear-gradient(to right, #7E47AF 10%, #1A1F63 100%)" } : null}
+                                                    style={toggling.subCategoryStates[cat.category] ?
+                                                        { background: "linear-gradient(to right, #7E47AF 10%, #1A1F63 100%)" } :
+                                                        null}
                                                 // className="devices-item d-flex justify-content-center align-items-center"
                                                 >
-                                                    <i id={cat.category} className={ICON_DICT_OF_CATEGORY[cat.category]}></i>
+                                                    <i id={cat.category}
+                                                        className={ICON_DICT_OF_CATEGORY[cat.category]}></i>
                                                     <div className="room" id={cat.category}
                                                     >{cat.category}</div>
                                                 </div>

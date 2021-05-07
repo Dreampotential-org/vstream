@@ -282,3 +282,10 @@
     vertical-align: -4px;
     /* color: #e8e9ea; */
   }
+
+  .slick-slide{
+      min-height: 55px !important;
+  }
+  .slick-track{
+      width: 100% !important;
+  }
