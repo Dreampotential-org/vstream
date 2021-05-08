@@ -31,14 +31,13 @@ function LoginRegister({
   const [toggleLoader, setToggleLoader] = useState(false);
 
   const [registerData, setRegisterData] = useState({
-    first_name: '',
-    last_name: '',
+    name: '',
     email: '',
     password: '',
     confirmPassword: '',
   });
 
-  const { first_name, last_name, email, password } = registerData;
+  // const { first_name, last_name, email, password } = registerData;
 
   const changeSignIn = (e) => {
     e.preventDefault();
@@ -124,22 +123,19 @@ function LoginRegister({
       }).show();
       setToggleLoader(false);
     } else {
-      let sendData = {
-        first_name,
-        last_name,
-        email,
-        password,
-        role: 'Admin',
-      };
-      let check = await userRegistration(sendData);
+      let dataForm = new FormData();
+
+      dataForm.append('name', registerData.name);
+      dataForm.append('email', registerData.email);
+      dataForm.append('password', registerData.password)
+      let check = await userRegistration(dataForm);
 
       if (check) {
         setToggleLoader(false);
         setToggleSignIn(true);
 
         setRegisterData({
-          first_name: '',
-          last_name: '',
+          name: '',
           email: '',
           password: '',
           confirmPassword: '',
@@ -540,7 +536,7 @@ function LoginRegister({
                     <div className='group material-input'>
                       <input
                         type='text'
-                        name='last_name'
+                        name='name'
                         value={registerData.last_name}
                         onChange={(e) => saveRegisterData(e)}
                         required
@@ -561,7 +557,7 @@ function LoginRegister({
                       <span className='bar'></span>
                       <label>Email</label>
                     </div>
-                    
+
                     {/* <div className='group material-input'>
                       <input
                         type='text'

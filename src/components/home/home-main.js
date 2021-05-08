@@ -13,7 +13,7 @@ function Home({ toggling: { toggleNavbarBurger }, loadUser, getCategories, }) {
     useEffect(() => {
         loadUser();
         getCategories();
-    }, [loadUser, getCategories]);
+    }, [ loadUser, getCategories]);
     return (
         <div
             className={toggleNavbarBurger ? 'content-inner' : 'content-inner active'}

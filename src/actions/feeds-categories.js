@@ -47,9 +47,10 @@ export const getCategories = () => async (dispatch) => {
         if (error.message !== 'Network Error') {
             console.log('Get Categories Data Error: ', error.response.status);
             if (error.response.status === 401) {
-                dispatch({
-                    type: AUTH_ERROR,
-                });
+                console.log(error.response)
+                // dispatch({
+                //     type: AUTH_ERROR,
+                // });
             } else {
                 new Noty({
                     type: 'error',

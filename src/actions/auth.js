@@ -20,13 +20,11 @@ export const loadUser = () => async (dispatch) => {
   try {
     // const res = await axios.get(`${API_ENDPOINT}/getUser/`);
     const res = {
-      "name": "Muhammad Hammad"
+      "name": localStorage.getItem('userDetail')
     }
     dispatch({
       type: USER_LOADED,
-      payload: {
-        "name": "Muhammad Hammad"
-      },
+      payload: res,
     });
 
     // dispatch({
@@ -67,7 +65,7 @@ export const userAuthentication = (authData, history) => async (dispatch) => {
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
-    dispatch(loadUser());
+    // dispatch(loadUser());
 
     history.push('/home');
     //}
@@ -117,7 +115,7 @@ export const userRegistration = (signUpData) => async (dispatch) => {
   //   params.append('password', password);
 
   try {
-    const res = await axios.post(`${API_ENDPOINT}/signup/`, body, config);
+    const res = await axios.post(`${API_ENDPOINT}/s3_uploader/user/register/`, body, config);
 
     console.log('User Registeration Response', res.data);
     // if (res.data.access_token !== 'undefined') {
