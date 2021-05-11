@@ -1,5 +1,5 @@
 import {
-  SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY
+  SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY, ACTIVE_TAB_CATEGORY
 } from '../actions/types';
 
 const initialState = {
@@ -15,6 +15,12 @@ const initialState = {
     activeAbout: false,
   },
   subCategoryStates: {},
+  activeTabStates: {
+    live_now: true,
+    trending: false,
+    following: false,
+    discover: false,
+  },
 
 };
 
@@ -28,7 +34,6 @@ export default function (state = initialState, action) {
         toggleNavbarBurger: !state.toggleNavbarBurger,
       };
     case ACTIVE_KEY:
-      console.log("payload", payload)
       for (var key in state.sidebarStates) {
         state.sidebarStates[key] = false
       }
@@ -44,6 +49,14 @@ export default function (state = initialState, action) {
       return {
         ...state,
         ...state.subCategoryStates[payload] = true
+      }
+    case ACTIVE_TAB_CATEGORY:
+      for (var key in state.activeTabStates) {
+        state.activeTabStates[key] = false
+      }
+      return {
+        ...state,
+        ...state.activeTabStates[payload] = true
       }
     default:
       return state;

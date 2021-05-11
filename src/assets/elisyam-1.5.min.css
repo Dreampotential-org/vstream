@@ -3811,9 +3811,9 @@ section.forms form small {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: black;
+  color: #7E47AF !important;
   background-color: transparent !important;
-  border-bottom: 2px solid #5d5386 !important;
+  border-bottom: 2px solid #7E47AF !important;
   margin-bottom: -1px;
   
 }
@@ -3831,7 +3831,7 @@ section.forms form small {
 .nav-tabs > li.active > a,
 .nav-tabs > li > a:hover {
   border: none;
-  color: #5d5386 !important;
+  color: #7E47AF !important;
   background: transparent;
 }
 .nav-tabs > li > a::after {

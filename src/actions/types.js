@@ -65,3 +65,5 @@ export const SOCIAL_ICONS = {
 }
 
 export const ACTIVE_SUB_CATEGORY = "ACTIVE_SUB_CATEGORY";
+
+export const ACTIVE_TAB_CATEGORY = "ACTIVE_TAB_CATEGORY";

@@ -1,5 +1,5 @@
 import {
-    SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY
+    SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY, ACTIVE_TAB_CATEGORY
 } from './types';
 
 export const toggleNavbar = () => async dispatch => {
@@ -28,5 +28,12 @@ export const clickCategory = (key) => async (dispatch) => {
     dispatch({
         type: ACTIVE_SUB_CATEGORY,
         payload: key,
+    });
+}
+
+export const changeTabOfCategory = (tab) => async (dispatch) => {
+    dispatch({
+        type: ACTIVE_TAB_CATEGORY,
+        payload: tab,
     });
 }
