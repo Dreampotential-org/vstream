@@ -1,5 +1,7 @@
 import {
-  SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY, ACTIVE_TAB_CATEGORY
+  SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY,
+  ACTIVE_TAB_CATEGORY, SHOW_NOTIFICATION, ACTIVE_SUB_SHOW_TIME,
+  ACTIVE_SUB_CATEGORY_SIDEBAR
 } from '../actions/types';
 
 const initialState = {
@@ -21,6 +23,26 @@ const initialState = {
     following: false,
     discover: false,
   },
+  notificationState: false,
+  showTimeSubItem : [
+    {
+      id: "host",
+      subState: "Host Now",
+      icon: "la la-play"
+    },
+    {
+      id: "schedule",
+      subState: "New Schedule",
+      icon: "la la-plus"
+    },
+    {
+      id: "calender",
+      subState: "View Calender",
+      icon: "la la-calendar"
+    }
+  ],
+  showTimeActiveSubStates: {},
+  categoryActiveSubStates: {}
 
 };
 
@@ -45,7 +67,6 @@ export default function (state = initialState, action) {
       for (var key in state.subCategoryStates) {
         state.subCategoryStates[key] = false
       }
-      // state.subCategoryStates[payload] = true
       return {
         ...state,
         ...state.subCategoryStates[payload] = true
@@ -57,6 +78,27 @@ export default function (state = initialState, action) {
       return {
         ...state,
         ...state.activeTabStates[payload] = true
+      }
+    case SHOW_NOTIFICATION:
+      return {
+        ...state,
+        notificationState: !state.notificationState
+      }
+    case ACTIVE_SUB_SHOW_TIME:
+      for (var key in state.showTimeActiveSubStates) {
+        state.showTimeActiveSubStates[key] = false
+      }
+      return {
+        ...state,
+        ...state.showTimeActiveSubStates[payload] = true
+      }
+    case ACTIVE_SUB_CATEGORY_SIDEBAR:
+      for (var key in state.categoryActiveSubStates) {
+        state.categoryActiveSubStates[key] = false
+      }
+      return {
+        ...state,
+        ...state.categoryActiveSubStates[payload] = true
       }
     default:
       return state;

@@ -11,7 +11,7 @@ import InviteFreinds from "../../assets/icons/sidebar/sidebar_invite_friends.png
 import PrivacySecurity from "../../assets/icons/sidebar/sidebar_privacy&security.png";
 import ShowTime from "../../assets/icons/sidebar/sidebar_showtime.png";
 // import PropTypes from 'prop-types'
-import { clickSidebarItems } from '../../actions/toggling';
+import { clickSidebarItems, activeShowTimeSubstate } from '../../actions/toggling';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ICON_DICT_OF_CATEGORY } from '../../actions/types'
@@ -32,8 +32,8 @@ var iconDictOfCategory = {
 }
 
 function Sidebar(
-  { toggling: { sidebarStates }, toggle,
-    conversation, clickSidebarItems }
+  { toggling: { sidebarStates, showTimeSubItem, showTimeActiveSubStates }, toggle,
+    conversation, clickSidebarItems, activeShowTimeSubstate }
 ) {
   // const [toggleStateDropdown, setToggleStateDropdown] = useState(false);
   // const [clickSideBar, setClickSidebar] = useState(false);
@@ -93,7 +93,10 @@ function Sidebar(
               <li id="activeCategory">
 
                 <a aria-expanded={sidebarStates.activeCategory ? "true" : "false"}
-                  data-toggle="collapse" onClick={onActiveItems} id="activeCategory">
+                  onMouseOver={onActiveItems}
+                  data-toggle="collapse" 
+                  // onClick={onActiveItems} 
+                  id="activeCategory">
 
                   <i className="la la-star"></i>
                   <span id="activeCategory">Categories</span></a>
@@ -120,36 +123,44 @@ function Sidebar(
                     </ul> : null
                 }
 
-                {/* <li><a href="app-calendar.html">Calendar</a></li>
-                  <li><a href="app-chat.html">Chat</a></li>
-                  <li><a href="app-mail.html">Mail</a></li>
-                  <li><a href="app-contact.html">Contact</a></li> */}
-
-
               </li>
-              {/* <li><a href="#dropdown-app" aria-expanded="false" data-toggle="collapse">
-                <i class="la la-puzzle-piece"></i><span>Applications</span></a>
-                <ul id="dropdown-app" class="collapse list-unstyled pt-0">
-                  <li><a href="app-calendar.html">Calendar</a></li>
-                  <li><a href="app-chat.html">Chat</a></li>
-                  <li><a href="app-mail.html">Mail</a></li>
-                  <li><a href="app-contact.html">Contact</a></li>
+              <li id="activeShowTime"
+              >
+                <a aria-expanded={sidebarStates.activeShowTime ? "true" : "false"}
+                  onMouseOver={onActiveItems}
+                  data-toggle="collapse" 
+                  // onClick={onActiveItems} 
+                  id="activeShowTime">
+
+                  <i className='la la-play-circle' id="activeShowTime"></i>
+                  <span id="activeShowTime">Show Time</span></a>
+                <ul id="dropdown-app" className="collapse list-unstyled pt-0"
+                  style={{ display: sidebarStates.activeShowTime ? "block" : 'none' }}>
+                  {showTimeSubItem.map((cat, i) => (
+                    <li key={i} id={cat.id}
+                      className={showTimeActiveSubStates[cat.id] ? "active" : "none"}
+                      onClick={(e) => { activeShowTimeSubstate(e.target.id) }}>
+                      <Link
+                        to={'/show/' + cat.id}
+                        id={cat.id}
+                      >
+                        <i className={cat.icon} id={cat.id}></i>
+                        <span id={cat.id}
+                          style={{ display: 'block !important' }}>{cat.subState}</span>
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
-              </li> */}
-              <li
-                className={sidebarStates.activeShowTime ? 'active' : "none"}>
-                <NavLink
-                  // activeClassName='active'
+                {/* <NavLink
                   id="activeShowTime"
                   onClick={onActiveItems}
                   to='/dashboard/conversation'
                 >
-                  <i className='la la-play-circle' id="activeShowTime">
-                  </i>
+                  <i className='la la-play-circle' id="activeShowTime"></i>
                   <span id="activeShowTime" style={{ display: 'block !important' }}>
                     Show Time
                   </span>
-                </NavLink>
+                </NavLink> */}
               </li>
               {/* <li>
                 <NavLink
@@ -331,6 +342,7 @@ Sidebar.propTypes = {
   toggling: PropTypes.object.isRequired,
   conversation: PropTypes.object.isRequired,
   clickSidebarItems: PropTypes.func.isRequired,
+  activeShowTimeSubstate: PropTypes.func.isRequired,
   // changeView: PropTypes.func.isRequired,
   // createCourse: PropTypes.func.isRequired,
 };
@@ -339,7 +351,7 @@ const mapStateToProps = (state) => ({
   toggling: state.toggling,
   conversation: state.conversation,
 });
-export default connect(mapStateToProps, { clickSidebarItems })(
+export default connect(mapStateToProps, { clickSidebarItems, activeShowTimeSubstate })(
   Sidebar
 );
 // export default Sidebar;

@@ -24,23 +24,23 @@ nav.navbar {
     /* background: black; */
 }
 
-nav.navbar .dropdown-menu a {
+/* nav.navbar .dropdown-menu a {
     color: grey;
     font-weight: normal;
-    /* letter-spacing: 2px; */
-    /* background: black; */
+    letter-spacing: 2px;
+    background: black;
 }
 
 nav.navbar .dropdown-menu a:hover {
     color: black;
     font-weight: bolder;
     letter-spacing: 2px;
-    /* background: black; */
+    background: black;
 }
 
 nav.navbar .user-size {
     min-width: 180px !important;
-}
+} */
 
 /* .remove-caret:after {
     display: none;

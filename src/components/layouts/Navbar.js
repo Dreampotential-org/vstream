@@ -5,7 +5,7 @@ import Logo from '../../assets/img/vstream-logo.png';
 import '../../assets/css/navbar.css';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
-import { toggleNavbar } from '../../actions/toggling';
+import { toggleNavbar, showNotification } from '../../actions/toggling';
 import { logout } from '../../actions/auth';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -16,8 +16,9 @@ import Search from '../../assets/icons/navbar/nav_search.png'
 import Icofont from 'react-icofont';
 
 function Navbar({
-  toggling: { toggleNavbarBurger },
+  toggling: { toggleNavbarBurger, notificationState, },
   toggleNavbar,
+  showNotification,
   logout,
   auth: { userDetail },
 }) {
@@ -61,7 +62,6 @@ function Navbar({
   const search = (e) => {
     e.preventDefault();
   }
-
   return (
     <div>
       <header className='header'>
@@ -84,10 +84,10 @@ function Navbar({
               </div> : null
           } */}
           {/* <div className='search-box' style={{ display: toggleSearch ? "block" : 'none' }}> */}
-            {/* <button className='dismiss' onClick={(e) => openSearchBar(e)}>
+          {/* <button className='dismiss' onClick={(e) => openSearchBar(e)}>
               <i className='ion-close-round'></i>
             </button> */}
-            {/* <form id='searchForm' role='search' onSubmit={search}>
+          {/* <form id='searchForm' role='search' onSubmit={search}>
               <input
                 style={{ borderRadius: "49px", border: '3px solid #1A1F63' }}
                 type='search'
@@ -130,11 +130,11 @@ function Navbar({
               align-items-md-center pull-right'>
               {/* <li className="nav-item d-flex align-items-center"
                 onClick={(e) => openSearchBar(e)} > */}
-                {/* <a id="search" style={{ cursor:"pointer" }}> */}
-                {/* <i className="la la-search"></i> */}
-                {/* <img src={Search}></img>
+              {/* <a id="search" style={{ cursor:"pointer" }}> */}
+              {/* <i className="la la-search"></i> */}
+              {/* <img src={Search}></img>
                 </a> */}
-                {/* <div className='search-box' style={{ display: toggleSearch ? "block" : 'none' }}>
+              {/* <div className='search-box' style={{ display: toggleSearch ? "block" : 'none' }}>
 
                   <form id='searchForm' role='search'>
                     <input
@@ -143,10 +143,10 @@ function Navbar({
                       placeholder='Search topic, event, channels, etc.'
                       className='form-control'
                     /> */}
-                {/* <button className='dismiss' onClick={(e) => openSearchBar(e)}>
+              {/* <button className='dismiss' onClick={(e) => openSearchBar(e)}>
                       <i className='ion-close-round'></i>
                     </button> */}
-                {/* </form>
+              {/* </form>
                 </div> */}
               {/* </li> */}
               <li>
@@ -180,7 +180,86 @@ function Navbar({
 
                 </button>
               </li>
-              <li>
+              <li className="nav-item dropdown">
+                <a id="notifications" onClick={() => showNotification()}
+
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
+                  <i
+                    className="la la-bell animated infinite swing" ></i>
+                  <span className="badge-pulse"></span></a>
+                {/* {
+                  notificationState ? */}
+                <ul aria-labelledby="notifications"
+                  className="dropdown-menu notification" style={{ display: notificationState ? "block" : "none" }}>
+                  <li>
+                    <div className="notifications-header">
+                      <div className="title">Notifications (4)</div>
+                      <div className="notifications-overlay"></div>
+                      <img src={Notification} alt="..." className="img-fluid" />
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="message-icon">
+                        <i className="la la-user"></i>
+                      </div>
+                      <div className="message-body">
+                        <div className="message-body-heading">
+                          New user registered
+                                                </div>
+                        <span className="date">2 hours ago</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="message-icon">
+                        <i className="la la-calendar-check-o"></i>
+                      </div>
+                      <div className="message-body">
+                        <div className="message-body-heading">
+                          New event added
+                                                </div>
+                        <span className="date">7 hours ago</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="message-icon">
+                        <i className="la la-history"></i>
+                      </div>
+                      <div className="message-body">
+                        <div className="message-body-heading">
+                          Server rebooted
+                                                </div>
+                        <span className="date">7 hours ago</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <div className="message-icon">
+                        <i className="la la-twitter"></i>
+                      </div>
+                      <div className="message-body">
+                        <div className="message-body-heading">
+                          You have 3 new followers
+                                                </div>
+                        <span className="date">10 hours ago</span>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <a rel="nofollow" href="#"
+                      className="dropdown-item all-notifications text-center">View All Notifications</a>
+                  </li>
+                </ul>
+                {/* : null
+                } */}
+
+              </li>
+              {/* <li>
                 <Dropdown as='ul'>
                   <Dropdown.Toggle id="notification-dropdown" as='b' className='nav-link remove-caret'>
                     <img src={Notification} height="30px"></img>
@@ -198,7 +277,7 @@ function Navbar({
                     </Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
-              </li>
+              </li> */}
               <li>
                 <Dropdown as='ul'>
                   <Dropdown.Toggle as='b' id="username-dropdown" className='nav-link remove-caret'>
@@ -385,6 +464,7 @@ Navbar.propTypes = {
   toggling: PropTypes.object.isRequired,
   logout: PropTypes.func.isRequired,
   toggleNavbar: PropTypes.func.isRequired,
+  showNotification: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
 };
 
@@ -393,4 +473,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
 });
 
-export default connect(mapStateToProps, { toggleNavbar, logout })(Navbar);
+export default connect(mapStateToProps, { toggleNavbar, logout, showNotification })(Navbar);

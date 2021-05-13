@@ -39,7 +39,7 @@ function App() {
       ></PrivateRoute> */}
       <PrivateRoute
         exact
-        path='/dashboard/conversation'
+        path='/show/:id'
         component={Conversation}
       ></PrivateRoute>
       <PrivateRoute
@@ -97,7 +97,7 @@ function App() {
             ></Route>
             <Route
               exact
-              path='/(dashboard)/(conversation)'
+              path='/(show)/:id'
               component={DefaultContainer}
             ></Route>
             <Route

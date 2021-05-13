@@ -3878,7 +3878,7 @@ section.forms form small {
   text-align: center;
 }
 .nav-link i {
-  color: #aea9c3;
+  color: #7E47AF;
 }
 .alert {
   color: #fff;
@@ -5777,11 +5777,11 @@ nav.navbar .search-box form input::placeholder {
 }
 nav.navbar .dropdown-menu {
   right: 0;
-  min-width: 300px;
+  min-width: 200px;
   left: auto;
   margin-top: 0;
   padding: 0;
-  max-width: 400px;
+  max-width: 300px;
   border-radius: 4px;
   border: none;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
@@ -5793,7 +5793,7 @@ nav.navbar
   .dropdown-menu.notification
   .notifications-header
   .notifications-overlay {
-  background: rgba(93, 83, 134, 0.8);
+  background: linear-gradient(to right, #7E47AF 10%, #1A1F63 100%);
   width: 100%;
   height: 100%;
   position: absolute;
@@ -5860,16 +5860,16 @@ nav.navbar .dropdown-menu.notification li a:hover i {
 nav.navbar .dropdown-menu a {
   padding: 1rem 0 1rem 1rem;
   font-size: 0.85rem;
-  color: #5d5386;
+  color: #1A1F63 !important;
   width: 100%;
   position: relative;
   z-index: 2;
 }
 nav.navbar .dropdown-menu a:hover {
-  color: #5d5386;
+  color: #665872 !important;
 }
 nav.navbar .dropdown-menu a.all-notifications {
-  color: #5d5386;
+  color: #1A1F63;
   font-size: 0.9rem;
   font-weight: 600;
   padding: 1.4rem 0;
