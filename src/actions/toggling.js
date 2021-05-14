@@ -1,6 +1,7 @@
 import {
-    SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY,
-    ACTIVE_TAB_CATEGORY, SHOW_NOTIFICATION, ACTIVE_SUB_SHOW_TIME
+    SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY, 
+    ACTIVE_TAB_CATEGORY, SHOW_NOTIFICATION, ACTIVE_SUB_SHOW_TIME, 
+    ACTIVE_SUB_CATEGORY_SIDEBAR, CHANGE_FORM_STEP
 } from './types';
 
 export const toggleNavbar = () => async dispatch => {
@@ -49,5 +50,19 @@ export const activeShowTimeSubstate = (key) => async (dispatch) => {
     dispatch({
         type: ACTIVE_SUB_SHOW_TIME,
         payload: key,
+    })
+}
+
+export const activeCategorySubstate = (key) => async (dispatch) => {
+    dispatch({
+        type: ACTIVE_SUB_CATEGORY_SIDEBAR,
+        payload: key,
+    })
+}
+
+export const changeFormStep = (id) => async (dispatch) => {
+    dispatch({
+        type: CHANGE_FORM_STEP,
+        payload: id,
     })
 }

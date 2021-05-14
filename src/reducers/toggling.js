@@ -1,7 +1,7 @@
 import {
   SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY,
   ACTIVE_TAB_CATEGORY, SHOW_NOTIFICATION, ACTIVE_SUB_SHOW_TIME,
-  ACTIVE_SUB_CATEGORY_SIDEBAR
+  ACTIVE_SUB_CATEGORY_SIDEBAR, CHANGE_FORM_STEP
 } from '../actions/types';
 
 const initialState = {
@@ -42,7 +42,8 @@ const initialState = {
     }
   ],
   showTimeActiveSubStates: {},
-  categoryActiveSubStates: {}
+  categoryActiveSubStates: {},
+  formStepState: {}
 
 };
 
@@ -99,6 +100,14 @@ export default function (state = initialState, action) {
       return {
         ...state,
         ...state.categoryActiveSubStates[payload] = true
+      }
+    case CHANGE_FORM_STEP:
+      for (var key in state.formStepState) {
+        state.formStepState[key] = false
+      }
+      return {
+        ...state,
+        ...state.formStepState[payload] = true
       }
     default:
       return state;

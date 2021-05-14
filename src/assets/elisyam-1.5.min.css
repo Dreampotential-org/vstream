@@ -1717,7 +1717,7 @@ a.text-primary:hover {
   color: #cd201f !important;
 }
 .progress {
-  background-color: rgba(52, 40, 104, 0.07);
+  background-color: #e9ecef;
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -3104,7 +3104,7 @@ section.forms form small {
 }
 .step-wizard .progressbar {
   position: absolute;
-  background-color: #5d5386;
+  background-color: #7E47AF ;
   height: 8px;
   border: 0 none;
   width: 0%;
@@ -3130,7 +3130,7 @@ section.forms form small {
   height: 55px;
   border-radius: 50%;
   border: 6px solid;
-  border-color: #5d5386;
+  border-color: #1A1F63;
   background: #fff;
   transition: background-color 0.6s ease, border-color 0.6s ease;
 }
@@ -3144,11 +3144,11 @@ section.forms form small {
 }
 .step-wizard .active .step {
   color: #fff;
-  background-color: #5d5386;
-  border-color: #5d5386;
+  background-color: #7E47AF;
+  border-color: #1A1F63;
 }
 .step-wizard .active .title {
-  color: #e76c90;
+  color: #7E47AF;
   font-weight: 500;
 }
 .step-wizard li > a {
@@ -3160,7 +3160,7 @@ section.forms form small {
 }
 .step-wizard a:hover .step {
   color: #fff;
-  background-color: #5d5386;
+  background-color: #7E47AF;
 }
 .step-wizard a:hover .title {
   color: #5d5386;

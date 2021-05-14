@@ -11,7 +11,7 @@ import InviteFreinds from "../../assets/icons/sidebar/sidebar_invite_friends.png
 import PrivacySecurity from "../../assets/icons/sidebar/sidebar_privacy&security.png";
 import ShowTime from "../../assets/icons/sidebar/sidebar_showtime.png";
 // import PropTypes from 'prop-types'
-import { clickSidebarItems, activeShowTimeSubstate } from '../../actions/toggling';
+import { clickSidebarItems, activeShowTimeSubstate, activeCategorySubstate } from '../../actions/toggling';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ICON_DICT_OF_CATEGORY } from '../../actions/types'
@@ -32,8 +32,9 @@ var iconDictOfCategory = {
 }
 
 function Sidebar(
-  { toggling: { sidebarStates, showTimeSubItem, showTimeActiveSubStates }, toggle,
-    conversation, clickSidebarItems, activeShowTimeSubstate }
+  { toggling: { sidebarStates, showTimeSubItem,
+    showTimeActiveSubStates, categoryActiveSubStates }, toggle,
+    conversation, clickSidebarItems, activeShowTimeSubstate, activeCategorySubstate }
 ) {
   // const [toggleStateDropdown, setToggleStateDropdown] = useState(false);
   // const [clickSideBar, setClickSidebar] = useState(false);
@@ -93,8 +94,8 @@ function Sidebar(
               <li id="activeCategory">
 
                 <a aria-expanded={sidebarStates.activeCategory ? "true" : "false"}
-                  onMouseOver={onActiveItems}
-                  data-toggle="collapse" 
+                  onMouseEnter={onActiveItems}
+                  data-toggle="collapse"
                   // onClick={onActiveItems} 
                   id="activeCategory">
 
@@ -108,7 +109,8 @@ function Sidebar(
                       style={{ display: sidebarStates.activeCategory ? "block" : 'none' }}>
                       {conversation.categories.map((cat, i) => (
                         // <SwiperSlide key={i}>{cat.category}</SwiperSlide>
-                        <li key={i}>
+                        <li key={i} onClick={(e) => { activeCategorySubstate(cat.category) }}
+                          className={categoryActiveSubStates[cat.category] ? "active" : "none"}>
                           <Link
                             to={'/feed/categories/' + cat.category}
                           >
@@ -127,8 +129,8 @@ function Sidebar(
               <li id="activeShowTime"
               >
                 <a aria-expanded={sidebarStates.activeShowTime ? "true" : "false"}
-                  onMouseOver={onActiveItems}
-                  data-toggle="collapse" 
+                  onMouseEnter={onActiveItems}
+                  data-toggle="collapse"
                   // onClick={onActiveItems} 
                   id="activeShowTime">
 
@@ -343,6 +345,7 @@ Sidebar.propTypes = {
   conversation: PropTypes.object.isRequired,
   clickSidebarItems: PropTypes.func.isRequired,
   activeShowTimeSubstate: PropTypes.func.isRequired,
+  activeCategorySubstate: PropTypes.func.isRequired,
   // changeView: PropTypes.func.isRequired,
   // createCourse: PropTypes.func.isRequired,
 };
@@ -351,7 +354,10 @@ const mapStateToProps = (state) => ({
   toggling: state.toggling,
   conversation: state.conversation,
 });
-export default connect(mapStateToProps, { clickSidebarItems, activeShowTimeSubstate })(
+export default connect(mapStateToProps, {
+  clickSidebarItems,
+  activeShowTimeSubstate, activeCategorySubstate
+})(
   Sidebar
 );
 // export default Sidebar;

@@ -11,6 +11,7 @@ import store from './store';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
 import PrivateRoute from './components/routing/PrivateRoute';
 import Navbar from './components/layouts/Navbar';
+import ShowTime from "./components/show-time/show-time-main";
 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
       <PrivateRoute
         exact
         path='/show/:id'
-        component={Conversation}
+        component={ShowTime}
       ></PrivateRoute>
       <PrivateRoute
         exact
