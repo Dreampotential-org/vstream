@@ -2,16 +2,30 @@ import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import HostNow from "./host-now";
+import EventCalender from "./calender";
 
-function ShowTime({ toggling: { toggleNavbarBurger }, }) {
+function ShowTime({ toggling: { toggleNavbarBurger, showTimeActiveSubStates }, }) {
     return (
         <div
             className={toggleNavbarBurger ? 'content-inner' : 'content-inner active'}
         >
             <Fragment>
-                <div className='container-fluid'>
-                    <HostNow></HostNow>
-                </div>
+
+                {
+                    showTimeActiveSubStates["host"] ?
+                        <div className='container-fluid'>
+                            <HostNow></HostNow>
+                        </div>
+                        : null
+
+                }
+                {
+                    showTimeActiveSubStates["calender"] ?
+                        <div className='container-fluid'>
+                            <EventCalender></EventCalender>
+                        </div>
+                        : null
+                }
             </Fragment>
         </div>
     )

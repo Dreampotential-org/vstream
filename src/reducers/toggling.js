@@ -43,7 +43,9 @@ const initialState = {
   ],
   showTimeActiveSubStates: {},
   categoryActiveSubStates: {},
-  formStepState: {}
+  formStepState: {
+    step1: true
+  }
 
 };
 
