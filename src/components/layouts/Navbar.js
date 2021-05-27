@@ -170,20 +170,20 @@ function Navbar({
                   className='btn btn-lg btn-gradient-01'
                 // style={toggleLoader ? { pointerEvents: 'none' } : null}
                 >
-                  {toggleLoader ? (
+                  {/* {toggleLoader ? (
                     <Icofont icon='play' size='3' color='#e8e9ea' />
-                  ) : null}
+                  ) : null} */}
                   <span
                     style={toggleLoader ? { marginLeft: '10px' } : null}>
-                    Show Time
+                    Join Event
                         </span>
 
                 </button>
               </li>
-              <li className="nav-item dropdown">
-                <a id="notifications" onClick={() => showNotification()}
-
-                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
+              <li className="nav-item dropdown" >
+                <a id="notifications" 
+                  onClick={() => showNotification()}
+                  aria-haspopup="true" aria-expanded="false" class="nav-link">
                   <i
                     className="la la-bell animated infinite swing" ></i>
                   <span className="badge-pulse"></span></a>

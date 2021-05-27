@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import HostNow from "./host-now";
 import EventCalender from "./calender";
+import NewSchedule from "./new-schedule";
 
 function ShowTime({ toggling: { toggleNavbarBurger, showTimeActiveSubStates }, }) {
     return (
@@ -23,6 +24,13 @@ function ShowTime({ toggling: { toggleNavbarBurger, showTimeActiveSubStates }, }
                     showTimeActiveSubStates["calender"] ?
                         <div className='container-fluid'>
                             <EventCalender></EventCalender>
+                        </div>
+                        : null
+                }
+                {
+                    showTimeActiveSubStates["schedule"] ?
+                        <div className='container-fluid'>
+                            <NewSchedule></NewSchedule>
                         </div>
                         : null
                 }

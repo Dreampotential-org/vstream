@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { changeFormStep } from "../../actions/toggling";
 
-function HostNow({ toggling: { toggleNavbarBurger, formStepState }, changeFormStep }) {
+
+function NewSchedule({ toggling: { toggleNavbarBurger, formStepState }, changeFormStep }) {
     return (
         // <div
         //     className={toggleNavbarBurger ? 'content-inner' : 'content-inner active'}
@@ -14,7 +15,7 @@ function HostNow({ toggling: { toggleNavbarBurger, formStepState }, changeFormSt
             <div className="col-xl-12">
                 <div className="widget has-shadow">
                     <div className="widget-header bordered no-actions d-flex align-items-center">
-                        <h4>Host Now!</h4>
+                        <h4>Schedule Event!</h4>
                     </div>
                     <div className="widget-body">
                         <div className="row flex-row justify-content-center">
@@ -120,6 +121,22 @@ function HostNow({ toggling: { toggleNavbarBurger, formStepState }, changeFormSt
 
                                         <div className="tab-pane" id="tab2"
                                             style={{ display: formStepState["step2"] ? "block" : "none" }}>
+                                            <div className="section-title mt-5 mb-5">
+                                                <h4>Schedule</h4>
+                                            </div>
+                                            <div class="form-group row d-flex align-items-center mb-5">
+                                                <label class="col-lg-3 form-control-label">Date Time</label>
+                                                <div class="col-lg-9">
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon">
+                                                                <i class="la la-calendar"></i>
+                                                            </span>
+                                                            <input type="text" class="form-control" id="datetime" placeholder="Select value" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div className="section-title mt-5 mb-5">
                                                 <h4>Invitation</h4>
                                             </div>
@@ -234,7 +251,7 @@ function HostNow({ toggling: { toggleNavbarBurger, formStepState }, changeFormSt
                                                         // onClick={(e) => changeFormStep("step2")}
                                                         className='btn btn-lg btn-gradient-01'>
                                                         <span>
-                                                            Golive
+                                                            Create Event
                                                         </span>
 
                                                     </button>
@@ -255,7 +272,7 @@ function HostNow({ toggling: { toggleNavbarBurger, formStepState }, changeFormSt
     )
 }
 
-HostNow.propTypes = {
+NewSchedule.propTypes = {
     toggling: PropTypes.object.isRequired,
     changeFormStep: PropTypes.func.isRequired,
 };
@@ -264,4 +281,4 @@ const mapStateToProps = (state) => ({
     toggling: state.toggling,
 });
 
-export default connect(mapStateToProps, { changeFormStep })(HostNow);
+export default connect(mapStateToProps, { changeFormStep })(NewSchedule);
