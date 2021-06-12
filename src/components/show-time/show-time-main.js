@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import HostNow from "./host-now";
 import EventCalender from "./calender";
 import NewSchedule from "./new-schedule";
+import "../../assets/css/show-time.css"
 
 function ShowTime({ toggling: { toggleNavbarBurger, showTimeActiveSubStates }, }) {
     return (
