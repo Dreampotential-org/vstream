@@ -2,12 +2,61 @@ import React, { Fragment, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { changeFormStep } from "../../actions/toggling";
+import { addAgenda } from "../../actions/show-time";
 import { WithContext as ReactTags } from "react-tag-input";
+
+function AgendaInput({ index, agendaInput }) {
+  return (
+    <>
+      <div className="col-xl-3">
+        <input
+          id="time"
+          name={index}
+          type="text"
+          placeholder="Select Time"
+          onChange={(e) => agendaInput(e.target.id, e.target.name)}
+          // value="Dream Potential Conference Series"
+          className="form-control"
+        />
+      </div>
+      <div className="col-xl-4">
+        <input
+          id="agenda"
+          name={index}
+          type="text"
+          placeholder="Agenda"
+          onChange={(e) => agendaInput(e.target.id, e.target.name)}
+          // value="Gain Next Level Insights To Accelerate your learning"
+          className="form-control"
+        />
+      </div>
+      <div className="col-xl-4">
+        <input
+          id="description"
+          name={index}
+          type="text"
+          placeholder="Add Description"
+          onChange={(e) => agendaInput(e.target.id, e.target.name)}
+          // value="Gain Next Level Insights To Accelerate your learning"
+          className="form-control"
+        />
+      </div>
+    </>
+  );
+}
 
 function HostNow({
   toggling: { toggleNavbarBurger, formStepState },
+  show_time: { agenda },
   changeFormStep,
+  addAgenda,
 }) {
+  const [eventBasicInfo, updateEventBasicInfo] = useState({
+    title: "",
+    tagline: "",
+    description: "",
+  });
+
   const KeyCodes = {
     comma: 188,
     enter: 13,
@@ -44,6 +93,15 @@ function HostNow({
 
   const handleTagClick = (index) => {
     console.log("The tag at index " + index + " was clicked");
+  };
+
+  const agendaInput = (id, index) => {
+    console.log(id, index);
+  };
+
+  const editEventBasicInfo = (e) => {
+    let key = e.target.id;
+    updateEventBasicInfo({ ...eventBasicInfo, key: e.target.value });
   };
 
   return (
@@ -162,9 +220,16 @@ function HostNow({
                             Title<span className="text-danger ml-2">*</span>
                           </label>
                           <input
+                            id="title"
                             type="text"
-                            value="Dream Potential Conference Series"
+                            value={eventBasicInfo.title}
                             className="form-control"
+                            onChange={(e) =>
+                              updateEventBasicInfo({
+                                ...eventBasicInfo,
+                                title: e.target.value,
+                              })
+                            }
                           />
                         </div>
                         <div className="col-xl-6">
@@ -172,9 +237,17 @@ function HostNow({
                             Tagline<span className="text-danger ml-2">*</span>
                           </label>
                           <input
+                            id="tagline"
                             type="text"
-                            value="Gain Next Level Insights To Accelerate your learning"
+                            value={eventBasicInfo.tagline}
                             className="form-control"
+                            onChange={(e) =>
+                              updateEventBasicInfo({
+                                ...eventBasicInfo,
+                                tagline: e.target.value,
+                              })
+                            }
+                            // onChange={(e) => eventBasicInfo(e)}
                           />
                         </div>
                       </div>
@@ -184,9 +257,16 @@ function HostNow({
                             Description
                           </label>
                           <textarea
+                            id="description"
                             type="text"
-                            value="UX Designer"
+                            value={eventBasicInfo.description}
                             className="form-control"
+                            onChange={(e) =>
+                              updateEventBasicInfo({
+                                ...eventBasicInfo,
+                                description: e.target.value,
+                              })
+                            }
                           ></textarea>
                         </div>
                       </div>
@@ -247,23 +327,68 @@ function HostNow({
                         <h4>Invitation</h4>
                       </div>
 
-                      <div className="form-group row mb-5">
-                        <label className="col-xl-1 form-control-label d-flex justify-content-lg-end">
-                          Agenda
-                        </label>
-                        <div className="col-xl-8">
-                          <input
-                            type="url"
-                            value="http://mywebsite.com"
-                            className="form-control"
-                          />
+                      <div className="form-group row mb-3">
+                        <div className="col-xl-12">
+                          <label className="form-control-label">Agenda</label>
+
+                          {/* <div className="col-xl-2">Add</div> */}
+                          {/* <label className="col-xl-1 form-control-label d-flex justify-content-lg-end">
+                          Guests
+                        </label> */}
+                          {/* <div className="form-group row">
+                            <div
+                              className="col-xl-1 mt-2"
+                              onClick={(e) => addAgenda()}
+                              style={{ cursor: "pointer" }}
+                            >
+                              <a>
+                                <i className="la la-plus"></i>
+                              </a>
+                            </div>
+                            <AgendaInput></AgendaInput>
+                          </div> */}
+                          {[...Array(agenda)].map((x, i) => (
+                            <div className="form-group row">
+                              <div
+                                className="col-xl-1 mt-2"
+                                onClick={(e) => addAgenda()}
+                                style={{ cursor: "pointer" }}
+                              >
+                                <a>
+                                  <i className="la la-plus"></i>
+                                </a>
+                              </div>
+                              <AgendaInput
+                                index={i}
+                                agendaInput={agendaInput}
+                              ></AgendaInput>
+                            </div>
+                          ))}
+                          {/* <div className="col-xl-10" id="input-agenda">
+                            <AgendaInput></AgendaInput>
+                            <label for="input-agenda">
+                              I
+                            </label>
+                          </div> */}
                         </div>
                       </div>
                       <div className="form-group row mb-5">
-                        <label className="col-xl-1 form-control-label d-flex justify-content-lg-end">
+                        {/* <label className="col-xl-1 form-control-label d-flex justify-content-lg-end">
                           Guests
-                        </label>
-                        <div className="col-xl-4">
+                        </label> */}
+                        <button
+                          onClick={(e) => console.log("click!")}
+                          className="btn btn-lg btn-gradient-01"
+                          // style={toggleLoader ? { pointerEvents: 'none' } : null}
+                        >
+                          <i class="la la-user-plus"></i>
+                          <span
+                          // style={toggleLoader ? { marginLeft: "10px" } : null}
+                          >
+                            Invite Co-host, Guests, or Speakers
+                          </span>
+                        </button>
+                        {/* <div className="col-xl-4">
                           <div className="styled-checkbox">
                             <input
                               type="checkbox"
@@ -286,7 +411,7 @@ function HostNow({
                               I would like to invite guest's or speakers
                             </label>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                       <ul className="pager wizard text-right">
                         <li className="previous d-inline-block">
@@ -339,7 +464,7 @@ function HostNow({
                                 Title
                               </div>
                               <div className="col-sm-8 form-control-plaintext">
-                                David Green
+                                {eventBasicInfo.title}
                               </div>
                             </div>
                             <div className="form-group row mb-5">
@@ -347,7 +472,7 @@ function HostNow({
                                 Tagline
                               </div>
                               <div className="col-sm-8 form-control-plaintext">
-                                dgreen@elisyam.com
+                                {eventBasicInfo.tagline}
                               </div>
                             </div>
                             <div className="form-group row mb-5">
@@ -355,7 +480,7 @@ function HostNow({
                                 Description
                               </div>
                               <div className="col-sm-8 form-control-plaintext">
-                                +00 987 654 32
+                                {eventBasicInfo.description}
                               </div>
                             </div>
                             <div className="form-group row mb-5">
@@ -363,7 +488,31 @@ function HostNow({
                                 Category
                               </div>
                               <div className="col-sm-8 form-control-plaintext">
-                                UX Designer
+                                <ul className="quizzes-list">
+                                  <Fragment>
+                                    {tags.map((data, index) => (
+                                      // <div
+                                      //   className='test'
+                                      //   style={{ position: 'relative' }}
+                                      // >
+                                      <span
+                                        //   href=''
+                                        //   target='_blank'
+                                        //   rel='noopener noreferrer'
+                                        key={index}
+                                        style={{ position: "relative" }}
+                                        className="test"
+                                      >
+                                        <li className="quiz-list">
+                                          {data.text}
+
+                                          {/* {data.question} */}
+                                        </li>
+                                      </span>
+                                    ))}
+                                  </Fragment>
+                                  
+                                </ul>
                               </div>
                             </div>
                             <div className="form-group row mb-5">
@@ -443,11 +592,14 @@ function HostNow({
 
 HostNow.propTypes = {
   toggling: PropTypes.object.isRequired,
+  show_time: PropTypes.object.isRequired,
   changeFormStep: PropTypes.func.isRequired,
+  addAgenda: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   toggling: state.toggling,
+  show_time: state.show_time,
 });
 
-export default connect(mapStateToProps, { changeFormStep })(HostNow);
+export default connect(mapStateToProps, { changeFormStep, addAgenda })(HostNow);

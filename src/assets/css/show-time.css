@@ -12,6 +12,7 @@
   /* width: 200px; */
   border-radius: 2px;
   display: inline-block;
+  
 }
 .ReactTags__tagInput input.ReactTags__tagInputField,
 .ReactTags__tagInput input.ReactTags__tagInputField:focus {
@@ -20,6 +21,7 @@
   /* font-size: 12px; */
   width: 30rem;
   border: 1px solid #eee;
+  
 }
 
 /* Styles for selected tags */
@@ -69,4 +71,62 @@
   cursor: pointer;
   background: none;
   color: white;
+}
+
+.quizzes-list,
+.assignments-list,
+.contents-list {
+    padding: 0;
+    list-style: none;
+}
+
+.quizzes-list .quiz-list,
+.assignments-list .assignment-list,
+.contents-list .content-list {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+    /* margin-bottom: 20px; */
+    font-size: 13px;
+    display: inline-block;
+    color: black;
+    margin-right: 5px;
+}
+
+.quizzes-list .quiz-list:hover,
+.assignments-list .assignment-list:hover,
+.contents-list .content-list:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.quizzes-list .quiz-list.add-quiz,
+.assignments-list .assignment-list.add-assignment,
+.contents-list .content-list.add-content {
+    color: gray;
+    position: relative;
+}
+
+.quizzes-list .quiz-list.add-quiz:hover,
+.assignments-list .assignment-list.add-assignment:hover,
+.contents-list .content-list.add-content:hover {
+    color: #fff;
+}
+
+/* .contents-list a {
+    color: black;
+}
+
+.quizzes-list .quiz-list {
+    color: black;
+} */
+
+.quizzes-list a:focus,
+.assignments-list a:focus,
+.contents-list a:focus {
+    color: black;
 }
