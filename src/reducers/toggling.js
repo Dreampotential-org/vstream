@@ -59,7 +59,7 @@ export default function (state = initialState, action) {
         toggleNavbarBurger: !state.toggleNavbarBurger,
       };
     case ACTIVE_KEY:
-      for (var key in state.sidebarStates) {
+      for (let key in state.sidebarStates) {
         state.sidebarStates[key] = false
       }
       return {
@@ -67,7 +67,7 @@ export default function (state = initialState, action) {
         ...state.sidebarStates[payload] = true
       }
     case ACTIVE_SUB_CATEGORY:
-      for (var key in state.subCategoryStates) {
+      for (let key in state.subCategoryStates) {
         state.subCategoryStates[key] = false
       }
       return {
@@ -75,7 +75,7 @@ export default function (state = initialState, action) {
         ...state.subCategoryStates[payload] = true
       }
     case ACTIVE_TAB_CATEGORY:
-      for (var key in state.activeTabStates) {
+      for (let key in state.activeTabStates) {
         state.activeTabStates[key] = false
       }
       return {
@@ -88,7 +88,7 @@ export default function (state = initialState, action) {
         notificationState: !state.notificationState
       }
     case ACTIVE_SUB_SHOW_TIME:
-      for (var key in state.showTimeActiveSubStates) {
+      for (let key in state.showTimeActiveSubStates) {
         state.showTimeActiveSubStates[key] = false
       }
       return {
@@ -96,7 +96,7 @@ export default function (state = initialState, action) {
         ...state.showTimeActiveSubStates[payload] = true
       }
     case ACTIVE_SUB_CATEGORY_SIDEBAR:
-      for (var key in state.categoryActiveSubStates) {
+      for (let key in state.categoryActiveSubStates) {
         state.categoryActiveSubStates[key] = false
       }
       return {
@@ -104,7 +104,7 @@ export default function (state = initialState, action) {
         ...state.categoryActiveSubStates[payload] = true
       }
     case CHANGE_FORM_STEP:
-      for (var key in state.formStepState) {
+      for (let key in state.formStepState) {
         state.formStepState[key] = false
       }
       return {

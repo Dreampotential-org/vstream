@@ -1,18 +1,12 @@
 // Component for Splash Screen
-import React, { useEffect } from 'react';
+import React from 'react';
 import "../../assets/css/splash-screen.css";
 import LoginRegister from "../auth/login-register";
 import Logo from '../../assets/img/vstream-logo.png';
 
 class SplashScreen extends React.Component {
   render() {
-    const style = {
-      top: 0,
-      bottom: 0,
-      right: 0,
-      left: 0,
-      position: 'fixed'
-    };
+
 
     return (
       // <div >
@@ -53,7 +47,6 @@ class MainComponent extends React.Component {
   // }
 
   render() {
-    let view;
 
     if (this.state.renderSplashscreen)
       return <SplashScreen />;

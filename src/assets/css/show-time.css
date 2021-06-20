@@ -100,7 +100,7 @@
 .quizzes-list .quiz-list:hover,
 .assignments-list .assignment-list:hover,
 .contents-list .content-list:hover {
-    background-color: #000;
+    background: linear-gradient(to right, #7E47AF 10%, #1A1F63 100%);;
     color: #fff;
 }
 

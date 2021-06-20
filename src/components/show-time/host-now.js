@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment,  useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { changeFormStep } from "../../actions/toggling";
@@ -91,18 +91,18 @@ function HostNow({
     updateTags(newTags);
   };
 
-  const handleTagClick = (index) => {
-    console.log("The tag at index " + index + " was clicked");
-  };
+  // const handleTagClick = (index) => {
+  //   console.log("The tag at index " + index + " was clicked");
+  // };
 
   const agendaInput = (id, index) => {
     console.log(id, index);
   };
 
-  const editEventBasicInfo = (e) => {
-    let key = e.target.id;
-    updateEventBasicInfo({ ...eventBasicInfo, key: e.target.value });
-  };
+  // const editEventBasicInfo = (e) => {
+  //   let key = e.target.id;
+  //   updateEventBasicInfo({ ...eventBasicInfo, key: e.target.value });
+  // };
 
   return (
     // <div
@@ -284,11 +284,6 @@ function HostNow({
                             delimiters={delimiters}
                             inputFieldPosition="bottom"
                           />
-                          {/* <input
-                            type="text"
-                            value="Dream Potential Conference Series"
-                            className="form-control"
-                          /> */}
                         </div>
                         <div className="col-xl-6">
                           <label className="form-control-label">
@@ -299,6 +294,12 @@ function HostNow({
                             className="form-control"
                             style={{ padding: ".375rem .75rem" }}
                           />
+                          {/* <button
+                            // onClick={(e) => changeFormStep("step2")}
+                            className="form-control btn btn-lg btn-gradient-01"
+                          >
+                            <span>Next</span>
+                          </button> */}
                         </div>
                       </div>
                       <ul className="pager wizard text-right">
@@ -330,25 +331,8 @@ function HostNow({
                       <div className="form-group row mb-3">
                         <div className="col-xl-12">
                           <label className="form-control-label">Agenda</label>
-
-                          {/* <div className="col-xl-2">Add</div> */}
-                          {/* <label className="col-xl-1 form-control-label d-flex justify-content-lg-end">
-                          Guests
-                        </label> */}
-                          {/* <div className="form-group row">
-                            <div
-                              className="col-xl-1 mt-2"
-                              onClick={(e) => addAgenda()}
-                              style={{ cursor: "pointer" }}
-                            >
-                              <a>
-                                <i className="la la-plus"></i>
-                              </a>
-                            </div>
-                            <AgendaInput></AgendaInput>
-                          </div> */}
                           {[...Array(agenda)].map((x, i) => (
-                            <div className="form-group row">
+                            <div className="form-group row" key={i}>
                               <div
                                 className="col-xl-1 mt-2"
                                 onClick={(e) => addAgenda()}
@@ -364,18 +348,10 @@ function HostNow({
                               ></AgendaInput>
                             </div>
                           ))}
-                          {/* <div className="col-xl-10" id="input-agenda">
-                            <AgendaInput></AgendaInput>
-                            <label for="input-agenda">
-                              I
-                            </label>
-                          </div> */}
                         </div>
                       </div>
                       <div className="form-group row mb-5">
-                        {/* <label className="col-xl-1 form-control-label d-flex justify-content-lg-end">
-                          Guests
-                        </label> */}
+
                         <button
                           onClick={(e) => console.log("click!")}
                           className="btn btn-lg btn-gradient-01"

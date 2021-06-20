@@ -16,7 +16,7 @@ export default function (state = initialState, action) {
     case ADD_EVENT:
       return {
         ...state,
-        events: [...state.events, action.payload],
+        events: [...state.events, payload],
       };
     case ADD_AGENDA:
       return {
