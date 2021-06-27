@@ -1,54 +1,16 @@
-import React, { Fragment,  useState } from "react";
+import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { changeFormStep } from "../../actions/toggling";
+import { changeFormStep, activeCollapsable } from "../../actions/toggling";
 import { addAgenda } from "../../actions/show-time";
 import { WithContext as ReactTags } from "react-tag-input";
-
-function AgendaInput({ index, agendaInput }) {
-  return (
-    <>
-      <div className="col-xl-3">
-        <input
-          id="time"
-          name={index}
-          type="text"
-          placeholder="Select Time"
-          onChange={(e) => agendaInput(e.target.id, e.target.name)}
-          // value="Dream Potential Conference Series"
-          className="form-control"
-        />
-      </div>
-      <div className="col-xl-4">
-        <input
-          id="agenda"
-          name={index}
-          type="text"
-          placeholder="Agenda"
-          onChange={(e) => agendaInput(e.target.id, e.target.name)}
-          // value="Gain Next Level Insights To Accelerate your learning"
-          className="form-control"
-        />
-      </div>
-      <div className="col-xl-4">
-        <input
-          id="description"
-          name={index}
-          type="text"
-          placeholder="Add Description"
-          onChange={(e) => agendaInput(e.target.id, e.target.name)}
-          // value="Gain Next Level Insights To Accelerate your learning"
-          className="form-control"
-        />
-      </div>
-    </>
-  );
-}
+import AgendaInput from "./child/agenda-input";
 
 function HostNow({
-  toggling: { toggleNavbarBurger, formStepState },
+  toggling: { toggleNavbarBurger, formStepState, collapsableState },
   show_time: { agenda },
   changeFormStep,
+  activeCollapsable,
   addAgenda,
 }) {
   const [eventBasicInfo, updateEventBasicInfo] = useState({
@@ -351,7 +313,6 @@ function HostNow({
                         </div>
                       </div>
                       <div className="form-group row mb-5">
-
                         <button
                           onClick={(e) => console.log("click!")}
                           className="btn btn-lg btn-gradient-01"
@@ -364,30 +325,6 @@ function HostNow({
                             Invite Co-host, Guests, or Speakers
                           </span>
                         </button>
-                        {/* <div className="col-xl-4">
-                          <div className="styled-checkbox">
-                            <input
-                              type="checkbox"
-                              name="co_hosts"
-                              id="check-host"
-                            />
-                            <label for="check-host">
-                              I would like to invite co-hosts
-                            </label>
-                          </div>
-                        </div>
-                        <div className="col-xl-4">
-                          <div className="styled-checkbox">
-                            <input
-                              type="checkbox"
-                              name="guest"
-                              id="check-guest"
-                            />
-                            <label for="check-guest">
-                              I would like to invite guest's or speakers
-                            </label>
-                          </div>
-                        </div> */}
                       </div>
                       <ul className="pager wizard text-right">
                         <li className="previous d-inline-block">
@@ -423,16 +360,22 @@ function HostNow({
                           <a
                             className="card-header collapsed d-flex align-items-center"
                             data-toggle="collapse"
-                            href="#IconRightCollapseOne"
+                            // href="#IconRightCollapseOne"
                             aria-expanded="true"
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) => activeCollapsable("step1")}
                           >
-                            <div className="card-title w-100">
+                            <div
+                              className="card-title w-100"
+                              
+                            >
                               1. Event Informations
                             </div>
                           </a>
                           <div
                             id="IconRightCollapseOne"
-                            className="card-body collapse show"
+                            className = {collapsableState["step1"] ? 
+                            "card-body collapse show" : "card-body collapse"}
                             data-parent="#accordion-icon-right"
                           >
                             <div className="form-group row mb-5">
@@ -487,7 +430,6 @@ function HostNow({
                                       </span>
                                     ))}
                                   </Fragment>
-                                  
                                 </ul>
                               </div>
                             </div>
@@ -502,16 +444,22 @@ function HostNow({
                           </div>
                           <a
                             className="card-header collapsed d-flex align-items-center"
-                            data-toggle="collapse"
-                            href="#IconRightCollapseTwo"
+                            // data-toggle="collapse"
+                            // href="#IconRightCollapseTwo"
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) => activeCollapsable("step2")}
                           >
-                            <div className="card-title w-100">
+                            <div
+                              className="card-title w-100"
+                              
+                            >
                               2. Invitation
                             </div>
                           </a>
                           <div
                             id="IconRightCollapseTwo"
-                            className="card-body collapse"
+                            className = {collapsableState["step2"] ? 
+                            "card-body collapse show" : "card-body collapse"}
                             data-parent="#accordion-icon-right"
                           >
                             <div className="form-group row mb-5">
@@ -571,6 +519,7 @@ HostNow.propTypes = {
   show_time: PropTypes.object.isRequired,
   changeFormStep: PropTypes.func.isRequired,
   addAgenda: PropTypes.func.isRequired,
+  activeCollapsable: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
@@ -578,4 +527,8 @@ const mapStateToProps = (state) => ({
   show_time: state.show_time,
 });
 
-export default connect(mapStateToProps, { changeFormStep, addAgenda })(HostNow);
+export default connect(mapStateToProps, {
+  changeFormStep,
+  activeCollapsable,
+  addAgenda,
+})(HostNow);

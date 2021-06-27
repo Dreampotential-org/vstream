@@ -1,7 +1,7 @@
 import {
   SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY,
   ACTIVE_TAB_CATEGORY, SHOW_NOTIFICATION, ACTIVE_SUB_SHOW_TIME,
-  ACTIVE_SUB_CATEGORY_SIDEBAR, CHANGE_FORM_STEP
+  ACTIVE_SUB_CATEGORY_SIDEBAR, CHANGE_FORM_STEP, ACTIVE_COLLAPSE
 } from '../actions/types';
 
 const initialState = {
@@ -44,6 +44,9 @@ const initialState = {
   showTimeActiveSubStates: {},
   categoryActiveSubStates: {},
   formStepState: {
+    step1: true
+  },
+  collapsableState: {
     step1: true
   }
 
@@ -110,6 +113,14 @@ export default function (state = initialState, action) {
       return {
         ...state,
         ...state.formStepState[payload] = true
+      }
+    case ACTIVE_COLLAPSE:
+      for (let key in state.collapsableState) {
+        state.collapsableState[key] = false
+      }
+      return {
+        ...state,
+        ...state.collapsableState[payload] = true
       }
     default:
       return state;

@@ -1,7 +1,7 @@
 import {
     SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY, 
     ACTIVE_TAB_CATEGORY, SHOW_NOTIFICATION, ACTIVE_SUB_SHOW_TIME, 
-    ACTIVE_SUB_CATEGORY_SIDEBAR, CHANGE_FORM_STEP
+    ACTIVE_SUB_CATEGORY_SIDEBAR, CHANGE_FORM_STEP, ACTIVE_COLLAPSE
 } from './types';
 
 export const toggleNavbar = () => async dispatch => {
@@ -63,6 +63,13 @@ export const activeCategorySubstate = (key) => async (dispatch) => {
 export const changeFormStep = (id) => async (dispatch) => {
     dispatch({
         type: CHANGE_FORM_STEP,
+        payload: id,
+    })
+}
+
+export const activeCollapsable = (id) => async (dispatch) => {
+    dispatch({
+        type: ACTIVE_COLLAPSE,
         payload: id,
     })
 }

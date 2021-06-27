@@ -1,24 +1,33 @@
 import React, { Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { changeFormStep } from "../../actions/toggling";
+import { changeFormStep, activeCollapsable } from "../../actions/toggling";
 import { WithContext as ReactTags } from "react-tag-input";
+import DateTimePicker from "react-datetime-picker";
+import AgendaInput from "./child/agenda-input";
+import { addAgenda } from "../../actions/show-time";
 
 
 function NewSchedule({
-  toggling: { toggleNavbarBurger, formStepState },
+  toggling: { toggleNavbarBurger, formStepState, collapsableState },
   changeFormStep,
+  show_time: { agenda },
+  addAgenda,
+  activeCollapsable
+  
 }) {
+  const [value, onChange] = useState(new Date());
+
   const [eventBasicInfo, updateEventBasicInfo] = useState({
     title: "",
     tagline: "",
     description: "",
   });
 
-//   const editEventBasicInfo = (e) => {
-//     let key = e.target.id;
-//     updateEventBasicInfo({ ...eventBasicInfo, key: e.target.value });
-//   };
+  //   const editEventBasicInfo = (e) => {
+  //     let key = e.target.id;
+  //     updateEventBasicInfo({ ...eventBasicInfo, key: e.target.value });
+  //   };
 
   const [tags, updateTags] = useState([
     { id: "Food", text: "Food" },
@@ -52,6 +61,9 @@ function NewSchedule({
     // re-render
     // this.setState({ tags: newTags });
     updateTags(newTags);
+  };
+  const agendaInput = (id, index) => {
+    console.log(id, index);
   };
   return (
     // <div
@@ -266,21 +278,54 @@ function NewSchedule({
                       <div className="section-title mt-5 mb-5">
                         <h4>Schedule</h4>
                       </div>
-                      <div class="form-group row d-flex align-items-center mb-5">
-                        <label class="col-lg-3 form-control-label">
-                          Date Time
-                        </label>
-                        <div class="col-lg-9">
-                          <div class="form-group">
-                            <div class="input-group">
-                              <span class="input-group-addon">
-                                <i class="la la-calendar"></i>
-                              </span>
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="datetime"
-                                placeholder="Select value"
+                      <div className="form-group row mb-3">
+                        <div className="col-xl-12">
+                          <label className="form-control-label">
+                            Date and Time
+                          </label>
+                          <div className="form-group row mt-2">
+                            <div
+                              className="col-xl-1 ml-4"
+                              style={{
+                                background:
+                                  "linear-gradient(to right, #7E47AF 10%, #1A1F63 100%)",
+                                borderRadius: "4.2rem",
+                                color: "white",
+                              }}
+                            >
+                              <a style={{ marginLeft: "15%", marginTop: "5%" }}>
+                                <i
+                                  className="la la-calendar-check-o"
+                                  style={{ fontSize: "x-large" }}
+                                ></i>
+                              </a>
+                            </div>
+                            <div className="col-xl-4">
+                              <DateTimePicker
+                                value={value}
+                                onChange={onChange}
+                              />
+                            </div>
+                            <div
+                              className="col-xl-1"
+                              style={{
+                                background:
+                                  "linear-gradient(to right, #7E47AF 10%, #1A1F63 100%)",
+                                borderRadius: "4.2rem",
+                                color: "white",
+                              }}
+                            >
+                              <a style={{ marginLeft: "15%", marginTop: "5%" }}>
+                                <i
+                                  className="la la-clock-o"
+                                  style={{ fontSize: "x-large" }}
+                                ></i>
+                              </a>
+                            </div>
+                            <div className="col-xl-4">
+                              <DateTimePicker
+                                value={value}
+                                onChange={onChange}
                               />
                             </div>
                           </div>
@@ -290,46 +335,42 @@ function NewSchedule({
                         <h4>Invitation</h4>
                       </div>
 
-                      <div className="form-group row mb-5">
-                        <label className="col-xl-1 form-control-label d-flex justify-content-lg-end">
-                          Agenda
-                        </label>
-                        <div className="col-xl-8">
-                          <input
-                            type="url"
-                            value="http://mywebsite.com"
-                            className="form-control"
-                          />
+                      <div className="form-group row mb-3">
+                        <div className="col-xl-12">
+                          <label className="form-control-label">Agenda</label>
+                          {[...Array(agenda)].map((x, i) => (
+                            <div className="form-group row" key={i}>
+                              <div
+                                className="col-xl-1 mt-2"
+                                onClick={(e) => addAgenda()}
+                                style={{ cursor: "pointer" }}
+                              >
+                                <a>
+                                  <i className="la la-plus"></i>
+                                </a>
+                              </div>
+                              <AgendaInput
+                                index={i}
+                                agendaInput={agendaInput}
+                              ></AgendaInput>
+                            </div>
+                          ))}
                         </div>
                       </div>
                       <div className="form-group row mb-5">
-                        <label className="col-xl-1 form-control-label d-flex justify-content-lg-end">
-                          Guests
-                        </label>
-                        <div className="col-xl-4">
-                          <div className="styled-checkbox">
-                            <input
-                              type="checkbox"
-                              name="co_hosts"
-                              id="check-host"
-                            />
-                            <label for="check-host">
-                              I would like to invite co-hosts
-                            </label>
-                          </div>
-                        </div>
-                        <div className="col-xl-4">
-                          <div className="styled-checkbox">
-                            <input
-                              type="checkbox"
-                              name="guest"
-                              id="check-guest"
-                            />
-                            <label for="check-guest">
-                              I would like to invite guest's or speakers
-                            </label>
-                          </div>
-                        </div>
+
+                        <button
+                          onClick={(e) => console.log("click!")}
+                          className="btn btn-lg btn-gradient-01"
+                          // style={toggleLoader ? { pointerEvents: 'none' } : null}
+                        >
+                          <i class="la la-user-plus"></i>
+                          <span
+                          // style={toggleLoader ? { marginLeft: "10px" } : null}
+                          >
+                            Invite Co-host, Guests, or Speakers
+                          </span>
+                        </button>
                       </div>
                       <ul className="pager wizard text-right">
                         <li className="previous d-inline-block">
@@ -365,8 +406,9 @@ function NewSchedule({
                           <a
                             className="card-header collapsed d-flex align-items-center"
                             data-toggle="collapse"
-                            href="#IconRightCollapseOne"
                             aria-expanded="true"
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) => activeCollapsable("step1")}
                           >
                             <div className="card-title w-100">
                               1. Event Informations
@@ -374,8 +416,9 @@ function NewSchedule({
                           </a>
                           <div
                             id="IconRightCollapseOne"
-                            className="card-body collapse show"
                             data-parent="#accordion-icon-right"
+                            className = {collapsableState["step1"] ? 
+                            "card-body collapse show" : "card-body collapse"}
                           >
                             <div className="form-group row mb-5">
                               <div className="col-sm-3 form-control-label d-flex align-items-center">
@@ -444,7 +487,8 @@ function NewSchedule({
                           <a
                             className="card-header collapsed d-flex align-items-center"
                             data-toggle="collapse"
-                            href="#IconRightCollapseTwo"
+                            style={{ cursor: "pointer" }}
+                            onClick={(e) => activeCollapsable("step2")}
                           >
                             <div className="card-title w-100">
                               2. Invitation
@@ -452,8 +496,10 @@ function NewSchedule({
                           </a>
                           <div
                             id="IconRightCollapseTwo"
-                            className="card-body collapse"
+                            className = {collapsableState["step2"] ? 
+                            "card-body collapse show" : "card-body collapse"}
                             data-parent="#accordion-icon-right"
+                            
                           >
                             <div className="form-group row mb-5">
                               <div className="col-sm-3 form-control-label d-flex align-items-center">
@@ -510,10 +556,14 @@ function NewSchedule({
 NewSchedule.propTypes = {
   toggling: PropTypes.object.isRequired,
   changeFormStep: PropTypes.func.isRequired,
+  addAgenda: PropTypes.func.isRequired,
+  show_time: PropTypes.object.isRequired,
+  activeCollapsable: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   toggling: state.toggling,
+  show_time: state.show_time,
 });
 
-export default connect(mapStateToProps, { changeFormStep })(NewSchedule);
+export default connect(mapStateToProps, { changeFormStep, activeCollapsable, addAgenda })(NewSchedule);

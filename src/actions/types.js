@@ -74,3 +74,5 @@ export const CHANGE_FORM_STEP = "CHANGE_FORM_STEP";
 
 export const ADD_EVENT = "ADD_EVENT";
 export const ADD_AGENDA = "ADD_AGENDA";
+
+export const ACTIVE_COLLAPSE = "ACTIVE_COLLAPSE";
