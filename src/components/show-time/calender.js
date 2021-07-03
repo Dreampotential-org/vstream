@@ -32,7 +32,7 @@ function EventCalender({
     <div className="row">
       {/* <div className="widget-body"> */}
       <Fragment>
-        <div className="col-xl-3">
+        <div className="col-2">
           <div class="widget-32 widget-image bg-image">
             <div class="overlay"></div>
             <div class="content">
@@ -59,7 +59,7 @@ function EventCalender({
         </div>
       </Fragment>
       <Fragment>
-        <div className="col-xl-9">
+        <div className="col-9">
           <Calendar
             selectable
             localizer={localizer}

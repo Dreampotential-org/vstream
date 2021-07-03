@@ -59,7 +59,7 @@ function Conversation({
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-md-3'>
+                    <div className='col-3'>
                         <div className='lessons-sidebar'>
                             <ul className='list-group rounded-0'>
                                 <li
@@ -107,7 +107,7 @@ function Conversation({
                         </div>
                     </div>
                     <div
-                        className='col-md-9  bg-white shadow p-5'
+                        className='col-9  bg-white shadow p-5'
                         style={{
                             maxHeight: 'calc(100vh - 230px)',
                             minHeight: 'calc(100vh - 230px)',

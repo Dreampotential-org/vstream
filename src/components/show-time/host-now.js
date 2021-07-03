@@ -73,14 +73,14 @@ function HostNow({
     //     <Fragment>
     //         <div className='container-fluid'>
     <div className="row flex-row">
-      <div className="col-xl-12">
+      <div className="col-12">
         <div className="widget has-shadow">
           <div className="widget-header bordered no-actions d-flex align-items-center">
             <h4>Host Now!</h4>
           </div>
           <div className="widget-body">
             <div className="row flex-row justify-content-center">
-              <div className="col-xl-10">
+              <div className="col-12">
                 <div id="rootwizard">
                   <div className="step-container">
                     <div className="step-wizard">
@@ -173,11 +173,11 @@ function HostNow({
                       className="tab-pane"
                       id="tab1"
                     >
-                      <div className="section-title mt-2 mb-3">
+                      <div className="section-title mt-2 mb-2">
                         <h4>Event Informations</h4>
                       </div>
                       <div className="form-group row mb-2">
-                        <div className="col-xl-6 mb-3">
+                        <div className="col-6 mb-2">
                           <label className="form-control-label">
                             Title<span className="text-danger ml-2">*</span>
                           </label>
@@ -194,7 +194,7 @@ function HostNow({
                             }
                           />
                         </div>
-                        <div className="col-xl-6">
+                        <div className="col-6">
                           <label className="form-control-label">
                             Tagline<span className="text-danger ml-2">*</span>
                           </label>
@@ -213,8 +213,8 @@ function HostNow({
                           />
                         </div>
                       </div>
-                      <div className="form-group row mb-3">
-                        <div className="col-xl-12">
+                      <div className="form-group row mb-2">
+                        <div className="col-12">
                           <label className="form-control-label">
                             Description
                           </label>
@@ -233,7 +233,7 @@ function HostNow({
                         </div>
                       </div>
                       <div className="form-group row mb-2">
-                        <div className="col-xl-6 mb-3">
+                        <div className="col-6 mb-3">
                           <label className="form-control-label">
                             Category<span className="text-danger ml-2">*</span>
                           </label>
@@ -247,7 +247,7 @@ function HostNow({
                             inputFieldPosition="bottom"
                           />
                         </div>
-                        <div className="col-xl-6">
+                        <div className="col-6">
                           <label className="form-control-label">
                             Banner<span className="text-danger ml-2">*</span>
                           </label>
@@ -291,12 +291,12 @@ function HostNow({
                       </div>
 
                       <div className="form-group row mb-3">
-                        <div className="col-xl-12">
+                        <div className="col-12">
                           <label className="form-control-label">Agenda</label>
                           {[...Array(agenda)].map((x, i) => (
                             <div className="form-group row" key={i}>
                               <div
-                                className="col-xl-1 mt-2"
+                                className="col-1 mt-2"
                                 onClick={(e) => addAgenda()}
                                 style={{ cursor: "pointer" }}
                               >
@@ -379,34 +379,34 @@ function HostNow({
                             data-parent="#accordion-icon-right"
                           >
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Title
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 {eventBasicInfo.title}
                               </div>
                             </div>
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Tagline
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 {eventBasicInfo.tagline}
                               </div>
                             </div>
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Description
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 {eventBasicInfo.description}
                               </div>
                             </div>
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Category
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 <ul className="quizzes-list">
                                   <Fragment>
                                     {tags.map((data, index) => (
@@ -434,10 +434,10 @@ function HostNow({
                               </div>
                             </div>
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Banner
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 UX Designer
                               </div>
                             </div>
@@ -463,18 +463,18 @@ function HostNow({
                             data-parent="#accordion-icon-right"
                           >
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Agenda
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 123 Century Blvd
                               </div>
                             </div>
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Guests
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 Country
                               </div>
                             </div>

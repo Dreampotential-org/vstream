@@ -3,7 +3,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 function Golive() {
     return (
         <div className='row flex-row'>
-            <div className='col-xl-12'>
+            <div className='col-12'>
                 {/* <!-- Form --> */}
                 <div className='widget has-shadow'>
                     <div className='widget-header bordered no-actions d-flex align-items-center'>
@@ -16,10 +16,10 @@ function Golive() {
                         // onSubmit={(e) => login(e)}
                         >
                             <div className='form-group row d-flex align-items-center mb-5'>
-                                <label className='col-lg-4 form-control-label d-flex justify-content-lg-end'>
+                                <label className='col-4 form-control-label d-flex justify-content-lg-end'>
                                     Stream Name *
                                 </label>
-                                <div className='col-lg-5'>
+                                <div className='col-5'>
                                     <input
                                         type='text'
                                         name='name'
@@ -33,10 +33,10 @@ function Golive() {
                             </div>
 
                             <div className='form-group row d-flex align-items-center mb-5'>
-                                <label className='col-lg-4 form-control-label d-flex justify-content-lg-end'>
+                                <label className='col-4 form-control-label d-flex justify-content-lg-end'>
                                     Add Guest *
                                 </label>
-                                <div className='col-lg-5'>
+                                <div className='col-5'>
                                     <input
                                         type='text'
                                         name='name'
@@ -49,27 +49,27 @@ function Golive() {
                                 </div>
                             </div>
                             <div className='form-group row d-flex align-items-center mb-5'>
-                                <div className='col-lg-5 form-control-label d-flex justify-content-lg-end'>
+                                <div className='col-5 form-control-label d-flex justify-content-lg-end'>
                                     <button className='btn btn-shadow'>
                                         Invites Only
                                     </button>
                                 </div>
-                                <div className='col-lg-2'>
+                                <div className='col-2'>
                                     <button className='btn btn-shadow'>
                                         Followers
                                     </button>
                                 </div>
-                                <div className='col-lg-2'>
+                                <div className='col-2'>
                                     <button className='btn btn-shadow'>
                                         Public
                                     </button>
                                 </div>
                             </div>
                             <div className='form-group row d-flex align-items-center mb-5'>
-                                <label className='col-lg-5 form-control-label d-flex justify-content-lg-end'>
+                                <label className='col-5 form-control-label d-flex justify-content-lg-end'>
                                     Direct Link
                                 </label>
-                                <div className='col-lg-5'>
+                                <div className='col-5'>
                                     <label className='form-control-label d-flex'>
                                         This is room
                                     </label>

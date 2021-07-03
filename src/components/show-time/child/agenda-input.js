@@ -1,7 +1,7 @@
 function AgendaInput({ index, agendaInput }) {
   return (
     <>
-      <div className="col-xl-3">
+      <div className="col-3">
         <input
           id="time"
           name={index}
@@ -12,7 +12,7 @@ function AgendaInput({ index, agendaInput }) {
           className="form-control"
         />
       </div>
-      <div className="col-xl-4">
+      <div className="col-4">
         <input
           id="agenda"
           name={index}
@@ -23,7 +23,7 @@ function AgendaInput({ index, agendaInput }) {
           className="form-control"
         />
       </div>
-      <div className="col-xl-4">
+      <div className="col-4">
         <input
           id="description"
           name={index}

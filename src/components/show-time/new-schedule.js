@@ -7,14 +7,12 @@ import DateTimePicker from "react-datetime-picker";
 import AgendaInput from "./child/agenda-input";
 import { addAgenda } from "../../actions/show-time";
 
-
 function NewSchedule({
   toggling: { toggleNavbarBurger, formStepState, collapsableState },
   changeFormStep,
   show_time: { agenda },
   addAgenda,
-  activeCollapsable
-  
+  activeCollapsable,
 }) {
   const [value, onChange] = useState(new Date());
 
@@ -72,14 +70,14 @@ function NewSchedule({
     //     <Fragment>
     //         <div className='container-fluid'>
     <div className="row flex-row">
-      <div className="col-xl-12">
+      <div className="col-12">
         <div className="widget has-shadow">
           <div className="widget-header bordered no-actions d-flex align-items-center">
             <h4>Schedule Event!</h4>
           </div>
           <div className="widget-body">
             <div className="row flex-row justify-content-center">
-              <div className="col-xl-10">
+              <div className="col-12">
                 <div id="rootwizard">
                   <div className="step-container">
                     <div className="step-wizard">
@@ -176,7 +174,7 @@ function NewSchedule({
                         <h4>Event Informations</h4>
                       </div>
                       <div className="form-group row mb-2">
-                        <div className="col-xl-6 mb-3">
+                        <div className="col-6 mb-3">
                           <label className="form-control-label">
                             Title<span className="text-danger ml-2">*</span>
                           </label>
@@ -192,7 +190,7 @@ function NewSchedule({
                             }
                           />
                         </div>
-                        <div className="col-xl-6">
+                        <div className="col-6">
                           <label className="form-control-label">
                             Tagline<span className="text-danger ml-2">*</span>
                           </label>
@@ -210,7 +208,7 @@ function NewSchedule({
                         </div>
                       </div>
                       <div className="form-group row mb-3">
-                        <div className="col-xl-12">
+                        <div className="col-12">
                           <label className="form-control-label">
                             Description
                           </label>
@@ -228,7 +226,7 @@ function NewSchedule({
                         </div>
                       </div>
                       <div className="form-group row mb-2">
-                        <div className="col-xl-6 mb-3">
+                        <div className="col-6 mb-3">
                           <label className="form-control-label">
                             Category<span className="text-danger ml-2">*</span>
                           </label>
@@ -242,7 +240,7 @@ function NewSchedule({
                             inputFieldPosition="bottom"
                           />
                         </div>
-                        <div className="col-xl-6">
+                        <div className="col-6">
                           <label className="form-control-label">
                             Banner<span className="text-danger ml-2">*</span>
                           </label>
@@ -279,50 +277,30 @@ function NewSchedule({
                         <h4>Schedule</h4>
                       </div>
                       <div className="form-group row mb-3">
-                        <div className="col-xl-12">
+                        <div className="col-12">
                           <label className="form-control-label">
                             Date and Time
                           </label>
-                          <div className="form-group row mt-2">
-                            <div
-                              className="col-xl-1 ml-4"
-                              style={{
-                                background:
-                                  "linear-gradient(to right, #7E47AF 10%, #1A1F63 100%)",
-                                borderRadius: "4.2rem",
-                                color: "white",
-                              }}
-                            >
-                              <a style={{ marginLeft: "15%", marginTop: "5%" }}>
-                                <i
-                                  className="la la-calendar-check-o"
-                                  style={{ fontSize: "x-large" }}
-                                ></i>
-                              </a>
-                            </div>
-                            <div className="col-xl-4">
+                          <div className="form-group row ml-3">
+                            <span class="dot ">
+                              <i
+                                className="la la-calendar-check-o"
+                                style={{ fontSize: "x-large" }}
+                              ></i>
+                            </span>
+                            <div className="col-5 mt-2">
                               <DateTimePicker
                                 value={value}
                                 onChange={onChange}
                               />
                             </div>
-                            <div
-                              className="col-xl-1"
-                              style={{
-                                background:
-                                  "linear-gradient(to right, #7E47AF 10%, #1A1F63 100%)",
-                                borderRadius: "4.2rem",
-                                color: "white",
-                              }}
-                            >
-                              <a style={{ marginLeft: "15%", marginTop: "5%" }}>
-                                <i
-                                  className="la la-clock-o"
-                                  style={{ fontSize: "x-large" }}
-                                ></i>
-                              </a>
-                            </div>
-                            <div className="col-xl-4">
+                            <span class="dot">
+                              <i
+                                className="la la-clock-o"
+                                style={{ fontSize: "x-large" }}
+                              ></i>
+                            </span>
+                            <div className="col-5 mt-2">
                               <DateTimePicker
                                 value={value}
                                 onChange={onChange}
@@ -336,12 +314,12 @@ function NewSchedule({
                       </div>
 
                       <div className="form-group row mb-3">
-                        <div className="col-xl-12">
+                        <div className="col-12">
                           <label className="form-control-label">Agenda</label>
                           {[...Array(agenda)].map((x, i) => (
                             <div className="form-group row" key={i}>
                               <div
-                                className="col-xl-1 mt-2"
+                                className="col-1 mt-2"
                                 onClick={(e) => addAgenda()}
                                 style={{ cursor: "pointer" }}
                               >
@@ -358,7 +336,6 @@ function NewSchedule({
                         </div>
                       </div>
                       <div className="form-group row mb-5">
-
                         <button
                           onClick={(e) => console.log("click!")}
                           className="btn btn-lg btn-gradient-01"
@@ -417,8 +394,11 @@ function NewSchedule({
                           <div
                             id="IconRightCollapseOne"
                             data-parent="#accordion-icon-right"
-                            className = {collapsableState["step1"] ? 
-                            "card-body collapse show" : "card-body collapse"}
+                            className={
+                              collapsableState["step1"]
+                                ? "card-body collapse show"
+                                : "card-body collapse"
+                            }
                           >
                             <div className="form-group row mb-5">
                               <div className="col-sm-3 form-control-label d-flex align-items-center">
@@ -496,10 +476,12 @@ function NewSchedule({
                           </a>
                           <div
                             id="IconRightCollapseTwo"
-                            className = {collapsableState["step2"] ? 
-                            "card-body collapse show" : "card-body collapse"}
+                            className={
+                              collapsableState["step2"]
+                                ? "card-body collapse show"
+                                : "card-body collapse"
+                            }
                             data-parent="#accordion-icon-right"
-                            
                           >
                             <div className="form-group row mb-5">
                               <div className="col-sm-3 form-control-label d-flex align-items-center">
@@ -566,4 +548,8 @@ const mapStateToProps = (state) => ({
   show_time: state.show_time,
 });
 
-export default connect(mapStateToProps, { changeFormStep, activeCollapsable, addAgenda })(NewSchedule);
+export default connect(mapStateToProps, {
+  changeFormStep,
+  activeCollapsable,
+  addAgenda,
+})(NewSchedule);

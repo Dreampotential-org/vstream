@@ -3086,7 +3086,7 @@ section.forms form small {
 }
 .step-container {
   position: relative;
-  min-height: 100px;
+  min-height: 80px;
   display: block;
   margin-bottom: 2rem;
 }

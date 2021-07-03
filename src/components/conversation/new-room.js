@@ -7,7 +7,7 @@ import React, { useState, useEffect, Fragment } from 'react';
 function AddRoom() {
     return (
         <div className='row flex-row'>
-            <div className='col-xl-12'>
+            <div className='col-12'>
                 {/* <!-- Form --> */}
                 <div className='widget has-shadow'>
                     <div className='widget-header bordered no-actions d-flex align-items-center'>
@@ -20,10 +20,10 @@ function AddRoom() {
                         // onSubmit={(e) => login(e)}
                         >
                             <div className='form-group row d-flex align-items-center mb-5'>
-                                <label className='col-lg-4 form-control-label d-flex justify-content-lg-end'>
+                                <label className='col-4 form-control-label d-flex justify-content-lg-end'>
                                     Room Name *
                                 </label>
-                                <div className='col-lg-5'>
+                                <div className='col-5'>
                                     <input
                                         type='text'
                                         name='name'
@@ -37,10 +37,10 @@ function AddRoom() {
                             </div>
 
                             <div className='form-group row d-flex align-items-center mb-5'>
-                                <label className='col-lg-4 form-control-label d-flex justify-content-lg-end'>
+                                <label className='col-4 form-control-label d-flex justify-content-lg-end'>
                                     Invite People *
                                 </label>
-                                <div className='col-lg-5'>
+                                <div className='col-5'>
                                     <input
                                         type='text'
                                         name='name'
@@ -56,7 +56,7 @@ function AddRoom() {
                                 <label className='col-lg-4 form-control-label d-flex justify-content-lg-end'>
                                     Room Link
                                 </label>
-                                <div className='col-lg-5'>
+                                <div className='col-5'>
                                     <label className='form-control-label d-flex'>
                                         This is room
                                     </label>

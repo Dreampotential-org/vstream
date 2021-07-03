@@ -69,7 +69,7 @@ function CategoriesSlider({
             } */}
             {
                 conversation.categories !== null ?
-                    <div className="col-xl-12 widget-29">
+                    <div className="col-12 widget-29">
                         <div className="widget no-bg">
                             <div className="widget-body pt-0">
                                 <OwlCarousel dots={false} autoPlay={false}
