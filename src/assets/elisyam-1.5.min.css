@@ -2684,7 +2684,7 @@ select.form-control:not([size]):not([multiple]) {
   border-color: #31b0d5;
 }
 .form-control-label {
-  color: #2c304d;
+  color: #7E47AF;
   font-weight: 500;
 }
 .form-control-plaintext {
@@ -9068,7 +9068,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
   z-index: 1;
 }
 .widget-32 .content {
-  padding: 4rem 0;
+  padding: 1rem 0;
   position: relative;
   z-index: 2;
 }
@@ -9086,7 +9086,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
   font-size: 1rem;
 }
 .widget-32 .real-time {
-  padding: 1.6rem 0;
+  padding: 0.6rem 0;
   z-index: 2;
   position: relative;
 }
@@ -10861,7 +10861,7 @@ a.fc-more:hover {
   height: 10% !important;
 }
 .chat #search-group {
-  background: #252946;
+  /* background: #252946; */
 }
 .chat #search-group input {
   background: #1e223f;
@@ -10879,7 +10879,7 @@ a.fc-more:hover {
   flex: 1 1;
 }
 .chat #sidebar {
-  background: #252946;
+  background: linear-gradient(to right, #7E47AF 10%, #1A1F63 100%);
 }
 .chat .sidebar-content {
   display: flex;

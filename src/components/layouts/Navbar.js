@@ -183,7 +183,7 @@ function Navbar({
               <li className="nav-item dropdown" >
                 <a id="notifications" 
                   onClick={() => showNotification()}
-                  aria-haspopup="true" aria-expanded="false" class="nav-link">
+                  aria-haspopup="true" aria-expanded="false" className="nav-link">
                   <i
                     className="la la-bell animated infinite swing" ></i>
                   <span className="badge-pulse"></span></a>

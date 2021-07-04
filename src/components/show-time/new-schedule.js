@@ -170,11 +170,11 @@ function NewSchedule({
                       className="tab-pane"
                       id="tab1"
                     >
-                      <div className="section-title mt-2 mb-3">
+                      <div className="section-title mt-2 mb-2">
                         <h4>Event Informations</h4>
                       </div>
                       <div className="form-group row mb-2">
-                        <div className="col-6 mb-3">
+                        <div className="col-6 mb-2">
                           <label className="form-control-label">
                             Title<span className="text-danger ml-2">*</span>
                           </label>
@@ -207,7 +207,7 @@ function NewSchedule({
                           />
                         </div>
                       </div>
-                      <div className="form-group row mb-3">
+                      <div className="form-group row mb-2">
                         <div className="col-12">
                           <label className="form-control-label">
                             Description
@@ -226,7 +226,7 @@ function NewSchedule({
                         </div>
                       </div>
                       <div className="form-group row mb-2">
-                        <div className="col-6 mb-3">
+                        <div className="col-6 mb-2">
                           <label className="form-control-label">
                             Category<span className="text-danger ml-2">*</span>
                           </label>
@@ -273,10 +273,10 @@ function NewSchedule({
                         display: formStepState["step2"] ? "block" : "none",
                       }}
                     >
-                      <div className="section-title mt-5 mb-5">
+                      <div className="section-title mt-5 mb-2">
                         <h4>Schedule</h4>
                       </div>
-                      <div className="form-group row mb-3">
+                      <div className="form-group row mb-2">
                         <div className="col-12">
                           <label className="form-control-label">
                             Date and Time
@@ -309,11 +309,11 @@ function NewSchedule({
                           </div>
                         </div>
                       </div>
-                      <div className="section-title mt-5 mb-5">
+                      <div className="section-title mt-5 mb-2">
                         <h4>Invitation</h4>
                       </div>
 
-                      <div className="form-group row mb-3">
+                      <div className="form-group row mb-2">
                         <div className="col-12">
                           <label className="form-control-label">Agenda</label>
                           {[...Array(agenda)].map((x, i) => (
@@ -335,7 +335,7 @@ function NewSchedule({
                           ))}
                         </div>
                       </div>
-                      <div className="form-group row mb-5">
+                      <div className="form-group row mb-2">
                         <button
                           onClick={(e) => console.log("click!")}
                           className="btn btn-lg btn-gradient-01"
@@ -375,7 +375,7 @@ function NewSchedule({
                         display: formStepState["step3"] ? "block" : "none",
                       }}
                     >
-                      <div className="section-title mt-5 mb-5">
+                      <div className="section-title mt-5 mb-2">
                         <h4>Confirmation</h4>
                       </div>
                       <div id="accordion-icon-right" className="accordion">
@@ -404,31 +404,31 @@ function NewSchedule({
                               <div className="col-sm-3 form-control-label d-flex align-items-center">
                                 Title
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 {eventBasicInfo.title}
                               </div>
                             </div>
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Tagline
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 {eventBasicInfo.tagline}
                               </div>
                             </div>
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Description
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 {eventBasicInfo.description}
                               </div>
                             </div>
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Category
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 <ul className="quizzes-list">
                                   <Fragment>
                                     {tags.map((data, index) => (
@@ -456,10 +456,10 @@ function NewSchedule({
                               </div>
                             </div>
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Banner
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 UX Designer
                               </div>
                             </div>
@@ -484,18 +484,18 @@ function NewSchedule({
                             data-parent="#accordion-icon-right"
                           >
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Agenda
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 123 Century Blvd
                               </div>
                             </div>
                             <div className="form-group row mb-5">
-                              <div className="col-sm-3 form-control-label d-flex align-items-center">
+                              <div className="col-3 form-control-label d-flex align-items-center">
                                 Guests
                               </div>
-                              <div className="col-sm-8 form-control-plaintext">
+                              <div className="col-8 form-control-plaintext">
                                 Country
                               </div>
                             </div>
