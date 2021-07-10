@@ -76,3 +76,5 @@ export const ADD_EVENT = "ADD_EVENT";
 export const ADD_AGENDA = "ADD_AGENDA";
 
 export const ACTIVE_COLLAPSE = "ACTIVE_COLLAPSE";
+export const ACTIVE_CHAT_BOX = "ACTIVE_CHAT_BOX";
+export const ACTIVE_CHAT_TAB = "ACTIVE_CHAT_TAB";

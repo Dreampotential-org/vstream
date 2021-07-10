@@ -6816,7 +6816,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
 }
 .off-sidebar {
   background: rgba(46, 52, 81, 0.3);
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   height: 100%;
@@ -6880,9 +6880,9 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
 .off-sidebar-container {
   background: #fff;
   position: fixed;
-  width: 430px;
-  height: 100%;
-  top: 0;
+  /* width: 360px; */
+  height: calc(100% - 70px);
+  top: 70px;
   z-index: 1;
   transition-property: transform;
   transition-duration: 0.3s;
@@ -6914,7 +6914,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 80%;
   padding: 0 1.07rem;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -7087,7 +7087,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
   display: block;
 }
 .enter-message {
-  padding: 10px 15px;
+  padding: 8px 6px;
   position: fixed;
   bottom: 0;
   width: 100%;

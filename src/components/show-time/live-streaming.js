@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import ChatBox from "./chatbox";
 
 function LiveStreaming({
   toggling: { toggleNavbarBurger, showTimeActiveSubStates },
@@ -11,7 +12,7 @@ function LiveStreaming({
     >
       <div className="container-fluid">
         <div className="row">
-          <div className="col-xl-12">
+          <div className="col-9">
             <div className="widget has-shadow">
               <div className="row post-video">
                 <div className="col-12">
@@ -284,6 +285,10 @@ function LiveStreaming({
                 </div>
               </div>
             </div>
+          </div>
+        
+          <div className="col-3">
+            <ChatBox></ChatBox>
           </div>
         </div>
       </div>
