@@ -10,6 +10,7 @@ import {
   ACTIVE_COLLAPSE,
   ACTIVE_CHAT_BOX,
   ACTIVE_CHAT_TAB,
+  ACTIVE_TAB_STREAMING,
 } from "../actions/types";
 
 const initialState = {
@@ -58,7 +59,12 @@ const initialState = {
     step1: true,
   },
   chatBoxVisible: false,
-  chatActiveTab: "",
+  chatActiveTab: "chatbox-tab",
+  activeStreamingTab: {
+    aboutHost: true,
+    eventDetails: false,
+    announcement: false,
+  }
 };
 
 export default function (state = initialState, action) {
@@ -141,6 +147,14 @@ export default function (state = initialState, action) {
         ...state,
         chatActiveTab: payload
       }
+    case ACTIVE_TAB_STREAMING:
+      for (let key in state.activeStreamingTab) {
+        state.activeStreamingTab[key] = false;
+      }
+      return {
+        ...state,
+        ...(state.activeStreamingTab[payload] = true),
+      };
     default:
       return state;
   }

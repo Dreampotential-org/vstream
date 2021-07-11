@@ -2,7 +2,7 @@ import {
     SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY, 
     ACTIVE_TAB_CATEGORY, SHOW_NOTIFICATION, ACTIVE_SUB_SHOW_TIME, 
     ACTIVE_SUB_CATEGORY_SIDEBAR, CHANGE_FORM_STEP, ACTIVE_COLLAPSE, 
-    ACTIVE_CHAT_BOX, ACTIVE_CHAT_TAB
+    ACTIVE_CHAT_BOX, ACTIVE_CHAT_TAB, ACTIVE_TAB_STREAMING
 } from './types';
 
 export const toggleNavbar = () => async dispatch => {
@@ -84,6 +84,13 @@ export const activeChatBox = () => async (dispatch) => {
 export const showParticipants = (key) => async (dispatch) => {
     dispatch({
         type: ACTIVE_CHAT_TAB,
+        payload: key
+    })
+}
+
+export const changeTabStreaming = (key) => async (dispatch) => {
+    dispatch({
+        type: ACTIVE_TAB_STREAMING,
         payload: key
     })
 }

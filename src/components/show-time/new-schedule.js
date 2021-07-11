@@ -251,7 +251,7 @@ function NewSchedule({
                           />
                         </div>
                       </div>
-                      <ul className="pager wizard text-right">
+                      <ul className="modal-footer">
                         {/* <li className="previous d-inline-block" >
                                                     <a className="btn btn-secondary ripple">Previous</a>
                                                 </li> */}
@@ -349,7 +349,7 @@ function NewSchedule({
                           </span>
                         </button>
                       </div>
-                      <ul className="pager wizard text-right">
+                      <ul className="modal-footer">
                         <li className="previous d-inline-block">
                           <button
                             onClick={(e) => changeFormStep("step1")}
@@ -502,7 +502,7 @@ function NewSchedule({
                           </div>
                         </div>
                       </div>
-                      <ul className="pager wizard text-right">
+                      <ul className="modal-footer">
                         <li className="previous d-inline-block">
                           <button
                             onClick={(e) => changeFormStep("step2")}

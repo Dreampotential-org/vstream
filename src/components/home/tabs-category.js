@@ -31,17 +31,6 @@ function TabsCategory(
                         role="tab" aria-controls="tab-4" aria-selected="false">Discover</a>
                 </li>
             </ul>
-            {/* <div class="tab-content pt-3">
-                <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="base-tab-1">
-                    Curabitur Cras gravida vitae. Tempor neque aliquam euismod. To Vestibulum pregnant with a lot of life, enhanced at it. Not just football, pure and innovative impact. Tomorrow, but the pot life, which sometimes variegated and graduated care. Ullamcorper microwave therapy, but they need gateway hatred of law enforcement.
-                                            </div>
-                <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="base-tab-2">
-                    For the arrows of life he wishes to, nor an employee. Till need grief salad. Nullam tortor tortor, lacinia nec consequat id, the time in the backyard. Boat or television chili and Bureau laughter. Nam is not chili graph ecological Bureau. But this is not a ante volutpat aliquam malesuada mauris lacus.
-                                            </div>
-                <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="base-tab-3">
-                    Nam ultricies element blockage. We always need approval. Stress has become the players care and sterilized free site. Pulvinar dui mi Curabitur auctor risus, tincidunt sapien condimentum in. But football is what it is worth, the biggest time consumer chocolate.
-                                            </div>
-            </div> */}
         </div>
     )
 }

@@ -5,6 +5,7 @@ import { changeFormStep, activeCollapsable } from "../../actions/toggling";
 import { addAgenda } from "../../actions/show-time";
 import { WithContext as ReactTags } from "react-tag-input";
 import AgendaInput from "./child/agenda-input";
+import { Link } from "react-router-dom";
 
 function HostNow({
   toggling: { toggleNavbarBurger, formStepState, collapsableState },
@@ -264,7 +265,7 @@ function HostNow({
                           </button> */}
                         </div>
                       </div>
-                      <ul className="pager wizard text-right">
+                      <ul className="modal-footer">
                         {/* <li className="previous d-inline-block" >
                                                     <a className="btn btn-secondary ripple">Previous</a>
                                                 </li> */}
@@ -326,7 +327,7 @@ function HostNow({
                           </span>
                         </button>
                       </div>
-                      <ul className="pager wizard text-right">
+                      <ul className="modal-footer">
                         <li className="previous d-inline-block">
                           <button
                             onClick={(e) => changeFormStep("step1")}
@@ -365,17 +366,17 @@ function HostNow({
                             style={{ cursor: "pointer" }}
                             onClick={(e) => activeCollapsable("step1")}
                           >
-                            <div
-                              className="card-title w-100"
-                              
-                            >
+                            <div className="card-title w-100">
                               1. Event Informations
                             </div>
                           </a>
                           <div
                             id="IconRightCollapseOne"
-                            className = {collapsableState["step1"] ? 
-                            "card-body collapse show" : "card-body collapse"}
+                            className={
+                              collapsableState["step1"]
+                                ? "card-body collapse show"
+                                : "card-body collapse"
+                            }
                             data-parent="#accordion-icon-right"
                           >
                             <div className="form-group row mb-5">
@@ -449,17 +450,17 @@ function HostNow({
                             style={{ cursor: "pointer" }}
                             onClick={(e) => activeCollapsable("step2")}
                           >
-                            <div
-                              className="card-title w-100"
-                              
-                            >
+                            <div className="card-title w-100">
                               2. Invitation
                             </div>
                           </a>
                           <div
                             id="IconRightCollapseTwo"
-                            className = {collapsableState["step2"] ? 
-                            "card-body collapse show" : "card-body collapse"}
+                            className={
+                              collapsableState["step2"]
+                                ? "card-body collapse show"
+                                : "card-body collapse"
+                            }
                             data-parent="#accordion-icon-right"
                           >
                             <div className="form-group row mb-5">
@@ -481,7 +482,7 @@ function HostNow({
                           </div>
                         </div>
                       </div>
-                      <ul className="pager wizard text-right">
+                      <ul className="modal-footer">
                         <li className="previous d-inline-block">
                           <button
                             onClick={(e) => changeFormStep("step2")}
@@ -491,12 +492,14 @@ function HostNow({
                           </button>
                         </li>
                         <li className="next d-inline-block">
-                          <button
-                            // onClick={(e) => changeFormStep("step2")}
-                            className="btn btn-lg btn-gradient-01"
-                          >
-                            <span>Golive</span>
-                          </button>
+                          <Link to="/live">
+                            <button
+                              // onClick={(e) => changeFormStep("step2")}
+                              className="btn btn-lg btn-gradient-01"
+                            >
+                              <span>Golive</span>
+                            </button>
+                          </Link>
                         </li>
                       </ul>
                     </div>

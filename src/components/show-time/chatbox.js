@@ -47,6 +47,7 @@ function ChatBox({
                 <li>
                   <a
                     className={chatActiveTab == "chatbox-tab" ? "active" : ""}
+                    style={{ cursor:"pointer" }}
                     id="chatbox-tab"
                     onClick={(e) => showParticipants(e.target.id)}
                   >
@@ -58,6 +59,7 @@ function ChatBox({
                     className={
                       chatActiveTab == "participant-tab" ? "active" : ""
                     }
+                    style={{ cursor:"pointer" }}
                     id="participant-tab"
                     onClick={(e) => showParticipants(e.target.id)}
                   >
@@ -67,6 +69,7 @@ function ChatBox({
               </ul>
               <a
                 onClick={(e) => activeChatBox()}
+                style={{ cursor:"pointer" }}
                 className="off-sidebar-close"
               ></a>
             </header>
@@ -144,27 +147,7 @@ function ChatBox({
                   }
                   id="today"
                   aria-labelledby="today-tab"
-                >
-                  <div className="sidebar-heading pt-0">Today</div>
-                  <div className="today-stats mt-3 mb-3">
-                    <div className="row">
-                      <div className="col-4 text-center">
-                        <i className="la la-users"></i>
-                        <div className="counter">264</div>
-                        <div className="heading">Clients</div>
-                      </div>
-                      <div className="col-4 text-center">
-                        <i className="la la-cart-arrow-down"></i>
-                        <div className="counter">360</div>
-                        <div className="heading">Sales</div>
-                      </div>
-                      <div className="col-4 text-center">
-                        <i className="la la-money"></i>
-                        <div className="counter">$ 4,565</div>
-                        <div className="heading">Earnings</div>
-                      </div>
-                    </div>
-                  </div>
+                >                  
                   <div className="sidebar-heading">Friends</div>
                   <div className="quick-friends mt-3 mb-3">
                     <ul className="list-group w-100">
