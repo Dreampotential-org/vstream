@@ -7,7 +7,11 @@ const initialState = {
   live_event_title: "",
   live_event_tagline: "",
   live_event_description: "",
-  event_basic_info: {'title':'', 'tagline':'', 'description':''}
+  event_basic_info: {'title':'', 'tagline':'', 'description':''},
+  categoryTags: [
+    { id: "Food", text: "Food" },
+    { id: "Music", text: "Music" },
+  ]
 };
 
 export default function (state = initialState, action) {

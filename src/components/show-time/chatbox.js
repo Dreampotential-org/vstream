@@ -23,7 +23,7 @@ function ChatBox({
         style={{ float: "right" }}
         // style={toggleLoader ? { pointerEvents: 'none' } : null}
       >
-        <i class="la la-angle-left"></i>
+        <i className="la la-angle-left"></i>
         <span>Chatbox</span>
       </button>
       <div className="chat">
@@ -162,7 +162,7 @@ function ChatBox({
                             />
                           </div>
                           <div className="media-body align-self-center">
-                            <a href="javascript:void(0);">Brandon Smith</a>
+                            <a >Brandon Smith</a>
                           </div>
                         </div>
                       </li>
@@ -177,7 +177,7 @@ function ChatBox({
                             />
                           </div>
                           <div className="media-body align-self-center">
-                            <a href="javascript:void(0);">Louis Henry</a>
+                            <a >Louis Henry</a>
                           </div>
                         </div>
                       </li>
@@ -192,7 +192,7 @@ function ChatBox({
                             />
                           </div>
                           <div className="media-body align-self-center">
-                            <a href="javascript:void(0);">Nathan Hunter</a>
+                            <a >Nathan Hunter</a>
                           </div>
                         </div>
                       </li>
@@ -207,7 +207,7 @@ function ChatBox({
                             />
                           </div>
                           <div className="media-body align-self-center">
-                            <a href="javascript:void(0);">Megan Duncan</a>
+                            <a >Megan Duncan</a>
                           </div>
                         </div>
                       </li>
@@ -222,7 +222,7 @@ function ChatBox({
                             />
                           </div>
                           <div className="media-body align-self-center">
-                            <a href="javascript:void(0);">Beverly Oliver</a>
+                            <a >Beverly Oliver</a>
                           </div>
                         </div>
                       </li>

@@ -5,6 +5,7 @@ import ChatBox from "./chatbox";
 import TabsStreaming from "./child/tabs-streaming";
 import AboutHost from "./child/host-info";
 import EventDetails from "./child/event-details";
+import EventAnnouncement from "./child/event-announcement";
 
 function LiveStreaming({
   toggling: { toggleNavbarBurger, showTimeActiveSubStates, activeStreamingTab },
@@ -56,6 +57,11 @@ function LiveStreaming({
             {
               activeStreamingTab['eventDetails'] ?
               <EventDetails></EventDetails>
+              : null 
+            }
+            {
+              activeStreamingTab['announcement'] ?
+              <EventAnnouncement></EventAnnouncement>
               : null 
             }
           </div>

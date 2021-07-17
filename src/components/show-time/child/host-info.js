@@ -49,35 +49,35 @@ function AboutHost({ toggling, changeTabStreaming }) {
       <div className="widget-footer d-flex align-items-center">
         <div className="col-xl-8 col-md-8 col-7 no-padding d-flex justify-content-start">
           <div className="users-like">
-            <a href="javascript:void(0);">
+            <a >
               <img
                 src="assets/img/avatar/avatar-01.jpg"
                 className="img-fluid rounded-circle"
                 alt="..."
               />
             </a>
-            <a href="javascript:void(0);">
+            <a >
               <img
                 src="assets/img/avatar/avatar-02.jpg"
                 className="img-fluid rounded-circle"
                 alt="..."
               />
             </a>
-            <a href="javascript:void(0);">
+            <a >
               <img
                 src="assets/img/avatar/avatar-03.jpg"
                 className="img-fluid rounded-circle"
                 alt="..."
               />
             </a>
-            <a href="javascript:void(0);">
+            <a >
               <img
                 src="assets/img/avatar/avatar-09.jpg"
                 className="img-fluid rounded-circle"
                 alt="..."
               />
             </a>
-            <a className="view-more" href="javascript:void(0);">
+            <a className="view-more" >
               +4
             </a>
           </div>
@@ -86,13 +86,13 @@ function AboutHost({ toggling, changeTabStreaming }) {
           <div className="meta">
             <ul>
               <li>
-                <a href="javascript:void(0);">
+                <a >
                   <i className="la la-comment"></i>
                   <span className="numb">12</span>
                 </a>
               </li>
               <li>
-                <a href="javascript:void(0);">
+                <a >
                   <i className="la la-heart-o"></i>
                   <span className="numb">30</span>
                 </a>
