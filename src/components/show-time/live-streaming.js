@@ -6,6 +6,8 @@ import TabsStreaming from "./child/tabs-streaming";
 import AboutHost from "./child/host-info";
 import EventDetails from "./child/event-details";
 import EventAnnouncement from "./child/event-announcement";
+import Sample from "../../assets/img/home/banner_ad1.png";
+import Live from "../../assets/icons/videos/live.png";
 
 function LiveStreaming({
   toggling: { toggleNavbarBurger, showTimeActiveSubStates, activeStreamingTab },
@@ -18,22 +20,96 @@ function LiveStreaming({
         <div className="row">
           <div className="col-9">
             <div className="widget has-shadow">
-              <div className="row post-video">
-                <div className="col-12">
-                  <figure className="img-hover-02">
-                    <img
-                      src="assets/img/videos/01.jpg"
-                      className="img-fluid"
-                      alt="..."
-                    />
-                    <i className="ion-play"></i>
-                    <a
-                      href="https://www.youtube.com/watch?v=8Z1eMy2FoX4"
-                      data-lity
-                    ></a>
-                  </figure>
+              <div className="widget-body video-player">
+                <div className="row post-video">
+                  <div className="col-12">
+                    <figure className="img-hover-02">
+                      <div className="card-header--title">
+                        <img src={Live} style={{textAlign:"right"}}></img>
+                        <span>Best Songs</span>
+                      </div>
+                      <img src={Sample} className="img-fluid" alt="..." />
+                      <i className="ion-play"></i>
+                      <a
+                        href="https://www.youtube.com/watch?v=8Z1eMy2FoX4"
+                        data-lity
+                      ></a>
+                    </figure>
+                  </div>
                 </div>
-                
+              </div>
+              <div className="widget-footer d-flex align-items-center">
+                <div className="col-12">
+                  <div className="meta">
+                    <ul>
+                      {[...Array(2)].map((x, i) => (
+                        <li>
+                          <a>
+                            <i className="la la-microphone"></i>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className="widget-footer d-flex align-items-center"
+                style={{
+                  background:
+                    "linear-gradient(to right, #7E47AF 10%, #1A1F63 100%)",
+                }}
+              >
+                <div className="col-8">
+                  <div className="meta footer-item">
+                    <ul>
+                      <li>
+                        <a>
+                          <i className="la la-microphone"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          <i className="la la-video-camera ml-5"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          <i className="la la-slideshare ml-5"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          <i className="la la-genderless ml-5"></i>
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          <i className="la la-share-square ml-5"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="col-4 no-padding d-flex justify-content-end">
+                  <div className="meta footer-item">
+                    <ul>
+                      <li>
+                        <a>
+                          <i className="la la-star"></i>
+                          <span className="numb">5.3K</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a>
+                          <i className="la la-eye"></i>
+                          <span className="numb">3.1k</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -49,21 +125,13 @@ function LiveStreaming({
         </div>
         <div className="row mt-3">
           <div className="col-9">
-            {
-              activeStreamingTab['aboutHost'] ?
-              <AboutHost></AboutHost>
-              : null 
-            }
-            {
-              activeStreamingTab['eventDetails'] ?
+            {activeStreamingTab["aboutHost"] ? <AboutHost></AboutHost> : null}
+            {activeStreamingTab["eventDetails"] ? (
               <EventDetails></EventDetails>
-              : null 
-            }
-            {
-              activeStreamingTab['announcement'] ?
+            ) : null}
+            {activeStreamingTab["announcement"] ? (
               <EventAnnouncement></EventAnnouncement>
-              : null 
-            }
+            ) : null}
           </div>
         </div>
       </div>

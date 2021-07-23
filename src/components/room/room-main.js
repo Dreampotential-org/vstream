@@ -275,17 +275,13 @@ class CardBody extends React.Component {
                                 <img src={Views} className="img-fluid rounded-circle" alt="..." />
                             </a>
                             <a className="db-social view-more ml-auto" href="javascript:void(0);"> 5.3k
-                        {/* <img src={} class="img-fluid rounded-circle" alt="..."/> */}
                             </a>
                             <a href="javascript:void(0);" className="ml-auto">
                                 <img src={Favourite} className="img-fluid rounded-circle" alt="..." />
                             </a>
                             <a href="javascript:void(0);" className="db-social view-more ml-auto"> 3.1k
-                        {/* <img src="assets/img/avatar/avatar-09.jpg" className="img-fluid rounded-circle" alt="..."/> */}
                             </a>
-                            {/* <a className="view-more" href="javascript:void(0);">
-                                            +4
-                    </a> */}
+                          
                         </div>
                     </div>
                     <div className="col-xl-7 col-md-7 col-5 no-padding d-flex justify-content-end align-items-center">

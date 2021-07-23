@@ -1,3 +1,15 @@
 .streamingTab {
     width: 33.333% !important;
 }
+
+.video-player {
+    padding: 0rem !important;
+}
+
+.widget-footer .footer-item li a  {
+    color: white !important;
+}
+
+.widget-footer .footer-item li a:hover {
+    color: #AEA9DD !important;
+}
