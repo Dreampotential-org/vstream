@@ -8,6 +8,9 @@ import EventDetails from "./child/event-details";
 import EventAnnouncement from "./child/event-announcement";
 import Sample from "../../assets/img/home/banner_ad1.png";
 import Live from "../../assets/icons/videos/live.png";
+import Logo from "../../assets/user-img.png";
+import ReactPlayer from 'react-player/file'
+
 
 function LiveStreaming({
   toggling: { toggleNavbarBurger, showTimeActiveSubStates, activeStreamingTab },
@@ -23,9 +26,11 @@ function LiveStreaming({
               <div className="widget-body video-player">
                 <div className="row post-video">
                   <div className="col-12">
+                  {/* <ReactPlayer width="auto" url='http://media.w3.org/2010/05/sintel/trailer.mp4' /> */}
+
                     <figure className="img-hover-02">
                       <div className="card-header--title">
-                        <img src={Live} style={{textAlign:"right"}}></img>
+                        <img src={Live} style={{ textAlign: "right" }}></img>
                         <span>Best Songs</span>
                       </div>
                       <img src={Sample} className="img-fluid" alt="..." />
@@ -40,16 +45,19 @@ function LiveStreaming({
               </div>
               <div className="widget-footer d-flex align-items-center">
                 <div className="col-12">
-                  <div className="meta">
-                    <ul>
-                      {[...Array(2)].map((x, i) => (
-                        <li>
-                          <a>
-                            <i className="la la-microphone"></i>
-                          </a>
-                        </li>
+                  <div className="friends-list">
+                    <div className="d-flex justify-content-between">
+                      {[...Array(6)].map((x, i) => (
+                        <a key={i}>
+                          <img
+                            src="https://d2phdgmkbm5x8b.cloudfront.net/img/us-passport-photo7.png"
+                            style={{ maxWidth:"60%", height:"auto"}}
+                            // class="img-fluid"
+                            alt="..."
+                          />
+                        </a>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 </div>
               </div>
