@@ -6093,7 +6093,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
   color: rgba(255, 255, 255, 0.5);
 }
 .db-modern .header {
-  background: #2c304d;
+  background: white;
 }
 .db-modern .navbar {
   background: transparent;
@@ -6616,7 +6616,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
   padding: 18px 0;
 }
 .horizontal-menu {
-  background: #2c304d;
+  background: white;
   padding: 0 30px;
 }
 .navbar-light .navbar-toggler {
@@ -6647,11 +6647,13 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
 .navbar-default .navbar-nav > li > a,
 .horizontal-menu .main-menu ul li a,
 .navbar-expand-lg .navbar-nav .nav-link {
-  color: #aea9c3;
+  color: #1A1F63;
   font-size: 1rem;
   padding: 1.2rem 1.07rem;
   font-family: "Montserrat", sans-serif;
   display: block !important;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .horizontal-menu .main-menu .dropdown-toggle::after {
   display: inline-block;
@@ -6666,12 +6668,12 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
 .horizontal-menu .main-menu .active a,
 .horizontal-menu .main-menu .active a:focus,
 .horizontal-menu .main-menu .active a:hover {
-  color: #e76c90;
+  color: #7E47AF !important;
   outline: 0;
 }
 .horizontal-menu .main-menu li a:hover,
 .horizontal-menu .main-menu li a:focus {
-  color: #aea9c3;
+  color: #7E47AF !important;
   outline: 0;
 }
 .horizontal-menu .navbar-default .navbar-nav > .show > a,
@@ -9306,7 +9308,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
   }
 }
 footer.main-footer {
-  background: #fff;
+  background: linear-gradient(to right, #7E47AF 10%, #1A1F63 100%);
   padding: 15px 30px;
   border-top: 0.07rem solid #eee;
   box-shadow: 0 1px 15px 1px rgba(52, 40, 104, 0.08);
@@ -9329,7 +9331,8 @@ footer.main-footer a:hover {
   color: #5d5386;
 }
 footer.main-footer p {
-  color: #98a8b4;
+  color: white;
+  -webkit-text-fill-color: white;
   margin: 0;
   font-size: 0.85rem;
   font-weight: 500;
@@ -9339,10 +9342,10 @@ footer.main-footer .nav-link {
   font-size: 0.85rem;
 }
 footer.main-footer a.nav-link {
-  color: #98a8b4;
+  color: white;
 }
 footer.main-footer a:hover.nav-link {
-  color: #5d5386;
+  color: #d4b8cb;
 }
 footer.second-footer {
   padding: 15px 30px;

@@ -16,7 +16,7 @@ function EventDetails({ toggling, changeTabStreaming, show_time }) {
       </div>
 
       <div className="widget-body">
-        <div className="form-group row mb-1">
+        <div className="form-group row">
           <div className="col-3 form-control-label d-flex align-items-center">
             Category
           </div>
@@ -47,9 +47,9 @@ function EventDetails({ toggling, changeTabStreaming, show_time }) {
             </ul>
           </div>
         </div>
-        <div className="form-group row mb-1">
+        <div className="form-group row">
           <div className="col-3 form-control-label d-flex align-items-center">
-            Banner
+            Schedule
           </div>
           <div className="col-8 form-control-plaintext">UX Designer</div>
         </div>

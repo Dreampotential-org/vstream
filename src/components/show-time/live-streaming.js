@@ -9,8 +9,7 @@ import EventAnnouncement from "./child/event-announcement";
 import Sample from "../../assets/img/home/banner_ad1.png";
 import Live from "../../assets/icons/videos/live.png";
 import Logo from "../../assets/user-img.png";
-import ReactPlayer from 'react-player/file'
-
+import ReactPlayer from "react-player/file";
 
 function LiveStreaming({
   toggling: { toggleNavbarBurger, showTimeActiveSubStates, activeStreamingTab },
@@ -26,14 +25,30 @@ function LiveStreaming({
               <div className="widget-body video-player">
                 <div className="row post-video">
                   <div className="col-12">
-                  {/* <ReactPlayer width="auto" url='http://media.w3.org/2010/05/sintel/trailer.mp4' /> */}
+                    {/* <ReactPlayer width="auto" url='http://media.w3.org/2010/05/sintel/trailer.mp4' /> */}
 
-                    <figure className="img-hover-02">
-                      <div className="card-header--title">
+                    <figure
+                      className="img-hover-02 img-fluid"
+                      style={{
+                        backgroundImage: 
+                          "url(" +
+                          "https://source.unsplash.com/user/erondu/600x400" +
+                          ")",
+                        height: "200px",
+                      }}
+                    >
+                      {/* <header style={{ backgroundImage: 'url(' + 'https://source.unsplash.com/user/erondu/600x400' + ')' }} className="card-header"> */}
+                      {/* <h4 className="card-header--title">{category}</h4> */}
+                      <div style={{ textAlign:"left" }} className="ml-1 mt-1">
+                        <img src={Live}></img>
+                        <span className="ml-2">Best Songs of 2020 - Joe Holland</span>
+                      </div>
+                      {/* </header> */}
+                      {/* <div className="card-header--title">
                         <img src={Live} style={{ textAlign: "right" }}></img>
                         <span>Best Songs</span>
-                      </div>
-                      <img src={Sample} className="img-fluid" alt="..." />
+                      </div> */}
+                      {/* <img src={Sample} className="img-fluid" alt="..." /> */}
                       <i className="ion-play"></i>
                       <a
                         href="https://www.youtube.com/watch?v=8Z1eMy2FoX4"
@@ -51,7 +66,7 @@ function LiveStreaming({
                         <a key={i}>
                           <img
                             src="https://d2phdgmkbm5x8b.cloudfront.net/img/us-passport-photo7.png"
-                            style={{ maxWidth:"60%", height:"auto"}}
+                            style={{ maxWidth: "60%", height: "auto" }}
                             // class="img-fluid"
                             alt="..."
                           />

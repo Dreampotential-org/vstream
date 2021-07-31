@@ -13,7 +13,10 @@ import PrivateRoute from "./components/routing/PrivateRoute";
 import Navbar from "./components/layouts/Navbar";
 import ShowTime from "./components/show-time/show-time-main";
 import LiveStreaming from "./components/show-time/live-streaming";
-import ChatBox from "./components/show-time/chatbox"
+import ChatBox from "./components/show-time/chatbox";
+import VstreamEventNavbar from "./components/vstream-events/navbar";
+import VstreamEventFooter from "./components/vstream-events/footer";
+import Spotlight from "./components/vstream-events/spotlight/spotlight";
 
 function App() {
   const LoginContainer = () => (
@@ -39,6 +42,7 @@ function App() {
 
       <PrivateRoute exact path="/live" component={LiveStreaming}></PrivateRoute>
       <PrivateRoute exact path="/chat" component={ChatBox}></PrivateRoute>
+
       <PrivateRoute
         exact
         path="/dashboard/follow"
@@ -76,6 +80,17 @@ function App() {
       ></PrivateRoute>
     </div>
   );
+  const vstreamEventsContainer = () => (
+    <div className="page db-modern">
+      <VstreamEventNavbar />
+      <PrivateRoute
+        exact
+        path="/spotlight"
+        component={Spotlight}
+      ></PrivateRoute>
+      <VstreamEventFooter />
+    </div>
+  );
   return (
     <Provider store={store}>
       <Router>
@@ -93,16 +108,13 @@ function App() {
               path="/(show)/:id"
               component={DefaultContainer}
             ></Route>
+            <Route exact path="/(live)" component={DefaultContainer}></Route>
             <Route
               exact
-              path="/(live)"
-              component={DefaultContainer}
+              path="/(spotlight)"
+              component={vstreamEventsContainer}
             ></Route>
-            <Route
-              exact
-              path="/(chat)"
-              component={DefaultContainer}
-            ></Route>
+            <Route exact path="/(chat)" component={DefaultContainer}></Route>
             <Route
               exact
               path="/(dashboard)/(follow)"
