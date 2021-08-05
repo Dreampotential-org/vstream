@@ -2,10 +2,7 @@
     width: 80px !important;
 }
 
-nav.navbar {
-    background-color: black;
-    color: white;
-}
+
 
 .remove-caret {
     cursor: pointer;

@@ -1,0 +1,4 @@
+.mySearchTextField {
+    height: calc(2.85rem + 2px) !important;
+    border-radius: 20px;
+}

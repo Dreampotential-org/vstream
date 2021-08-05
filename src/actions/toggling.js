@@ -2,7 +2,8 @@ import {
     SET_NAVBAR_TOGGLE, ACTIVE_KEY, ACTIVE_SUB_CATEGORY, 
     ACTIVE_TAB_CATEGORY, SHOW_NOTIFICATION, ACTIVE_SUB_SHOW_TIME, 
     ACTIVE_SUB_CATEGORY_SIDEBAR, CHANGE_FORM_STEP, ACTIVE_COLLAPSE, 
-    ACTIVE_CHAT_BOX, ACTIVE_CHAT_TAB, ACTIVE_TAB_STREAMING
+    ACTIVE_CHAT_BOX, ACTIVE_CHAT_TAB, ACTIVE_TAB_STREAMING,
+    ACTIVE_VSTREAM_EVENT_NAVBAR
 } from './types';
 
 export const toggleNavbar = () => async dispatch => {
@@ -92,5 +93,12 @@ export const changeTabStreaming = (key) => async (dispatch) => {
     dispatch({
         type: ACTIVE_TAB_STREAMING,
         payload: key
+    })
+}
+
+export const onClickEventNavbar = (id) => async (dispatch) => {
+    dispatch({
+        type: ACTIVE_VSTREAM_EVENT_NAVBAR,
+        payload: id
     })
 }

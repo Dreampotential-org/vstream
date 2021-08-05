@@ -5,7 +5,7 @@ import { loadUser } from '../../actions/auth';
 import FeedsCategories from "./categories";
 import CategoryCards from "./category-card";
 
-function CategoryMain({ toggling: { toggleNavbarBurger },match, loadUser }) {
+function CategoryMain({ toggling: { toggleNavbarBurger }, match, loadUser }) {
   useEffect(() => {
     loadUser();
     // console.log(match.params.id);

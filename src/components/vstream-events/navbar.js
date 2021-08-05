@@ -2,9 +2,13 @@ import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Logo from "../../assets/img/vstream-logo.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { onClickEventNavbar } from "../../actions/toggling";
 
-function VstreamEventNavbar() {
+function VstreamEventNavbar({
+  toggling: { eventNavbarStates },
+  onClickEventNavbar,
+}) {
   return (
     <header class="header">
       <div class="container">
@@ -27,7 +31,6 @@ function VstreamEventNavbar() {
             </div>
 
             <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right">
-              
               <div class="horizontal-menu">
                 <div class="container">
                   <div class="row">
@@ -50,14 +53,50 @@ function VstreamEventNavbar() {
                         id="navbarSupportedContent"
                       >
                         <ul class="navbar-nav mr-auto ">
-                          <li className="active">
-                            <a href="maps-leaflet.html">Spotlight</a>
+                          <li
+                            className={
+                              eventNavbarStates.activeSpotlight
+                                ? "active"
+                                : "none"
+                            }
+                          >
+                            <NavLink
+                              id="activeSpotlight"
+                              to="/spotlight"
+                              onClick={(e) => onClickEventNavbar(e.target.id)}
+                            >
+                              Spotlight
+                            </NavLink>
                           </li>
-                          <li>
-                            <a href="components-widgets.html">Discover</a>
+                          <li
+                            className={
+                              eventNavbarStates.activeDiscover
+                                ? "active"
+                                : "none"
+                            }
+                          >
+                            <NavLink
+                              id="activeDiscover"
+                              to="/discover"
+                              onClick={(e) => onClickEventNavbar(e.target.id)}
+                            >
+                              Discover
+                            </NavLink>
                           </li>
-                          <li>
-                            <a href="components-widgets.html">Calendar</a>
+                          <li
+                            className={
+                              eventNavbarStates.activeCalender
+                                ? "active"
+                                : "none"
+                            }
+                          >
+                            <NavLink
+                              id="activeCalender"
+                              to="/calender"
+                              onClick={(e) => onClickEventNavbar(e.target.id)}
+                            >
+                              Calendar
+                            </NavLink>
                           </li>
                         </ul>
                       </div>
@@ -137,4 +176,15 @@ function VstreamEventNavbar() {
   );
 }
 
-export default VstreamEventNavbar;
+VstreamEventNavbar.propTypes = {
+  toggling: PropTypes.object.isRequired,
+  onClickEventNavbar: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) => ({
+  toggling: state.toggling,
+});
+
+export default connect(mapStateToProps, { onClickEventNavbar })(
+  VstreamEventNavbar
+);

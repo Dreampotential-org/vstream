@@ -11,6 +11,7 @@ import {
   ACTIVE_CHAT_BOX,
   ACTIVE_CHAT_TAB,
   ACTIVE_TAB_STREAMING,
+  ACTIVE_VSTREAM_EVENT_NAVBAR
 } from "../actions/types";
 
 const initialState = {
@@ -24,6 +25,11 @@ const initialState = {
     activeGuidelines: false,
     activeSupport: false,
     activeAbout: false,
+  },
+  eventNavbarStates: {
+    activeSpotlight: true,
+    activeDiscover: false,
+    activeCalender: false
   },
   subCategoryStates: {},
   activeTabStates: {
@@ -83,6 +89,14 @@ export default function (state = initialState, action) {
       return {
         ...state,
         ...(state.sidebarStates[payload] = true),
+      };
+    case ACTIVE_VSTREAM_EVENT_NAVBAR:
+      for (let key in state.eventNavbarStates) {
+        state.eventNavbarStates[key] = false;
+      }
+      return {
+        ...state,
+        ...(state.eventNavbarStates[payload] = true),
       };
     case ACTIVE_SUB_CATEGORY:
       for (let key in state.subCategoryStates) {

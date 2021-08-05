@@ -6100,6 +6100,7 @@ nav.navbar .user-size.dropdown-menu a.logout:hover {
 }
 .db-modern nav.navbar {
   box-shadow: none;
+  margin-bottom: 0px !important;
 }
 .db-modern .menu-area {
   background: #2c304d;
@@ -9346,6 +9347,7 @@ footer.main-footer a.nav-link {
 }
 footer.main-footer a:hover.nav-link {
   color: #d4b8cb;
+  background-color: transparent !important;
 }
 footer.second-footer {
   padding: 15px 30px;
