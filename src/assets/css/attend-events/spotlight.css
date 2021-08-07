@@ -1,0 +1,57 @@
+.mySearchTextField {
+    height: calc(2.85rem + 2px) !important;
+    border-radius: 20px !important;
+}
+
+.myDateOfEvent {
+    height: 40px;
+    width: 40px;
+    background: linear-gradient(to right, #7E47AF 10%, #1A1F63 100%);
+    display: inline-block;
+    color: white;
+    text-align: center;
+}
+
+.myDateOfEvent .date {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: -.3rem;
+}
+
+.myDateOfEvent .month {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.my-event-list-info {
+    display: flex;
+    align-items: flex-start;
+}
+
+.my-event-list-info .title-time {
+    flex: 1;
+}
+
+.my-event-list-info .title-time .time-author {
+    font-size: .85rem;
+    font-weight: 600;
+    margin-top: -0.5rem;
+}
+
+.theme-color {
+    background: linear-gradient(to right, #7E47AF 10%, #1A1F63 100%);
+    color: white;
+}
+
+.bg-color-event-list {
+    background: #e1d7ea !important;
+    color: #7E47AF !important;
+}
+
+.bg-color-event-list:hover,
+.bg-color-event-list a:hover {
+    background: #1A1F63 !important;
+    color: white !important;
+}

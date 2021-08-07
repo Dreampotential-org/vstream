@@ -10,33 +10,33 @@ function VstreamEventNavbar({
   onClickEventNavbar,
 }) {
   return (
-    <header class="header">
-      <div class="container">
-        <nav class="navbar">
-          <div class="navbar-holder d-flex align-items-center align-middle justify-content-between">
-            <div class="navbar-header">
+    <header className="header">
+      <div className="container">
+        <nav className="navbar">
+          <div className="navbar-holder d-flex align-items-center align-middle justify-content-between">
+            <div className="navbar-header">
               <Link to="/spotlight" className="navbar-brand">
-                <div class="brand-image brand-big">
+                <div className="brand-image brand-big">
                   <img
                     src={Logo}
                     alt="logo"
                     style={{ width: "70px" }}
-                    class="logo-big"
+                    className="logo-big"
                   />
                 </div>
-                <div class="brand-image brand-small">
-                  <img src={Logo} alt="logo" class="logo-small" />
+                <div className="brand-image brand-small">
+                  <img src={Logo} alt="logo" className="logo-small" />
                 </div>
               </Link>
             </div>
 
-            <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right">
-              <div class="horizontal-menu">
-                <div class="container">
-                  <div class="row">
-                    <nav class="navbar navbar-light navbar-expand-lg main-menu">
+            <ul className="nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right">
+              <div className="horizontal-menu">
+                <div className="container">
+                  <div className="row">
+                    <nav className="navbar navbar-light navbar-expand-lg main-menu">
                       <button
-                        class="navbar-toggler"
+                        className="navbar-toggler"
                         type="button"
                         data-toggle="collapse"
                         data-target="#navbarSupportedContent"
@@ -49,10 +49,10 @@ function VstreamEventNavbar({
                         <span></span>
                       </button>
                       <div
-                        class="collapse navbar-collapse"
+                        className="collapse navbar-collapse"
                         id="navbarSupportedContent"
                       >
-                        <ul class="navbar-nav mr-auto ">
+                        <ul className="navbar-nav mr-auto ">
                           <li
                             className={
                               eventNavbarStates.activeSpotlight
@@ -105,7 +105,7 @@ function VstreamEventNavbar({
                 </div>
               </div>
 
-              <li class="nav-item dropdown">
+              <li className="nav-item dropdown">
                 <a
                   id="user"
                   rel="nofollow"
@@ -114,45 +114,45 @@ function VstreamEventNavbar({
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false"
-                  class="nav-link"
+                  className="nav-link"
                 >
                   <img
                     src="https://d2phdgmkbm5x8b.cloudfront.net/img/us-passport-photo7.png"
                     alt="..."
-                    class="avatar rounded-circle"
+                    className="avatar rounded-circle"
                   />
                 </a>
-                <ul aria-labelledby="user" class="user-size dropdown-menu">
-                  <li class="welcome">
-                    <a href="#" class="edit-profil">
-                      <i class="la la-gear"></i>
+                <ul aria-labelledby="user" className="user-size dropdown-menu">
+                  <li className="welcome">
+                    <a href="#" className="edit-profil">
+                      <i className="la la-gear"></i>
                     </a>
                     <img
                       src="https://d2phdgmkbm5x8b.cloudfront.net/img/us-passport-photo7.png"
                       alt="..."
-                      class="rounded-circle"
+                      className="rounded-circle"
                     />
                   </li>
                   <li>
-                    <a href="pages-profile.html" class="dropdown-item">
+                    <a href="pages-profile.html" className="dropdown-item">
                       Profile
                     </a>
                   </li>
                   <li>
-                    <a href="app-mail.html" class="dropdown-item">
+                    <a href="app-mail.html" className="dropdown-item">
                       Messages
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="dropdown-item no-padding-bottom">
+                    <a href="#" className="dropdown-item no-padding-bottom">
                       Settings
                     </a>
                   </li>
-                  <li class="separator"></li>
+                  <li className="separator"></li>
                   <li>
                     <a
                       href="pages-faq.html"
-                      class="dropdown-item no-padding-top"
+                      className="dropdown-item no-padding-top"
                     >
                       Faq
                     </a>
@@ -161,9 +161,9 @@ function VstreamEventNavbar({
                     <a
                       rel="nofollow"
                       href="pages-login.html"
-                      class="dropdown-item logout text-center"
+                      className="dropdown-item logout text-center"
                     >
-                      <i class="ti-power-off"></i>
+                      <i className="ti-power-off"></i>
                     </a>
                   </li>
                 </ul>

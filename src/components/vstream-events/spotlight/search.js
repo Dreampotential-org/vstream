@@ -1,23 +1,32 @@
 import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import "../../../assets/css/attend-events/search.css"
 
 function EventSearch() {
   return (
-    <div class="form-group row mt-3 mr-auto ml-auto">
-      <div class="col-6 mb-3">
-        <input type="text" value="Search a topic, event, channel etc" class="mySearchTextField form-control" />
+    <div className="row d-flex justify-content-between form-group mt-1">
+      <div className="col-6 text-center">
+        <input
+          type="text"
+          value="Search a topic, event, channel etc"
+          className="mySearchTextField form-control"
+        />
       </div>
-      <div class="col-3">
-        <select name="country" class="custom-select form-control">
+      <div className="col-3 text-center">
+        <select
+          name="country"
+          className="custom-select form-control mySearchTextField"
+        >
           <option value="">Filter</option>
           <option value="AF">Pakistan</option>
           <option value="AX">US</option>
         </select>
       </div>
-      <div class="col-3">
-        <select name="country" class="custom-select form-control">
+      <div className="col-3 text-center">
+        <select
+          name="country"
+          className="custom-select form-control mySearchTextField"
+        >
           <option value="">Sort</option>
           <option value="AF">Pakistan</option>
           <option value="AX">US</option>

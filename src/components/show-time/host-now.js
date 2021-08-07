@@ -266,9 +266,6 @@ function HostNow({
                         </div>
                       </div>
                       <ul className="modal-footer">
-                        {/* <li className="previous d-inline-block" >
-                                                    <a className="btn btn-secondary ripple">Previous</a>
-                                                </li> */}
                         <li className="next d-inline-block">
                           <button
                             onClick={(e) => changeFormStep("step2")}
