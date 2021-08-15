@@ -12,8 +12,8 @@ import { getCategories, joinConference } from '../../actions/feeds-categories';
 function Home({ toggling: { toggleNavbarBurger }, loadUser, getCategories, }) {
     useEffect(() => {
         loadUser();
-        getCategories();
-    }, [ loadUser, getCategories]);
+        // getCategories();
+    }, [ loadUser]);
     return (
         <div
             className={toggleNavbarBurger ? 'content-inner' : 'content-inner active'}
@@ -85,4 +85,4 @@ const mapStateToProps = (state) => ({
     toggling: state.toggling,
 });
 
-export default connect(mapStateToProps, { loadUser, getCategories })(Home);
+export default connect(mapStateToProps, { loadUser })(Home);

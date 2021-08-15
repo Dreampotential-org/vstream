@@ -1,7 +1,4 @@
 import React, { useState, useEffect, Fragment } from 'react'; // useState
-import Logo from '../../assets/img/vstream-logo.png';
-// import Notification01 from '../../assets/img/notifications/01.jpg';
-// import Avatar01 from '../../assets/img/avatar/avatar-01.jpg';
 import '../../assets/css/navbar.css';
 import { Link } from 'react-router-dom';
 import Sidebar from './Sidebar';
@@ -12,8 +9,7 @@ import PropTypes from 'prop-types';
 import { Dropdown } from 'react-bootstrap';
 import Notification from '../../assets/icons/navbar/notification.png'
 import vStream from '../../assets/icons/navbar/vstream_logo.png'
-import Search from '../../assets/icons/navbar/nav_search.png'
-import Icofont from 'react-icofont';
+
 
 function Navbar({
   toggling: { toggleNavbarBurger, notificationState, },

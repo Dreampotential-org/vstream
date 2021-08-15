@@ -7,15 +7,15 @@ import { ICON_DICT_OF_CATEGORY } from "../../actions/types";
 function CategoryCards({
     id,
     conversation,
-    getCategories,
+    // getCategories,
     joinConference,
     changeView,
 
 }) {
-    useEffect(() => {
-        console.log("id...", id)
-        getCategories();
-    }, [getCategories]);
+    // useEffect(() => {
+    //     console.log("id...", id)
+    //     getCategories();
+    // }, [getCategories]);
     return (
         <div className="categoryCard" id="app-card-list">
             {   conversation.categories !== null ?
@@ -85,6 +85,6 @@ const mapStateToProps = (state) => ({
     conversation: state.conversation,
 });
 
-export default connect(mapStateToProps, { getCategories, joinConference })(
+export default connect(mapStateToProps, {  joinConference })(
     CategoryCards
 );

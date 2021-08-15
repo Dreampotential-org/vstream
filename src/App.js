@@ -17,6 +17,8 @@ import ChatBox from "./components/show-time/chatbox";
 import VstreamEventNavbar from "./components/vstream-events/navbar";
 import VstreamEventFooter from "./components/vstream-events/footer";
 import Spotlight from "./components/vstream-events/spotlight/spotlight";
+import Discover from "./components/vstream-events/discover/discover";
+import CalenderEvent from "./components/vstream-events/calender/calender";
 
 function App() {
   const LoginContainer = () => (
@@ -85,8 +87,18 @@ function App() {
       <VstreamEventNavbar />
       <PrivateRoute
         exact
-        path="/spotlight"
+        path="/event/spotlight"
         component={Spotlight}
+      ></PrivateRoute>
+      <PrivateRoute
+        exact
+        path="/event/discover"
+        component={Discover}
+      ></PrivateRoute>
+      <PrivateRoute
+        exact
+        path="/event/calender"
+        component={CalenderEvent}
       ></PrivateRoute>
       <VstreamEventFooter />
     </div>
@@ -111,7 +123,17 @@ function App() {
             <Route exact path="/(live)" component={DefaultContainer}></Route>
             <Route
               exact
-              path="/(spotlight)"
+              path="/(event)/(spotlight)"
+              component={vstreamEventsContainer}
+            ></Route>
+            <Route
+              exact
+              path="/(event)/(discover)"
+              component={vstreamEventsContainer}
+            ></Route>
+            <Route
+              exact
+              path="/(event)/(calender)"
               component={vstreamEventsContainer}
             ></Route>
             <Route exact path="/(chat)" component={DefaultContainer}></Route>

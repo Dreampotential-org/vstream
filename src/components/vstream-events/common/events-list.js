@@ -7,7 +7,7 @@ function EventList({ v_events }) {
   return (
     <div>
       {v_events.vEvents.map((event, i) => (
-        <div className="row flex-row mb-4" key={i}>
+        <div className="row flex-row mb-4 mt-5" key={i}>
           <div className="col-6">
             <div className="row align-items-center">
               <div className="col-12 ">

@@ -3,6 +3,9 @@ import React from 'react';
 import "../../assets/css/splash-screen.css";
 import LoginRegister from "../auth/login-register";
 import Logo from '../../assets/img/vstream-logo.png';
+import { getCategories } from '../../actions/feeds-categories';
+import { connect } from 'react-redux';
+
 
 class SplashScreen extends React.Component {
   render() {
@@ -32,6 +35,8 @@ class MainComponent extends React.Component {
   }
   async componentDidMount() {
     try {
+      console.log("this is splash screen");
+      this.props.getCategories();
       setTimeout(() => {
         this.setState({ renderSplashscreen: false });
       }, 5000)
@@ -55,4 +60,4 @@ class MainComponent extends React.Component {
   }
 }
 
-export default MainComponent;
+export default connect(null, { getCategories })(MainComponent)

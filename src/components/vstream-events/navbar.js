@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import Logo from "../../assets/img/vstream-logo.png";
+import Logo from "../../assets/icons/navbar/vstream_event.png";
 import { Link, NavLink } from "react-router-dom";
 import { onClickEventNavbar } from "../../actions/toggling";
 
@@ -15,12 +15,11 @@ function VstreamEventNavbar({
         <nav className="navbar">
           <div className="navbar-holder d-flex align-items-center align-middle justify-content-between">
             <div className="navbar-header">
-              <Link to="/spotlight" className="navbar-brand">
+              <Link to="/event/spotlight" className="navbar-brand">
                 <div className="brand-image brand-big">
                   <img
                     src={Logo}
                     alt="logo"
-                    style={{ width: "70px" }}
                     className="logo-big"
                   />
                 </div>
@@ -62,7 +61,7 @@ function VstreamEventNavbar({
                           >
                             <NavLink
                               id="activeSpotlight"
-                              to="/spotlight"
+                              to="/event/spotlight"
                               onClick={(e) => onClickEventNavbar(e.target.id)}
                             >
                               Spotlight
@@ -77,7 +76,7 @@ function VstreamEventNavbar({
                           >
                             <NavLink
                               id="activeDiscover"
-                              to="/discover"
+                              to="/event/discover"
                               onClick={(e) => onClickEventNavbar(e.target.id)}
                             >
                               Discover
@@ -92,7 +91,7 @@ function VstreamEventNavbar({
                           >
                             <NavLink
                               id="activeCalender"
-                              to="/calender"
+                              to="/event/calender"
                               onClick={(e) => onClickEventNavbar(e.target.id)}
                             >
                               Calendar

@@ -15,9 +15,9 @@ function FeedsCategories({
     const [toggleLoader, setToggleLoader] = useState(true);
     const [categories, setCategories] = useState(null);
 
-    useEffect(() => {
-        getCategories();
-    }, [getCategories]);
+    // useEffect(() => {
+    //     getCategories();
+    // }, [getCategories]);
 
     const joinRoom = (evt) => {
         evt.preventDefault();

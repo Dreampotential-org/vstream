@@ -1,16 +1,11 @@
 import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-// import "../../../public/public-assets/vendors/calendar/fullcalendar.min.js";
-// import "../../../public/public-assets/vendors/calendar/moment.min.js";
-// import "../../../public/public-assets/vendors/app/app.min.js";
-// import "../../../public/public-assets/vendors/nicescroll/nicescroll.min.js";
 import "../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css";
 import "../../../node_modules/react-big-calendar/lib/addons/dragAndDrop";
 import { Calendar, momentLocalizer, Views } from "react-big-calendar";
 import moment from "moment";
 import { addEvent } from "../../actions/show-time";
-// import { SafeAnchor } from "react-bootstrap";
 
 const localizer = momentLocalizer(moment);
 
@@ -32,7 +27,7 @@ function EventCalender({
     <div className="row">
       {/* <div className="widget-body"> */}
       <Fragment>
-        <div className="col-2">
+        <div className="col-2" style={{ backgroundColor:"black" }}>
           <div class="widget-32 widget-image bg-image">
             <div class="overlay"></div>
             <div class="content">
@@ -59,7 +54,7 @@ function EventCalender({
         </div>
       </Fragment>
       <Fragment>
-        <div className="col-9">
+        <div className="col-10">
           <Calendar
             selectable
             localizer={localizer}

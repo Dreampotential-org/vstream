@@ -4,11 +4,11 @@ import { connect } from "react-redux";
 
 function EventSearch() {
   return (
-    <div className="row d-flex justify-content-between form-group mt-1">
+    <div className="row d-flex justify-content-between form-group mt-3">
       <div className="col-6 text-center">
         <input
           type="text"
-          value="Search a topic, event, channel etc"
+          placeholder="Search a topic, event, channel etc"
           className="mySearchTextField form-control"
         />
       </div>
