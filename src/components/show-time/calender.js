@@ -24,10 +24,10 @@ function EventCalender({
       });
   };
   return (
-    <div className="row">
+    <div className="row justify-content-center">
       {/* <div className="widget-body"> */}
       <Fragment>
-        <div className="col-2" style={{ backgroundColor:"black" }}>
+        <div className="col-3">
           <div class="widget-32 widget-image bg-image">
             <div class="overlay"></div>
             <div class="content">
@@ -39,22 +39,42 @@ function EventCalender({
               <div id="events-time">{moment().format("h:mm:ss a")}</div>
             </div>
           </div>
-          {show_time.events.map((event, i) => (
-            <div className="fc-event-container" key={i}>
-              <div className="fc-event fc-bg-default">
-                <div className="fc-content">
-                  <span className="fc-title">
-                    <i className="la la-cutlery"></i>
-                    {event.title}
-                  </span>
-                </div>
-              </div>
+          <div class="widget has-shadow">
+            <div
+              class="widget-header bordered no-actions"
+              style={{ padding: "0.49rem", background: "transparent" }}
+            >
+              <h3
+                class="text-center mt-3 mb-1"
+                style={{
+                  // color: "white",
+                  fontSize: "1.7rem",
+                  fontWeight: "700",
+                }}
+              >
+                Event Schedule
+              </h3>
+              <p class="text-center">May 11, 2021</p>
             </div>
-          ))}
+            <div class="widget-body">
+              {show_time.events.map((event, i) => (
+                <div className="fc-event-container" key={i}>
+                  <div className="fc-event fc-bg-default">
+                    <div className="fc-content">
+                      <span className="fc-title">
+                        <i className="la la-cutlery"></i>
+                        {event.title}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </Fragment>
       <Fragment>
-        <div className="col-10">
+        <div className="col-9">
           <Calendar
             selectable
             localizer={localizer}
